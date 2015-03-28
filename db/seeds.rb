@@ -31,4 +31,4 @@ Post.create(
   created_at: '2015-02-02',
   category: exhibition_category,
   visits: 110,
-);
+)

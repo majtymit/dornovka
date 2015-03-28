@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    titleHome Nová DORNOVKA
+    title Nová DORNOVKA
     meta charset="utf-8"
     meta name="description" content="Dornova metóda zvierá"
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
@@ -11,15 +11,13 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body
-    body.home-template.enable-filter.pattern
-      .main-wrap
-        = render partial: 'shared/left_panel'
-        = render partial: 'shared/main'
 
-        = yield
+  body.home-template.enable-filter.pattern
+    .main-wrap
+      = render partial: 'shared/left_panel'
 
-
-
+      #main-content
+        main.body-content role="main"
+          = yield
 
 

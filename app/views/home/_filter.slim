@@ -1,0 +1,41 @@
+
+
+.filter-control
+  .filter-container
+    .group.filter-group
+      .input-group.btn-group
+        span.input-group-addon
+          i.fa.fa-filter
+          span Filter by:
+        select#filter multiple="multiple"
+          option value=".featured"
+            | Featured
+          option value=".video"
+            | Video
+          option value=".image-thumbnail"
+            | Image Thumbnail
+          option value=".audio"
+            | Audio
+          option value=".plain-text"
+            | Plain Text
+          option value=".quote"
+            | Quote
+    .group.sort-group
+      .input-group.btn-group
+        span.input-group-addon
+          i.fa.fa-sort-amount-desc
+          span Sort by:
+        select#sort
+          option selected="" value="date"  Date
+          option value="title"  Title
+    a.sort-option data-sort="desc" href="javascript:;"
+      i.fa.fa-long-arrow-down
+    .search-box
+      a#btn-search.btn.btn-theme
+        span Search
+        i.fa.fa-search
+      .search-form
+        form.form-inline role="form"
+          .form-group
+            input#search-keyword.form-control placeholder=("Enter keyword") type="text" /
+        #searchresult

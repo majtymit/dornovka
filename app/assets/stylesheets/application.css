@@ -10,13 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require ./bootstrap-multiselect.scss
- *= require ./bootstrap.min.scss
- *= require ./colors.scss
- *= require ./custom.scss
- *= require ./font-awesome.min.scss
- *= require ./magnific-popup.scss
- *= require ./owl.theme.scss
- *= require ./screen.scss
+
+ *= require ./bootstrap.min
+ *= require ./font-awesome.min
+ *= require ./owl.carousel
+ *= require ./owl.theme
+ *= require ./magnific-popup
+ *= require ./bootstrap-multiselect
+ *= require ./screen
+ *= require ./colors
+ *= require ./custom
  *= require_self
  */

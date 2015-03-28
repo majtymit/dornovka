@@ -936,7 +936,7 @@ var sfApp={
             }).fadeIn('slow', function() {});
         }
         if($('.sidebar-wrap').length){
-            var sidebarWrapHeight=$('#main-sidebar').height()-$('.logo-container').height()-25;
+            var sidebarWrapHeight=$('#main-sidebar').height()-$('.logo-container').height()-201;
             $('.sidebar-wrap').css('min-height', sidebarWrapHeight+'px');
         }
     },
