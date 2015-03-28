@@ -1,0 +1,37 @@
+aside#main-sidebar.covered
+  = render partial: 'shared/logo'
+  .sidebar-wrap
+    .sidebar-menu-container
+      .intro
+        .intro-wrap
+          p
+            | Vitaje na stránke venovanej Dornovej metóde pre zvieratá
+      a#mobile-menu.btn.btn-theme.collapsed data-target=".main-nav" data-toggle="collapse"
+        span
+          | Navigation
+        i.fa.fa-tasks
+      = render partial: 'shared/menu'
+    .sidebar-bottom-container
+      .bottom-social
+        ul.social
+          li.twitter
+            a href="#" target="_blank" title="Twitter"
+              i.fa.fa-twitter
+          li.facebook
+            a href="#" target="_blank" title="Facebook"
+              i.fa.fa-facebook
+          li.google
+            a href="#" target="_blank" title="Google"
+              i.fa.fa-google-plus
+          li.linkedin
+            a href="#" target="_blank" title="Linkedin"
+              i.fa.fa-linkedin
+          li.skype
+            a href="#" target="_blank" title="Skype"
+              i.fa.fa-skype
+          li.rss
+            a href="/rss/" target="_blank" title=("Rss Feed")
+              i.fa.fa-rss
+      .copyright
+        | Copyright &copy; 2015
+        a href="/"  Dornovka
