@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get '/' => 'home#index', as: :home
 
-  scope 'O-mne' do
+  scope 'o-mne' do
     get '/' => 'about#index', as: :about
   end
 
-  scope 'Kontakt' do
+  scope 'kontakt' do
     get '/' => 'contact#index', as: :contact
   end
 

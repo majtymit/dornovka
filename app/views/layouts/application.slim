@@ -12,7 +12,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-  body.home-template.enable-filter.pattern
+  body.pattern class=body_class
     .main-wrap
       = render partial: 'shared/left_panel'
 
