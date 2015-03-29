@@ -1,24 +1,10 @@
 ul.nav.main-nav.collapse.navbar-collapse
-  li.has-sub.active
-    a href="#"
-      | Home
-      span.caret
-    ul.dropdown-menu
-      li
-        a href="index.slim"
-          | Home Standard Style
-      li.active
-        a href="index-with-filter.html"
-          | Home With Filter
-      li
-        a href="index-gallery-style.html"
-          | Home Gallery Style
-      li
-        a href="index-simple-style.html"
-          | Home Simple Style
   li
-    a href="profile.html"
-      | My Profile
+    a href=home_url
+      | Home
+  li
+    a href=about_url
+      | O mne
   li.has-sub
     a href="#"
       | Portfolio
@@ -42,9 +28,6 @@ ul.nav.main-nav.collapse.navbar-collapse
       li
         a href="portfolio-single-video.html"
           | Portfolio Single Video
-  /!
-    | Begin of one menu item
-    | \- Add class="has-sub" if this menu item has sub menu
   li.has-sub
     a href="#"
       | Pages
@@ -69,5 +52,5 @@ ul.nav.main-nav.collapse.navbar-collapse
         a href="404.html"
           | 404 Page
   li
-    a href="get-in-touch.html"
-      | Get In Touch
+    a href=contact_url
+      | Kontakt

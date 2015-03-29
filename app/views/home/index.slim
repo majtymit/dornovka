@@ -8,9 +8,9 @@
           a href="post-single-default.html"
             = post.title
         .post-media
-          img.img-responsive alt="Ghost" src="assets/img/post-demo.gif" /
+          img.img-responsive alt="Demo" src="post-demo.gif" /
           .mask
-            a.preview.magnific-popup-image href="assets/img/post-demo.gif"
+            a.preview.magnific-popup-image href="post-demo.gif"
               i.fa.fa-search
             a.detail href="post-single-default.html"
               i.fa.fa-link
@@ -21,8 +21,11 @@
         .post-meta.clearfix
           span.time.pull-left
             i.fa.fa-calendar
-            | 12 days ago
+            = post.created_at
           span.comment.pull-right
             i.fa.fa-comments-o
             span
-              | 0 comment
+              | Zobrazené
+              = post.visits
+              | x
+

@@ -18,7 +18,7 @@ Post.create(
   description: 'niekam do bratislavy alebo aj mimo nej',
   text: '',
   image_url: 'blog/pes.jpg',
-  created_at: '2015-02-12',
+  created_at: '15.2.2015',
   category: dogs_category,
   visits: 227,
 )
