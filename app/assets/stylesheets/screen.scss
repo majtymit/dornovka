@@ -2378,7 +2378,7 @@ ul.social.active li.rss{
 }
 
 #preloader{
-	background:#FFF url(../img/loading.gif) no-repeat center;
+	background:#FFF image-url('loading.gif') no-repeat center;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -2395,7 +2395,7 @@ ul.social.active li.rss{
 }
 
 #infscr-loading{
-	background:#FFF url(../img/loading.gif) no-repeat center;
+	background:#FFF image-url('loading.gif') no-repeat center;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
