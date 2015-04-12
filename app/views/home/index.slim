@@ -15,14 +15,17 @@
               i.fa.fa-link
         .post-excerpt
           = post.description
+          br
           a.read-more href="post-single-default.html"
             | Read more »
         .post-meta.clearfix
           span.time.pull-left
             i.fa.fa-calendar
+            '
             = post.created_at
           span.comment.pull-right
             i.fa.fa-comments-o
+            '
             span
               | Zobrazené #{post.visits}x
 
