@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+
+development:
+  <<: *default
+  user: 'dornovka'
+  database: dornovka
+  password: ''
+
+test:
+  <<: *default
+  user: 'dornovka'
+  database: dornovka_test
+  password: ''
+
+production:
+  <<: *default
+  user: 'dornovka'
+  database: dornovka_production
+  password: ''
