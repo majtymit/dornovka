@@ -961,11 +961,13 @@ $(window).on("debouncedresize", function( event ) {
     "use strict";
     sfApp.reloadIsotope();
     sfApp.reloadPortfolio();
+    sfApp.reFormatUI();
 });
 $(window).load(function(){
     "use strict";
     sfApp.reloadIsotope();
     sfApp.reloadPortfolio();
+    sfApp.reFormatUI();
 });
 $(window).resize(function () {
     "use strict";
