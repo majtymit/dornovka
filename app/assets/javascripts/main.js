@@ -103,47 +103,6 @@ var sfApp={
                         $postMedia.css('background-image','url("'+youtubeThumnailUrl+'")');
                     }
                 }
-                else if($(this).find(".hidden").has('iframe[src^="https://w.soundcloud.com"]').length){
-                    var $soundcloud=$(this).find(".hidden").find("iframe:first-child");
-                    var regExp=/soundcloud.com\/tracks\/(\d+)/;
-                    var soundcloudId='';
-                    var regResult= $soundcloud.attr('src').match(regExp);
-                    if(regResult!=null)
-                        soundcloudId=regResult[1];
-                    if(soundcloudId!=''){
-                        var soundcloudApiUrl='http://api.soundcloud.com/tracks/'+soundcloudId+'.json?client_id=425fc6ee65a14efbb9b83b1c49a87ccb';
-                        $.ajax({
-                            type: 'GET',
-                            url: soundcloudApiUrl,
-                            dataType: "json",
-                            success: function(result) {
-                                var artwork_url=result.artwork_url.replace('-large','-t500x500');
-                                $postMedia.css('background-image','url("'+artwork_url+'")');
-                            }
-                        });
-                    }
-                }
-                else if($(this).find(".hidden").has('iframe[src^="//player.vimeo.com"]').length){
-                    var $vimeo=$(this).find(".hidden").find('iframe[src^="//player.vimeo.com"]');
-                    var regExp = /video\/(\d+)/;
-                    var vimeoId ='';
-                    var regResult= $vimeo.attr('src').match(regExp);
-                    if(regResult.length)
-                        vimeoId=regResult[1];
-                    if(vimeoId!=''){
-                        var vimeoUrl='http://vimeo.com/api/v2/video/'+vimeoId+'.json';
-                        $.ajax({
-                            type: 'GET',
-                            url: vimeoUrl,
-                            dataType: "json",
-                            success: function(result) {
-                                if(result.length){
-                                    $postMedia.css('background-image','url("'+result[0].thumbnail_large+'")');
-                                }
-                            }
-                        });
-                    }
-                }
                 else{
                     var $innerContent=$('.post-desc',$(this));
                     var innerContentMargin=Math.floor($innerContent.height()/2);
@@ -190,53 +149,6 @@ var sfApp={
             }
         }
     },
-    getFlickr:function(){
-        if($('.flickr-feed').length){
-            $('.flickr-feed').each(function() {
-                if(flickr_id=='' || flickr_id=='YOUR_FLICKR_ID_HERE'){
-                    $(this).html('<li><strong>Please change Flickr user id before use this widget</strong></li>');
-                }
-                else{
-                    var feedTemplate='<li><a href="{{image_b}}" target="_blank"><img src="{{image_m}}" alt="{{title}}" /></a></li>';
-                    var size=15;
-                    if($(this).data('size'))
-                        size=$(this).data('size');
-                    var isPopupPreview=false;
-                    if($(this).data('popup-preview'))
-                        isPopupPreview=$(this).data('popup-preview');
-                    if(isPopupPreview){
-                        feedTemplate='<li><a href="{{image_b}}"><img src="{{image_m}}" alt="{{title}}" /></a></li>';
-                    }
-                    $(this).jflickrfeed({
-                        limit: size,
-                        qstrings: {
-                            id: flickr_id
-                        },
-                        itemTemplate: feedTemplate
-                    }, function(data) {
-                        if(isPopupPreview){
-                            $(this).magnificPopup({
-                                delegate: 'a',
-                                type: 'image',
-                                closeOnContentClick: false,
-                                closeBtnInside: false,
-                                mainClass: 'mfp-with-zoom mfp-img-mobile',
-                                gallery: {
-                                    enabled: true,
-                                    navigateByImgClick: true,
-                                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-                                },
-                                image: {
-                                    verticalFit: true,
-                                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-        }
-    },
     getInstagram: function(){
         if($('.instagram-feed').length){
             if(instagram_accessToken!='' || instagram_accessToken!='your-instagram-access-token'){
@@ -260,46 +172,6 @@ var sfApp={
                         max: display
                     });
                 }
-            });
-        }
-    },
-    getDribbble: function(){
-        if($('.dribbble-feed').length){
-            $('.dribbble-feed').each(function(){
-                var $this=$(this);
-                var display=15;
-                if($this.data('display'))
-                    display=$this.data('display');
-                var isPopupPreview=false;
-                if($this.data('popup-preview'))
-                    isPopupPreview=$this.data('popup-preview');
-                $.jribbble.getShotsByList(ribbble_data_method, function (listDetails) {
-                    var html = [];
-                    $.each(listDetails.shots, function (i, shot) {
-                        html.push('<li><a href="' + shot.image_url + '" title="'+shot.title+'">');
-                        html.push('<img src="' + shot.image_teaser_url + '" ');
-                        html.push('alt="' + shot.title + '"></a></li>');
-                    });
-                    $this.html(html.join(''));
-                    if(isPopupPreview){
-                        $(this).magnificPopup({
-                                delegate: 'a',
-                                type: 'image',
-                                closeOnContentClick: false,
-                                closeBtnInside: false,
-                                mainClass: 'mfp-with-zoom mfp-img-mobile',
-                                gallery: {
-                                    enabled: true,
-                                    navigateByImgClick: true,
-                                    preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-                                },
-                                image: {
-                                    verticalFit: true,
-                                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-                                }
-                            });
-                    }
-                }, {page: 1, per_page: display});
             });
         }
     },
@@ -1027,21 +899,16 @@ var sfApp={
             }
         });
         $('#more-info-sidebar').niceScroll();
-        if($('.gmap').length){
-            sfApp.gmapInitialize();
-            google.maps.event.addDomListener(window, 'load', sfApp.gmapInitialize);
-            google.maps.event.addDomListener(window, 'resize', sfApp.gmapInitialize);
-        }
         if($('.share-box').length){
             $('#btn-share').click(function(event) {
                 event.preventDefault();
                 if($('.share-box-content').is(':hidden')){
-                    $('body').addClass('open-share');
+                    //$('body').addClass('open-share');
                     $('.share-box-content').fadeIn('fast');
                 }
                 else{
                     $('.share-box-content').fadeOut('fast');
-                    $('body').removeClass('open-share');
+                    //$('body').removeClass('open-share');
                 }
             });
         }
@@ -1071,9 +938,7 @@ var sfApp={
         sfApp.isotopeSetup();
         sfApp.infiniteScrollSetup();
         sfApp.portfolioSetup();
-        sfApp.getFlickr();
         sfApp.getInstagram();
-        sfApp.getDribbble();
         sfApp.contentPopup();
         sfApp.newsletterSetup();
         sfApp.postAnimation();
