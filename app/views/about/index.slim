@@ -1,15 +1,22 @@
 .post-header
   .pull-left.post-title
     h2
-      | Kto som, čo som?
+      | Kto som, čo som a čo robím?
 .post-wrap
   article.post.page
     section.post-content
       .row
-        .col-md-12.text-center
+        .col-md-8
           h3.intro-title.no-margin Thanks for visiting me
           p
             | We operate around the world and work with businesses to solve their communication challenges.
+        .col-sm-4
+          .testimonial
+            .quote
+              | Dornova metóda je jemná manuálna terapia. Reguluje chybné postavenie kostí v tele. Využíva prirodzený pohyb pacienta a nenásilne ošetruje oporný aparát.
+              .arrow-down
+                .arrow
+                .arrow-border
       .row.margin-20
         .col-md-8
           p.small-text
@@ -23,41 +30,6 @@
             br A tam sa začala moja cesta pomáhať ľudom a zvieratkám...
         .col-md-4
           img.img-responsive alt="Heňa" src=image_url("hena-photo-web.jpg") /
-      .row
-        .col-md-12.text-center
-          h3.intro-title What work i do?
-          p
-            | We operate around the world and work with businesses to solve their communication challenges.
-      .row.margin-20
-        .col-xs-12.col-sm-4.col-md-4.col-lg-4.service-item
-          .media
-            .pull-left
-              i.fa.fa-tachometer
-            .media-body
-              h4.service-title Web Design
-              p
-                | Nunc non congue urna, commodo ullamcorper nisi. Praesent sed augue non nulla facilisis tempus imperdiet ac elit.
-        .col-xs-12.col-sm-4.col-md-4.col-lg-4.service-item
-          .media
-            .pull-left
-              i.fa.fa-code
-            .media-body
-              h4.service-title Web Development
-              p
-                | Nunc non congue urna, commodo ullamcorper nisi. Praesent sed augue non nulla facilisis tempus imperdiet ac elit.
-        .col-xs-12.col-sm-4.col-md-4.col-lg-4.service-item
-          .media
-            .pull-left
-              i.fa.fa-search
-            .media-body
-              h4.service-title Web Marketing
-              p
-                | Nunc non congue urna, commodo ullamcorper nisi. Praesent sed augue non nulla facilisis tempus imperdiet ac elit.
-      .row
-        .col-md-12.text-center
-          h3.intro-title Why Me?
-          p
-            | We operate around the world and work with businesses to solve their communication challenges.
       .row.margin-20
         .col-sm-6
           #accordion.panel-group
@@ -147,43 +119,50 @@
               span 03/2015 - súčasnosť
               span.value Zdravotná sestra na veterinárnej klinike Bennett v Bratislave
       .row
-        .col-md-12.text-center
-          h3.intro-title Trusted by a lot businesses around the world:
-      .row.margin-20
-        .col-sm-6
-          .testimonial.pull-right
-            .quote
-              | I am just quoting some stuff but I am seriously happy about this product. Has a lot of powerful
-              | features and is so easy to set up, I could stay customizing it day and night, it's just so much fun!
-              .arrow-down
-                .arrow
-                .arrow-border
-            .author
-              img.pic alt="John" src="assets/img/avatar-demo.gif" /
-              .name John McClane
-              .company Microsoft
-        .col-sm-6
-          .testimonial
-            .quote
-              | This thing is one of those tools that everybody should be using. I really like it and with this ease to use, you can kickstart your projects and apps and just focus on your business!
-              .arrow-down
-                .arrow
-                .arrow-border
-            .author
-              img.pic alt="Karen" src="assets/img/avatar-demo.gif" /
-              .name Karen Jones
-              .company Pixar Co.
-      .row.margin-20
-        .col-md-12
-          .intro-box.call-action-box.clearfix
-            .intro-content
-              h3.intro-title
-                | Are you interested in my skill?
-              p
-                | You can call me any day at
-                strong 1-800-123-4567
-            .action-button
-              a.btn href="get-in-touch.html"
-                | Contact Me Now
-                i.fa.fa-envelope-o
-
+        .col-md-3
+          h3 Napíšte mi
+          form#contact-form.contact-form role="form"
+            .form-group
+              input#contactEmail.form-control name="contactEmail" placeholder="Vaša e-mailová adresa" required="" type="email" /
+            .form-group
+              input#contactSubject.form-control name="contactSubject" placeholder="Predmet správy..." required="" type="text" /
+            .form-group
+              textarea#contactMessage.form-control name="contactMessage" placeholder="Správa..." required="" rows="3"
+            button.btn.btn-theme-color type="submit"
+              | Odoslať správu
+              i.fa.fa-envelope-o
+        .col-md-3
+          h3 Informácie
+          p
+            | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.
+          ul.vcard
+            li
+              span.vcard-icon
+                i.fa.fa-home
+              span.vcard-text 677 Tan Son Street, Ho Chi Minh, VN
+            li
+              span.vcard-icon
+                i.fa.fa-phone
+              span.vcard-text (+84) 909 53 6892
+            li
+              span.vcard-icon
+                i.fa.fa-print
+              span.vcard-text (+84) 909 53 6892
+            li
+              span.vcard-icon
+                i.fa.fa-envelope
+              span.vcard-text
+                a href="mailto:info@yourdomain.com"  info@yourdomain.com
+            li
+              span.vcard-icon
+                i.fa.fa-globe
+              span.vcard-text
+                a href="#"  www.yourdomain.com
+            li
+              span.vcard-icon
+                i.fa.fa-clock-o
+              span.vcard-text
+                | Mon - Sat 9:00am - 6:00 pm
+        .col-md-6
+          .gmap-container.clearfix
+            #gmap.gmap
