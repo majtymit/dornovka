@@ -899,6 +899,11 @@ var sfApp={
             }
         });
         $('#more-info-sidebar').niceScroll();
+        if($('.gmap').length){
+            sfApp.gmapInitialize();
+            google.maps.event.addDomListener(window, 'load', sfApp.gmapInitialize);
+            google.maps.event.addDomListener(window, 'resize', sfApp.gmapInitialize);
+        }
         if($('.share-box').length){
             $('#btn-share').click(function(event) {
                 event.preventDefault();
