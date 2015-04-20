@@ -1114,9 +1114,9 @@ ul.social.active li.rss{
 	display: block;
 	overflow: hidden;
 }
-.post img{
-	width: 100%;
-}
+//.post img{
+	//width: 100%;
+//}
 .post .wrap{
 	background: #fff;
 	border: solid 1px #ddd;
@@ -3133,3 +3133,9 @@ ul.social.active li.rss{
 		z-index: 30;
 	}
 }
+
+	.pic-partners {
+		width: 120px;
+		height: auto;
+  		max-width: 100%;
+	}
