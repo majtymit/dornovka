@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get '/' => 'about#index', as: :about
   end
 
-  scope 'kontakt' do
-    get '/' => 'contact#index', as: :contact
+  scope 'partneri' do
+    get '/' => 'partners#index', as: :partners
   end
 
   scope 'blog' do
