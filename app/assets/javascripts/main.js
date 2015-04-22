@@ -178,7 +178,7 @@ var sfApp={
     initFilter:function(){
         // This is demo how to use filter function, you can change it as you want.
         if($('body').is('.enable-filter') && $('.filter-control').length){
-            var noSelectedText="None Selected";
+            var noSelectedText="Všetky";
             if($(window).width()<=480){
                 noSelectedText="None";
             }
@@ -188,8 +188,11 @@ var sfApp={
                     if (options.length == 0) {
                       return noSelectedText+' <b class="caret"></b>';
                     }
+                    if (options.length == 1) {
+                            return options.length + ' vybraná <b class="caret"></b>';
+                    }
                     else {
-                        return options.length + ' selected <b class="caret"></b>';
+                        return options.length + ' vybrané <b class="caret"></b>';
                     }
                 },
                 onChange: function(option, checked) {
