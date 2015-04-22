@@ -189,7 +189,7 @@ var sfApp={
                       return noSelectedText+' <b class="caret"></b>';
                     }
                     if (options.length == 1) {
-                            return options.length + ' vybraná <b class="caret"></b>';
+                            return options.length + ' vybraný <b class="caret"></b>';
                     }
                     else {
                         return options.length + ' vybrané <b class="caret"></b>';
