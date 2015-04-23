@@ -9,9 +9,9 @@
 Category.destroy_all
 Post.destroy_all
 
-dogs = Category.create
-horses = Category.create
-exhibition = Category.create
+dogs = Category.create(name: 'dogs')
+horses = Category.create(name: 'horses')
+exhibition = Category.create(name: 'exhibition')
 
 Post.create(
   title: 'Henka dnes pôjde za psíkom',

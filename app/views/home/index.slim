@@ -2,8 +2,11 @@
 
 #isotope-content
   - @posts.each do |post|
-    .item-list.post.galery data-publish-date=("Mon Jan 13 2014 11:44:53")
-      .wrap class=post.category
+    .item-list.post.galery [
+      class=post.category.name
+      data-publish-date='Mon Jan 13 2014 11:44:53'
+    ]
+      .wrap
         h2.post-title
           a href="post-single-default.html"
             = post.title
