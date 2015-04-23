@@ -196,20 +196,14 @@ var sfApp={
                     }
                 },
                 onChange: function(option, checked) {
-                    var selected='';
-                    $('#filter option:selected').each(function() {
-                        if(selected!='')
-                            selected+=','+$(this).val();
-                        else
-                            selected+=$(this).val();
-                    });
-                    if(selected=='' || selected.indexOf('*')>=0){
-                        selected='*';
-                    }
-                    if($('#isotope-content').length){
+                    var selected = $('#filter option:selected')
+                                       .map(function() { return $(this).val(); })
+                                       .toArray()
+                                       .join(',');
+                    if ($('#isotope-content').length){
                         $('#isotope-content').isotope({filter:selected});
                     }
-                    else if($('#portfolio-content').length){
+                    else if ($('#portfolio-content').length){
                         $('#portfolio-content').isotope({filter:selected});
                     }
                 }
