@@ -2,16 +2,17 @@
 
 #isotope-content
   - @posts.each do |post|
-    .item-list.post.featured.image-thumbnail data-publish-date=("Mon Jan 13 2014 11:44:53")
-      .wrap.photo
+    .item-list.post.galery data-publish-date=("Mon Jan 13 2014 11:44:53")
+      .wrap class=post.category
         h2.post-title
           a href="post-single-default.html"
             = post.title
         .post-media
+          img.img-responsive alt="Heňa" src=image_url("hena-photo.png")
           .mask
-            a.preview.magnific-popup-image href=""
+            a.preview.magnific-popup-image
               i.fa.fa-search
-            a.detail href="post-single-default.html"
+            a.detail src=image_url("")
               i.fa.fa-link
         .post-excerpt
           = post.description
