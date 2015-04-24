@@ -43,6 +43,8 @@ end
 
 gem 'upmin-admin'
 
+gem 'paperclip'
+
 gem 'rails_12factor', group: :production
 
 gem 'puma', group: :production
