@@ -41,7 +41,7 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'upmin-admin'
+gem 'upmin-admin', github: 'upmin/upmin-admin-ruby'
 
 gem 'paperclip'
 
