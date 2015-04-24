@@ -9,9 +9,16 @@
 Category.destroy_all
 Post.destroy_all
 
+featured = Category.create(name: 'featured')
 dogs = Category.create(name: 'dogs')
 horses = Category.create(name: 'horses')
-exhibition = Category.create(name: 'exhibition')
+cats = Category.create(name: 'cats')
+small_pets = Category.create(name: 'small_pets')
+events = Category.create(name: 'events')
+status = Category.create(name: 'status')
+quote = Category.create(name: 'quote')
+
+
 
 Post.create(
   title: 'Henka dnes pôjde za psíkom',
@@ -29,6 +36,6 @@ Post.create(
   text: 'Trošku som sa toho obávala, pretože som už celkom zabudla posudzovať, už len čo chytím dornujem. Celkovo mi prešlo rukami cez 30 zvierat. Z čoho polovica mala blokady krížovej kosti, prvých chvostových stavcov. Mala som aj 4 zrotované panvy a 1 atlas. Ostatní rozhodcovia na mna čakali, lebo okrem posudzovania sa aj dornovalo, tak som skončila viac ako 30min po nich :). Výsledok je taký, že aj zviera, ktoré na prvý pohlaď je maximálne pružné elastické (viac ako mačka) má naozaj skoro 50% pravdepodobnosť posunu a problémov v pohybovom aparáte, akurat vzhladom na dlžku ich života, aktivitu a štýl pohybu to zatiaľ chovatelia a veterinári neriešia, nakoľko sa ten pohybový problém často prejaví s ochorením (hypertrofia-slabosť končatín, šmachtlanie nohami; po opatrnej dornovke zvieratá už chodia viacmenej normálne a pod.).\nŠkoda, že nebolo času na prednášku nech sa aj fretkári trošku s dornovkou oboznámia, lebo ich zvery by to potrebovali.',
   image_url: 'vystava_CZ.jpg',
   created_at: '2015-02-02',
-  category: exhibition,
+  category: events,
   visits: 110,
 )
