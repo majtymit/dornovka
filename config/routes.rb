@@ -13,4 +13,7 @@ Rails.application.routes.draw do
     get '/' => 'blog#index', as: :posts
     get ':id' => 'blog#show', as: :post
   end
+
+  mount Upmin::Engine => '/admin'
+
 end

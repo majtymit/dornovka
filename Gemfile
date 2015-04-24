@@ -41,6 +41,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'upmin-admin'
+
 gem 'rails_12factor', group: :production
 
 gem 'puma', group: :production
