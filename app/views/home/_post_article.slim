@@ -4,19 +4,15 @@
 ]
   .wrap
     h2.post-title
-      a href="post-single-default.html"
+      a href=""
         = post.title
     .post-media
-      img.img-responsive alt="Heňa" src=image_url("hena-photo.png")
-      .mask
-        a.preview.magnific-popup-image
-          i.fa.fa-search
-        a.detail src=image_url("")
-          i.fa.fa-link
+      img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("blog/#{post.image_url}")
+        a href=""
     .post-excerpt
       = post.description
       br
-      a.read-more href="post-single-default.html"
+      a.read-more href=""
         | Read more »
     .post-meta.clearfix
       span.time.pull-left

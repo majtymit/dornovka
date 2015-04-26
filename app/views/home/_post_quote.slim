@@ -9,3 +9,13 @@
           = post.text
       cite
         = post.title
+    .post-meta.clearfix
+      span.time.pull-left
+        i.fa.fa-calendar
+        '
+        = post.created_at
+      span.comment.pull-right
+        i.fa.fa-comments-o
+        '
+        span
+          | Zobrazené #{post.visits}x

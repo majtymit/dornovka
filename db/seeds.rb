@@ -31,6 +31,17 @@ Post.create(
 )
 
 Post.create(
+  format: 'article',
+  title: 'Akita Kuma',
+  description: '6,5r Akita Kuma, DM robena preventívne no nájdených dosť problemov: najvýraznejší je prepad L-Sacr. spojenia, krížovej kosti, ktorý sa už odzrkadloval aj na chôdzy, posun panvy a aj atlasu. Končatiny pukajúce, bolo ich potrebné usadiť pre zlepšenie látkovej výmeny v klboch. A znovu neštastné tylo...',
+  text: '',
+  image_url: 'akita-kuma.jpg',
+  created_at: '26.4.2015',
+  category: dogs,
+  visits: 2,
+)
+
+Post.create(
   format: 'quote',
   title: 'Miško',
   description: '',
@@ -58,3 +69,4 @@ Partner.create(
   link: '',
   #logo: '',
 )
+
