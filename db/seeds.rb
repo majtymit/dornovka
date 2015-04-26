@@ -53,12 +53,23 @@ Post.create(
 )
 
 Post.create(
+  format: 'quote',
+  title: 'Heňa',
+  description: '',
+  text: 'Vikend s Equine Touch, alebo vzdelania nikdy nie je dost — cítim sa motivovaná.',
+  image_url: '',
+  created_at: '24.4.2015',
+  category: quote,
+  visits: 6,
+)
+
+Post.create(
   format: 'article',
   title: 'Posudzovanie fretiek na medzinárodnej výstave fretiek v Brnenských Lužánkách',
   description: 'udialo sa v CZ a bola to fajn sobota',
   text: 'Trošku som sa toho obávala, pretože som už celkom zabudla posudzovať, už len čo chytím dornujem. Celkovo mi prešlo rukami cez 30 zvierat. Z čoho polovica mala blokady krížovej kosti, prvých chvostových stavcov. Mala som aj 4 zrotované panvy a 1 atlas. Ostatní rozhodcovia na mna čakali, lebo okrem posudzovania sa aj dornovalo, tak som skončila viac ako 30min po nich :). Výsledok je taký, že aj zviera, ktoré na prvý pohlaď je maximálne pružné elastické (viac ako mačka) má naozaj skoro 50% pravdepodobnosť posunu a problémov v pohybovom aparáte, akurat vzhladom na dlžku ich života, aktivitu a štýl pohybu to zatiaľ chovatelia a veterinári neriešia, nakoľko sa ten pohybový problém často prejaví s ochorením (hypertrofia-slabosť končatín, šmachtlanie nohami; po opatrnej dornovke zvieratá už chodia viacmenej normálne a pod.).\nŠkoda, že nebolo času na prednášku nech sa aj fretkári trošku s dornovkou oboznámia, lebo ich zvery by to potrebovali.',
   image_url: 'vystava_CZ.jpg',
-  created_at: '2015-02-02',
+  created_at: '15.2.2015',
   category: events,
   visits: 110,
 )
@@ -70,3 +81,35 @@ Partner.create(
   #logo: '',
 )
 
+Post.create(
+  format: 'article',
+  title: 'Rysy',
+  description: 'Rysy - 2r fenočka Border teriera. Rysy pozná dornovku veľmi dobre, pretože je pravidelná účastníčka kurzov ľudskej dornovky v Bratislave, kde so svojou paničkou asistuje. Panička chcela poriešiť prepadajúci sa stavec, a celkovo preventívne zhodnotiť, nakoľko sa s fenkou pripravujú na Agility. Rysinka mala rozvolnenú patellu na ľavej labke (panička dostala D.ú. usádzať) a toršku rozhádzaný krk (C1, C6) a posun posledného L stavčeka (nedávno dostala bočný náraz od vacšieho šteniatka, čo predpokladáme, že mohlo spsobiť posun L a C6 stavca). Na konci Rysy zhodnotila, že bude radšej aj nadalej chodiť radšej na tie ludské dornovky než na svoje tam jej krk nenaprávajú',
+  text: '',
+  image_url: 'rysy.jpg',
+  created_at: '02.04.2015',
+  category: dogs,
+  visits: 3,
+)
+
+Post.create(
+  format: 'article',
+  title: 'Merci',
+  description: 'Merci, cca 2r nádherná múdra mojkacia fenočka adoptovaná z útulku z LM. Má za sebou resekciu ľavého bedrového kĺbu, a dornovku pozná veľmi dobre. Operovanú nohu už celkom slušne používa. Akurat poslednu dobu začala divne chodiť na druhú pravú nôžku, tak prišli preventívne na ošetrenie. Kedže sme nič výrazné nenašli (len posun krčných stavcov) dostala ešte kompletnú bowenovu masáž, lebo problém bude v makkých tkanivách a v pretažovaní zdravej končatiny. Kedže sa blíži leto, chystajú sa s merci plávať, tak veríme, že nožičky zosilnejú ',
+  text: '',
+  image_url: 'merci.jpg',
+  created_at: '10.04.2015',
+  category: dogs,
+  visits: 17,
+)
+
+Post.create(
+  format: 'article',
+  title: 'Igi (Gidran)',
+  description: 'Včera sme navštívili Igiho aby podstúpil 2. ošetrenie DM. Do 2 týždnoch po prvej dornovke sa igimu postupne polepšilo, prestal krívať na predné nohy, pri poslednej vychádzke si však trošku viac vyhodil z kopýtka, takže trošku zakríval, ale 2. terapia bola aj tak potrebná pre upevnenie všetkých kostí, lebo nie všetky nam ostali ok. Igi podstúpil klasicky uvolnenie celého tela a blokád bowenovou masážou a následne Dorn. Usádzali sme ľavé rameno, ktoré bolo ešte stále o dosť vpredšie, po uplnom uvolnení a odlepení lopatiek, ktoré boli už v lepšom stave ako minule sa objavil posunutý 6. stavec, ku ktorému sme sa cez blokády pri 1. terapii nedostali. A ešte sa upravila panva, ktoré bola trošku ľavou lopatou vpredu. Igorko bol znovu úplne ukážkový pacient.',
+  text: '',
+  image_url: 'igi.jpg',
+  created_at: '25.02.2015',
+  category: horses,
+  visits: 9,
+)
