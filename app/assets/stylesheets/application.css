@@ -20,5 +20,7 @@
  *= require ./screen
  *= require ./colors
  *= require ./custom
+ *= require ./tooltip-classic
+ *= require ./normalize
  *= require_self
  */
