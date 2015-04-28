@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     get '/' => 'methods#index', as: :methods
   end
 
+  scope 'kalendar' do
+    get '/' => 'calendar#index', as: :calendar
+  end
+
   scope 'partneri' do
     get '/' => 'partners#index', as: :partners
   end

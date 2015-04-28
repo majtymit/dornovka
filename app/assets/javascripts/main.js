@@ -955,7 +955,7 @@ var sfApp={
 /*================================================================*/
 /*  2. Initialing
 /*================================================================*/
-$(document).ready(function() {
+$(document).on('ready page:load', function() {
     "use strict";
     sfApp.init();
 });
@@ -977,3 +977,7 @@ $(window).resize(function () {
     sfApp.reloadPortfolio();
     sfApp.reFormatUI();
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

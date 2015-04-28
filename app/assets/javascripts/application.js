@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require ./jquery-1.10.2.min
+//= require turbolinks
 //= require ./bootstrap.min
 //= require ./imagesloaded.pkgd.min
 //= require ./jqBootstrapValidation

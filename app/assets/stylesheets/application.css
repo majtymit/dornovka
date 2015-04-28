@@ -19,9 +19,7 @@
  *= require ./screen
  *= require ./colors
  *= require ./custom
- *= require nprogress
  *= require nprogress-bootstrap
- *= require ./tooltip-classic
  *= require ./grid
  *= require ./normalize
  *= require_self
