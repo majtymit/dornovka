@@ -29,6 +29,6 @@
 //= require ./sscr
 //= require ./config
 //= require ./main
-//= require ./nprogress
-//= require ./nprogress-turbolinks
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_self

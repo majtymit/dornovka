@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     get '/' => 'about#index', as: :about
   end
 
+  scope 'metody' do
+    get '/' => 'methods#index', as: :methods
+  end
+
   scope 'partneri' do
     get '/' => 'partners#index', as: :partners
   end
