@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-
  *= require ./bootstrap.min
  *= require ./font-awesome
  *= require ./owl.carousel
@@ -20,6 +19,8 @@
  *= require ./screen
  *= require ./colors
  *= require ./custom
+ *= require ./nprogress
+ *= require ./nprogress-bootstrap
  *= require ./tooltip-classic
  *= require ./normalize
  *= require_self

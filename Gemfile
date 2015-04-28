@@ -43,6 +43,8 @@ end
 
 gem 'upmin-admin', github: 'upmin/upmin-admin-ruby'
 
+gem 'nprogress-rails'
+
 gem 'paperclip'
 
 gem 'rails_12factor', group: :production
