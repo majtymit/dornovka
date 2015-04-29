@@ -978,6 +978,9 @@ $(window).resize(function () {
     sfApp.reFormatUI();
 });
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+$(".timeline-item").hover(function () {
+    $(".timeline-item").removeClass("active");
+    $(this).toggleClass("active");
+    $(this).prev(".timeline-item").toggleClass("close");
+    $(this).next(".timeline-item").toggleClass("close");
+});

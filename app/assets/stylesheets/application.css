@@ -21,6 +21,7 @@
  *= require ./custom
  *= require nprogress-bootstrap
  *= require ./grid
+ *= require ./timeline
  *= require ./normalize
  *= require_self
  */
