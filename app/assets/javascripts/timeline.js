@@ -1,8 +1,10 @@
 $(function() {
   $('#ti11').hover(function() {
     $('#ti11 .marker').css('border', '4px solid #5996d5');
+    $('#ti11 .info').css('border-image', 'url("timelineborder.png") 0 0 0 10px repeat');
   }, function() {
     $('#ti11 .marker').css('border', '');
+    $('#ti11 .info').css('border-image', '');
   });
 });
 
