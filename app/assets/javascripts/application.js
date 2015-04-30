@@ -30,6 +30,7 @@
 //= require ./sscr
 //= require ./config
 //= require ./main
+//= require ./timeline
 //= require nprogress
 //= require nprogress-turbolinks
 //= require_self
