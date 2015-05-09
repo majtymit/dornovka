@@ -23,6 +23,7 @@
  *= require ./grid
  *= require ./timeline
  *= require ./partners
+ *= require ./certificate
  *= require ./normalize
  *= require_self
  */

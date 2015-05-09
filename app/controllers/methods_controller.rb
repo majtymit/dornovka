@@ -3,6 +3,6 @@ class MethodsController < ApplicationController
   end
 
   def body_class
-    "post-template"
+    "home-template"
   end
 end

@@ -1,41 +1,18 @@
-.partner_micro .thumb {
-  width: 9em;
-  display: table-cell;
-}
-
-.partner_micro .item {
-  display: table;
-  width: 100%;
-  position: relative;
-}
-
-.partner_micro ul {
-  padding: 0 0 15px 0;
-  list-style: none;
-  overflow: hidden;
-}
-
-.partner ul li {
-  border: 1px solid #bce8f1;
-  background: #d9edf7;
-}
-
-.partner_micro .thumb img {
-  width: 100%;
-  height: auto;
-}
-
-.partner_micro .text {
-  display: table-cell;
+.partner {
   width: auto;
   vertical-align: middle;
   text-align: left;
-  padding: 1em 6%;
+  padding: 0 0 5px 0;
   line-height: 1.4;
 }
 
-.pic-partner {
-  width: 120px;
-  height: auto;
-  max-width: 100%;
+.partner_name {
+  font-weight: bold;
+}
+
+.centerimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 0 5px 0;
 }
