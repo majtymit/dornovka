@@ -984,3 +984,10 @@ $(".timeline-item").hover(function () {
     $(this).prev(".timeline-item").toggleClass("close");
     $(this).next(".timeline-item").toggleClass("close");
 });
+
+$(document).on('ready page:load', function() {
+    var tabs = document.getElementById('tabs');
+    if (tabs) {
+        new CBPFWTabs(tabs);
+    }
+});

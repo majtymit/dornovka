@@ -113,3 +113,39 @@ Post.create(
   category: horses,
   visits: 9,
 )
+
+Post.create(
+  format: 'article',
+  title: 'Portoriko',
+  description: '15r, Westfalsky valach, Miloslavov, zameranie: parkúr',
+  text: 'Ďna 3.4.2015 sme navštívili stajnu Plameň v Miloslavove aby sme sa pozreli na Portorikove telo, nakoľko je vynikajúci skokan, ale veľmi ťažko jazditelný. Už na prvý pohlad bol jasne viditeľný problém a blokáda krčných stavcov. Na úvod podstúpil bowenovu masáž pre kone, na celkové uvolnenie svalstva, následne dornovu metódu. Prvý krčný stavec bol výrazne zrotovaný a aj vpáčený do hlavy, čoho následkom je aj opuch lymfatických uzlín, ktoré mal výrazne zväčšené. Dalej to bol posun 3. a 4. krčného stavca do prava. A zrotovaná panva - pravou lopatou dopredu a ľavou dohora, pridružila sa aj blokáda krížovej kosti v pravo. S Portom sa veľmi dobre pracovalo a aj keď mal krk bolestivý, pomáhal ako mohol.
+
+    27.4.2015 sme sa vybrali na kontrolu. Hneď po nutnom oddychu nám majiteľka písala, že má pod sedlom iného koňa, inak nosí krk a
+    hlavu, nedriape sa až tak dopredu a jazdenie je teda príjmenejšie. Ale nedostatky tam stále sú práca na parkúre je dosť nestabilná,
+    dúfame, že sú to všetko len prechodné stavy.
+    Ľavá panvová lopata bola ešte jemne hore, krížová kosť bola tiež tým pádom ešte bloknutá. Prvý krčný stavec v lepšom stave, rotácia
+    už nie je, ale stále je príliž natlačený na hlavu, takže musíme v jemných uvolnovaniach pokračovať. Na záver dostal Porto základné vybalansovanie tela pomocou the equine touch techniky + ošetrenie hlavy a krku na uvolnenie lymfatického toku krku a hlavy. Za mesiac prídeme opať na návštevu povenovať sa problémovej C1.
+',
+  image_url: 'portoriko.jpg',
+  created_at: '27.04.2015',
+  category: horses,
+  visits: 9,
+)
+
+Post.create(
+  format: 'article',
+  title: 'Portoriko',
+  description: '15r, Westfalsky valach, Miloslavov, zameranie: parkúr',
+  text: 'Ďna 3.4.2015 sme navštívili stajnu Plameň v Miloslavove aby sme sa pozreli na Portorikove telo, nakoľko je vynikajúci skokan, ale veľmi ťažko jazditelný. Už na prvý pohlad bol jasne viditeľný problém a blokáda krčných stavcov. Na úvod podstúpil bowenovu masáž pre kone, na celkové uvolnenie svalstva, následne dornovu metódu. Prvý krčný stavec bol výrazne zrotovaný a aj vpáčený do hlavy, čoho následkom je aj opuch lymfatických uzlín, ktoré mal výrazne zväčšené. Dalej to bol posun 3. a 4. krčného stavca do prava. A zrotovaná panva - pravou lopatou dopredu a ľavou dohora, pridružila sa aj blokáda krížovej kosti v pravo. S Portom sa veľmi dobre pracovalo a aj keď mal krk bolestivý, pomáhal ako mohol.
+
+    27.4.2015 sme sa vybrali na kontrolu. Hneď po nutnom oddychu nám majiteľka písala, že má pod sedlom iného koňa, inak nosí krk a
+    hlavu, nedriape sa až tak dopredu a jazdenie je teda príjmenejšie. Ale nedostatky tam stále sú práca na parkúre je dosť nestabilná,
+    dúfame, že sú to všetko len prechodné stavy.
+    Ľavá panvová lopata bola ešte jemne hore, krížová kosť bola tiež tým pádom ešte bloknutá. Prvý krčný stavec v lepšom stave, rotácia
+    už nie je, ale stále je príliž natlačený na hlavu, takže musíme v jemných uvolnovaniach pokračovať. Na záver dostal Porto základné vybalansovanie tela pomocou the equine touch techniky + ošetrenie hlavy a krku na uvolnenie lymfatického toku krku a hlavy. Za mesiac prídeme opať na návštevu povenovať sa problémovej C1.
+',
+  image_url: 'portoriko.jpg',
+  created_at: '27.04.2015',
+  category: horses,
+  visits: 9,
+)

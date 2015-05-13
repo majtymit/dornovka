@@ -20,8 +20,9 @@
  *= require ./colors
  *= require ./custom
  *= require nprogress-bootstrap
- *= require ./grid
  *= require ./timeline
+ *= require ./timeline_new
+ *= require ./CBPFWTabs
  *= require ./partners
  *= require ./certificate
  *= require ./normalize

@@ -29,6 +29,7 @@
 //= require ./owl.carousel.min
 //= require ./sscr
 //= require ./config
+//= require ./CBPFWTabs
 //= require ./main
 //= require ./timeline
 //= require nprogress
