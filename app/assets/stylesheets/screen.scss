@@ -2612,7 +2612,7 @@ ul.social.active li.rss{
 		right: 0px;
 	}
 }
-@media only screen and (min-width: 768px) and (max-width: 979px) {
+@media only screen and (min-width: 738px) and (max-width: 979px) {
 	#preloader{
 		margin-top: 130px;
 		margin-left: -20px;
@@ -2652,11 +2652,14 @@ ul.social.active li.rss{
 		border: none;
 		display: inline-block;
 		float: left;
-		margin-top: 5px;
+		margin-top: 17px;
 		padding-left: 20px;
 		position: relative;
 		z-index: 3;
 	}
+	#main-sidebar .logo-container .logo img {
+  max-height: 181px;
+}
 	#main-sidebar #mobile-menu{
 		display: inline-block;
 		margin-right: 20px;
@@ -2705,7 +2708,7 @@ ul.social.active li.rss{
 	#main-sidebar .intro .intro-wrap{
 		position: absolute;
 		top: 50%;
-		left: 0;
+		//left: 0;
 		right: 0;
 		display: none;
 		padding: 0 20px;
@@ -2717,10 +2720,13 @@ ul.social.active li.rss{
 	#main-sidebar .bottom-social,
 	.simple-style #main-sidebar .bottom-social{
 		bottom: 0;
+		right: 0;
 	}
 	#main-sidebar .bottom-social .social,
 	.simple-style #main-sidebar .bottom-social .social{
 		margin: 10px 0 10px 0;
+		padding-right: 20px;
+		float: right;
 	}
 	#main-sidebar .copyright{
 		display: none !important;
@@ -2792,7 +2798,7 @@ ul.social.active li.rss{
 		margin-top: 20px;
 	}
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 737px) {
 	.margin-20{
 		margin-top: 10px;
 	}
@@ -2832,7 +2838,7 @@ ul.social.active li.rss{
 		border: none;
 		display: inline-block;
 		float: left;
-		margin-top: 5px;
+		margin-top: 17px;
 		padding-left: 20px;
 		position: relative;
 		z-index: 3;
@@ -2841,7 +2847,7 @@ ul.social.active li.rss{
 		font-size: 22px;
 	}
 	#main-sidebar .logo-container .logo img{
-		max-width: 200px;
+		max-height: 181px;
 	}
 	#main-sidebar #mobile-menu{
 		display: inline-block;
@@ -2891,10 +2897,12 @@ ul.social.active li.rss{
 	#main-sidebar .intro .intro-wrap{
 		position: absolute;
 		top: 50%;
-		left: 0;
+		//left: 0;
 		right: 0;
 		display: none;
 		padding: 0 20px;
+		width: 250px;
+		text-align: right;
 	}
 	#main-sidebar .sidebar-bottom-container {
 		z-index: 2;
@@ -2907,6 +2915,8 @@ ul.social.active li.rss{
 	#main-sidebar .bottom-social .social,
 	.simple-style #main-sidebar .bottom-social .social{
 		margin: 10px 0 10px 0;
+		float: right;
+		padding-right: 20px;
 	}
 	#main-sidebar .copyright{
 		display: none !important;
@@ -2937,9 +2947,6 @@ ul.social.active li.rss{
 	}
 	.filter-control .filter-container .group{
 		margin-right: 5px;
-	}
-	.filter-container .group .input-group-addon span{
-		display: none;
 	}
 	.filter-container .search-box{
 		margin-left: 5px;
@@ -3043,7 +3050,29 @@ ul.social.active li.rss{
 		margin-top: 20px;
 	}
 }
-@media only screen and (max-width: 480px) {
+
+@media only screen and (min-width: 480px) and (max-width: 578px) {
+	#main-sidebar .bottom-social .social, .simple-style #main-sidebar .bottom-social .social {
+	  margin: 10px 0 -4px 0;
+	  float: right;
+	  padding-right: 20px;
+	  width: 136px;
+	}
+	#main-sidebar .intro .intro-wrap {
+	  position: absolute;
+	  top: 43%;
+	  right: 0;
+	  display: none;
+	  //padding: 0 20px;
+	  width: 180px;
+	  text-align: right;
+	}
+	.filter-container .group .input-group-addon span{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 479px) {
 	#preloader{
 		margin-top: 48px;
 		margin-left: -20px;
@@ -3060,13 +3089,34 @@ ul.social.active li.rss{
 		height: 68px;
 		position: fixed;
 	}
+	.filter-control .filter-container {
+  display: inline-block;
+  float: left;
+  //width: 277px;
+  padding-top: 58px;
+	}
+	.filter-container .group .input-group-addon span{
+		display: none;
+	}
 	.simple-style #main-sidebar {
 		height: 68px;
 	}
 	#main-sidebar .bottom-social,
 	#main-sidebar .intro,
 	#main-sidebar .bottom-nav{
-		display: none !important;
+		//display: none !important;
+	}
+	#main-sidebar .intro .intro-wrap {
+  position: absolute;
+  top: 60%;
+  display: none;
+  width: 418px;
+  text-align: center;
+	}
+	#main-sidebar .bottom-social .social, .simple-style #main-sidebar .bottom-social .social {
+  margin: 10px 0 -21px 0;
+  float: right;
+  padding-right: 20px;
 	}
 	#main-sidebar .bottom-nav.in{
 		display: block !important;
@@ -3083,6 +3133,9 @@ ul.social.active li.rss{
 		border-top: solid 1px #fff;
 		text-align: right;
 		padding-right: 20px;
+	}
+	#main-sidebar .logo-container .logo img {
+  max-height: 86px;
 	}
 	.simple-style #main-sidebar .bottom-nav.in li{
 		display: inline-block;
