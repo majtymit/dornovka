@@ -1,0 +1,37 @@
+.row
+  .col-md-6
+    h3 Napíšte mi
+    form#contact-form.contact-form role="form"
+      .form-group
+        input#contactEmail.form-control name="contactEmail" placeholder="Vaša e-mailová adresa" required="" type="email" /
+      .form-group
+        input#contactSubject.form-control name="contactSubject" placeholder="Predmet správy..." required="" type="text" /
+      .form-group
+        textarea#contactMessage.form-control name="contactMessage" placeholder="Správa..." required="" rows="3"
+      button.btn.btn-theme-color type="submit"
+        | Odoslať správu
+        '
+        i.fa.fa-envelope-o
+  .col-md-6
+    h3 Kontakt
+    p
+      | Rada odpoviem na vaše otázky
+    ul.vcard
+      li
+        span.vcard-icon
+          i.fa.fa-home
+        span.vcard-text Ružinov - Bratislava
+      li
+        span.vcard-icon
+          i.fa.fa-phone
+        span.vcard-text +421 918 299 613
+      li
+        span.vcard-icon
+          i.fa.fa-envelope
+        span.vcard-text
+          a href="quinzinka@gmail.com"  quinzinka@gmail.com
+      li
+        span.vcard-icon
+          i.fa.fa-envelope
+        span.vcard-text
+          a href="hena.vegesiova@gmail.com"  hena.vegesiova@gmail.com
