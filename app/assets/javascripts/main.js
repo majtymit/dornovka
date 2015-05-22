@@ -965,7 +965,7 @@ $(window).on("debouncedresize", function( event ) {
     sfApp.reloadPortfolio();
     sfApp.reFormatUI();
 });
-$(window).load(function(){
+$(document).on('ready page:load', function() {
     "use strict";
     sfApp.reloadIsotope();
     sfApp.reloadPortfolio();
