@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :category
   has_many :subposts
+  validates :title, length: { maximum: 45, too_long: "45 characters is the maximum allowed" }
 
   scope :query, ->(q) {
     attributes = ['title', 'description', 'text']

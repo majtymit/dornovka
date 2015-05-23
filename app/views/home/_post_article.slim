@@ -7,12 +7,12 @@
       a href=post_url(post)
         = post.title
     .post-media
-      img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("blog/#{post.image_url}")
-        a href=""
+      a href=post_url(post)
+        img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("blog/#{post.image_url}")
     .post-excerpt
       = post.description
       br
-      a.read-more href=""
+      a.read-more href=post_url(post)
         | Read more »
     .post-meta.clearfix
       span.time.pull-left
