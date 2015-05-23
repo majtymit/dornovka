@@ -15,44 +15,10 @@ var sfApp={
         if($('body').is('.gallery')){
             isGallery=true;
             columnPadding=0;
-            if (contentWidth<=480){
-                columns=1;
-            }
-            else if (contentWidth<=640){
-                columns=2;
-            }
-            else if (contentWidth<=800){
-                columns=3;
-            }
-            else if(contentWidth<=1140){
-                columns=4;
-            }
-            else if(contentWidth<=1380){
-                columns=5;
-            }
-            else if(contentWidth<=1620){
-                columns=6;
-            }
-            else if(contentWidth>1620){
-                columns=7;
-            }
+            columns = Math.round(Math.max(contentWidth - 500, 0) / 200) + 1;
         }
         else{
-            if (contentWidth<640){
-                columns=1;
-            }
-            else if (contentWidth<=966){
-                columns=2;
-            }
-            else if(contentWidth<=1140){
-                columns=3;
-            }
-            else if(contentWidth<=1620){
-                columns=4;
-            }
-            else if(contentWidth>1620){
-                columns=5;
-            }
+            columns = Math.round(Math.max(contentWidth - 650, 0) / 300) + 1;
         }
         var itemWidth = Math.floor((contentWidth-(columnPadding*(columns+1)))/columns);
         $('.item-list').each(function(){
@@ -264,30 +230,9 @@ var sfApp={
             var $container = $('#isotope-content');
             $('.post').imagesLoaded(function( instance ) {
                 sfApp.formatWidth();
-                if($('body').is('.gallery')){
-                    var columns=3;
+                if($('body').is('.gallery')) {
                     var contentWidth = $container.width();
-                    if (contentWidth<=480){
-                        columns=1;
-                    }
-                    else if (contentWidth<=640){
-                        columns=2;
-                    }
-                    else if (contentWidth<=800){
-                        columns=3;
-                    }
-                    else if(contentWidth<=1140){
-                        columns=4;
-                    }
-                    else if(contentWidth<=1380){
-                        columns=5;
-                    }
-                    else if(contentWidth<=1620){
-                        columns=6;
-                    }
-                    else if(contentWidth>1620){
-                        columns=7;
-                    }
+                    var columns = Math.round(Math.max(contentWidth - 500, 0) / 200) + 1;
                     $container.isotope({
                         itemSelector : '.item-list',
                         layoutMode: 'perfectMasonry',
@@ -329,7 +274,7 @@ var sfApp={
                     }
                     else{
                         $container.isotope({
-                            itemSelector : '.item-list',
+                            itemSelector: '.item-list',
                             resizable: false,
                             animationOptions: {
                                 duration: 400,
@@ -339,34 +284,36 @@ var sfApp={
                         });
                     }
                 }
-                $('#preloader').fadeOut('fast', function () {
-                    $(this).remove();
-                    if($('body').is('.enable-filter')){
-                        $('.filter-control').fadeIn('fast', function() {
-                            var marginTop=$('.filter-control').height()+40;
-                            $('#isotope-content').css('margin-top', marginTop+'px');
-                            $('.filter-control').animate({'top': '0px'},
-                                400,
-                                function() {
-                                    $('#isotope-content').fadeIn('slow').css({
-                                        'visibility':'visible',
-                                    });
-                                sfApp.reloadIsotope();
-                            });
+
+                $('#preloader').remove();
+
+                if($('body').is('.enable-filter')){
+                    $('.filter-control').fadeIn('fast', function() {
+                        var marginTop=$('.filter-control').height()+40;
+                        $('#isotope-content').css('margin-top', marginTop+'px');
+                        $('.filter-control').animate({'top': '0px'},
+                            400,
+                            function() {
+                                $('#isotope-content').fadeIn('slow').css({
+                                    'visibility':'visible',
+                                });
+                            sfApp.reloadIsotope();
                         });
-                    }
-                    else{
-                        $('#isotope-content').fadeIn('slow').css({
-                            'visibility':'visible',
-                        });
-                        sfApp.reloadIsotope();
-                    }
-                });
+                    });
+                }
+                else{
+                    var marginTop=$('.post-header').height();
+                    $('#isotope-content').css('margin-top', marginTop + 15 + 'px');
+                    $('#isotope-content').fadeIn('slow').css({
+                        'visibility':'visible',
+                    });
+                    sfApp.reloadIsotope();
+                }
             });
         }
     },
     infiniteScrollSetup:function(){
-        if($('#isotope-content').length){
+        if($('#isotope-content').length) {
             var $container = $('#isotope-content');
             $container.infinitescroll({
                     navSelector     : '.pagination',    // selector for the paged navigation
@@ -375,11 +322,11 @@ var sfApp={
                     maxPage           : sfApp.getMaxPagination(),
                     loading: {
                         finishedMsg: 'No more post to load.',
-                            img: '/assets/img/loading.gif'
+                        img: '/assets/img/loading.gif'
                     }
                 },
                 // call Isotope as a callback
-                function( newElements ) {
+                function(newElements) {
                     $container.isotope('insert', $(newElements),function(){
                         $(".post .wrap").fitVids();
                         sfApp.reloadIsotope();
@@ -447,7 +394,8 @@ var sfApp={
                         masonry: {}
                     });
                 }
-                $('#preloader').fadeOut('slow', function () {
+                var afterLoad = function () {
+                    console.log("banana")
                     $(this).remove();
                     if($('body').is('.enable-filter')){
                         $('.filter-control').fadeIn('fast', function() {
@@ -465,7 +413,7 @@ var sfApp={
                                 });
                         });
                     }
-                    else{
+                    else {
                         $('#portfolio-content').fadeIn('slow').css({
                             'visibility':'visible',
                         });
@@ -474,7 +422,13 @@ var sfApp={
                         }
                         sfApp.reloadPortfolio();
                     }
-                });
+                };
+
+                if ($('#preloader').is(":visible")) {
+                    $('#preloader').fadeOut('slow', afterLoad)
+                } else {
+                    afterLoad();
+                }
             });
         }
     },
@@ -687,14 +641,12 @@ var sfApp={
                 postMargin=$('.post-header').height();
             }
             $('.body-content').imagesLoaded(function( instance ) {
-                $('#preloader').stop().fadeOut('fast', function () {
-                    $(this).remove();
-                    $('.post-header').animate({
-                        top: headerTop+'px'
-                    },50, function() {
-                        $('.post-wrap').fadeIn(1000);
-                        $('.body-content').css('margin-top', postMargin+'px');
-                    });
+                $('#preloader').remove();
+                $('.post-header').animate({
+                    top: headerTop+'px'
+                }, 50 , function() {
+                    $('.post-wrap').fadeIn(1000);
+                    $('.body-content').css('margin-top', postMargin+'px');
                 });
             });
         }

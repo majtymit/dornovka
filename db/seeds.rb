@@ -8,6 +8,7 @@
 
 Category.destroy_all
 Post.destroy_all
+Subpost.destroy_all
 Partner.destroy_all
 
 featured = Category.create(name: 'featured')
@@ -28,6 +29,10 @@ Post.create(
   created_at: '15.2.2015',
   category: dogs,
   visits: 227,
+  subposts: [
+    Subpost.new(icon: "dm-podkova.png", text: "bola som tam zase", happened_at: "21.05.2015"),
+    Subpost.new(icon: "dm-laba.png", text: "prva navsteva", happened_at: "19.05.2015"),
+  ]
 )
 
 Post.create(

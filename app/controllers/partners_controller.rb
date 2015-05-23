@@ -3,6 +3,6 @@ class PartnersController < ApplicationController
   end
 
   def body_class
-    "home-template"
+    "post-template"
   end
 end

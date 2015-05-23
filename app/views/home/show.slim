@@ -1,0 +1,33 @@
+.post-header
+  .pull-left.post-title
+    h2 = @post.title
+  .pull-right.post-tools
+    = render partial: 'search'
+.post-wrap
+  article.post
+    section.post-content
+      .row
+        .col-md-6
+          img.img-responsive alt="obyvacka" title="obyvacka" src=image_url("blog/obyvacka.jpg")
+        .col-md-6
+          h2 MENO ZVIERAŤA
+          strong Popis:
+          br
+          | 15 rokov, valach, Westfalsky kôň, Miloslavov, zameranie: parkúr
+          br
+          br
+          | Curabitur dignissim ac urna ac luctus. Maecenas et fermentum elit. Vestibulum ut orci venenatis nibh consequat vulputate a ac tortor.
+      .row.margin-20
+        .col-md-12
+          - @post.subposts.each do |subpost|
+            blockquote
+              .navsteva
+                img.paw-pic alt="laba" title="laba" src=image_url(subpost.icon)
+                .navsteva-datum = subpost.happened_at
+                = subpost.text
+      .row
+        .col-md-12
+          = render partial: 'footer'
+      .row
+        = render partial: 'post_article', locals: { post: @post }
+

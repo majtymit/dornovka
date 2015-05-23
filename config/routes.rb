@@ -9,17 +9,12 @@ Rails.application.routes.draw do
     get '/' => 'methods#index', as: :methods
   end
 
-  scope 'postdetail' do
-    get '/' => 'postdetail#index', as: :postdetail
-  end
-
   scope 'partneri' do
     get '/' => 'partners#index', as: :partners
   end
 
   scope 'blog' do
-    get '/' => 'blog#index', as: :posts
-    get ':id' => 'blog#show', as: :post
+    get ':id' => 'home#show', as: :post
   end
 
   mount Upmin::Engine => '/admin'
