@@ -397,7 +397,7 @@ blockquote.blockquote-reverse{
 	margin-right: 5px;
 }
 .panel-group .panel .panel-body{
-	font-size: 13px;
+	font-size: 15px;
 }
 .pagination>li>a:hover,
 .pagination>li>span:hover,
@@ -1391,9 +1391,13 @@ ul.social.active li.rss{
 	padding: 10px;
 	border-top: solid 1px #eee;
 }
-.post .wrap .post-meta .time,
 .post .wrap .post-meta .comment{
 	text-transform: capitalize;
+	display: block;
+	min-width: 100px;
+	text-align: left;
+}
+.post .wrap .post-meta .time{
 	display: block;
 	min-width: 100px;
 	text-align: left;
