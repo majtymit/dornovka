@@ -30,7 +30,7 @@
 	}
 
 	CBPFWTabs.prototype.options = {
-	start : window.location.hash.slice(-1) || 0
+		start : window.location.hash.slice(-1) || 0
 	};
 
 	CBPFWTabs.prototype._init = function() {
@@ -41,7 +41,9 @@
 		// current index
 		this.current = -1;
 		// show current content item
-		this._show();
+
+		var tabIdx = window.location.hash.slice(-1);
+		this._show(tabIdx ? tabIdx : undefined);
 		// init events
 		this._initEvents();
 	};

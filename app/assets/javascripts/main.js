@@ -934,8 +934,9 @@ $(document).on('ready page:load', function() {
     if (tabs) {
         window.CBPFWTabsInstance = new CBPFWTabs(tabs);
     }
-});
-
-$('[data-tab-idx]').click(function() {
-    debugger;
+    $('[data-tab-idx]').click(function() {
+        if (window.CBPFWTabsInstance) {
+            CBPFWTabsInstance._show($(this).data('tab-idx'));
+        }
+    });
 });
