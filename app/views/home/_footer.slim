@@ -3,7 +3,7 @@
     span
       i.fa.fa-calendar
       '
-      | 22.05.2015
+      = @post.created_at
     span
       i.fa.fa-user
       '
@@ -16,7 +16,7 @@
     span
       i.fa.fa-file-text-o
       '
-      | Videné 1545x
+      | Videné #{@post.visits}x
     span.share
       span.title Zdielaj na:
       ul.social.active
@@ -32,19 +32,21 @@
         /li.linkedin
           a href="#" target="_blank" title="Linkedin"
             i.fa.fa-linkedin
-  .post-author
+  /.post-author
     .avatar
       img alt="Author name here" src=image_url("")
     h5.author-name
       | Misko
     p
       | hmm not bad
+br
+br
 
 #disqus_thread
     javascript:
       var disqus_config = function () {
       this.page.url = '#{request.original_url}';
-      this.page.identifier = '@post.id';
+      this.page.identifier = '#{@post.id}';
       };
 
       (function() {

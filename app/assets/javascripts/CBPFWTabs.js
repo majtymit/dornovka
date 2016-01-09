@@ -30,7 +30,7 @@
 	}
 
 	CBPFWTabs.prototype.options = {
-		start : 0
+	start : window.location.hash.slice(-1) || 0
 	};
 
 	CBPFWTabs.prototype._init = function() {
@@ -65,6 +65,7 @@
 		this.current = idx != undefined ? idx : this.options.start >= 0 && this.options.start < this.items.length ? this.options.start : 0;
 		this.tabs[ this.current ].className = 'tab-current';
 		this.items[ this.current ].className = 'content-current';
+		window.location.hash = idx || 0'';
 	};
 
 	// add to global namespace

@@ -932,6 +932,10 @@ $(".timeline-item").hover(function () {
 $(document).on('ready page:load', function() {
     var tabs = document.getElementById('tabs');
     if (tabs) {
-        new CBPFWTabs(tabs);
+        window.CBPFWTabsInstance = new CBPFWTabs(tabs);
     }
+});
+
+$('[data-tab-idx]').click(function() {
+    debugger;
 });

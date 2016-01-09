@@ -14,8 +14,9 @@
         i.fa.fa-calendar
         '
         = post.created_at
-      span.comment.pull-right
+      /span.comment.pull-right
         i.fa.fa-comments-o
         '
         span
           | Zobrazené #{post.visits}x
+      span.disqus-comment-count data-disqus-identifier=="#{post.id}"
