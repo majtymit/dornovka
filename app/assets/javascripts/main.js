@@ -940,3 +940,9 @@ $(document).on('ready page:load', function() {
         }
     });
 });
+
+$('input').keyup(function() {
+  setTimeout(function() {
+    console.log("hovno");
+  }, 1000 );
+});
