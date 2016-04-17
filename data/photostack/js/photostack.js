@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- *
+ * 
  * Copyright 2014, Codrops
  * http://www.codrops.com
  */
@@ -28,7 +28,7 @@
 		return (computedStyle === val);
 	});
 
-	var support = {
+	var support = { 
 			transitions : Modernizr.csstransitions,
 			preserve3d : Modernizr.csstransformspreserve3d
 		},
@@ -42,7 +42,7 @@
 		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ];
 
 	function extend( a, b ) {
-		for( var key in b ) {
+		for( var key in b ) { 
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -148,13 +148,13 @@
 	Photostack.prototype._open = function( beforeStep ) {
 		var self = this,
 		el = this.el;
-		var setTransition = function() {
+		var setTransition = function() { 
 			if( support.transitions ) {
-				classie.addClass( el, 'photostack-transition' );
+				classie.addClass( el, 'photostack-transition' ); 
 			}
 		}
 		if( beforeStep ) {
-			el.removeEventListener( 'click', open );
+			el.removeEventListener( 'click', open ); 
 			classie.removeClass( el, 'photostack-start' );
 			setTransition();
 		}
@@ -162,7 +162,7 @@
 			self.openDefault = true;
 			setTimeout( setTransition, 25 );
 		}
-		self.started = true;
+		self.started = true; 
 		self._showPhoto( self.current );
 	};
 
@@ -245,11 +245,11 @@
 			classie.removeClass( this.navDots[ this.current ], 'current' );
 		}
 		classie.removeClass( this.currentItem, 'photostack-current' );
-
+		
 		// change current
 		this.current = pos;
 		this.currentItem = this.items[ this.current ];
-
+		
 		if(this.options.showNavigation) {
 			classie.addClass( this.navDots[ this.current ], 'current' );
 		}
@@ -278,7 +278,7 @@
 			this.openDefault = false;
 			this.isShuffling = false;
 		}
-
+		
 		var overlapFactor = .5,
 			// lines & columns
 			lines = Math.ceil(this.sizes.inner.width / (this.sizes.item.width * overlapFactor) ),
@@ -411,7 +411,7 @@
 			inner : { width : this.inner.offsetWidth, height : this.inner.offsetHeight },
 			item : { width : this.currentItem.offsetWidth, height : this.currentItem.offsetHeight }
 		};
-
+		
 		// translation values to center an item
 		this.centerItem = { x : this.sizes.inner.width / 2 - this.sizes.item.width / 2, y : this.sizes.inner.height / 2 - this.sizes.item.height / 2 };
 	}
@@ -507,4 +507,3 @@
 	window.Photostack = Photostack;
 
 })( window );
-

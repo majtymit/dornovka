@@ -892,15 +892,6 @@ var sfApp={
 /*================================================================*/
 $(document).on('ready page:load', function() {
     "use strict";
-    new Photostack( document.getElementById( 'photostack-3' ), {
-        callback : function( item ) {
-            //console.log(item)
-        }
-    } );
-});
-
-$(document).on('ready page:load', function() {
-    "use strict";
     sfApp.init();
 });
 
@@ -948,4 +939,13 @@ $('input[name="testsearch"]').keyup(function() {
   setTimeout(function() {
     console.log("hovno");
   }, 1000 );
+});
+
+$(document).on('ready page:load', function() {
+    "use strict";
+    window.hovno = new Photostack( document.getElementById( 'photostack-3' ), {
+        callback : function( item ) {
+            console.log("hovno")
+        }
+    } );
 });

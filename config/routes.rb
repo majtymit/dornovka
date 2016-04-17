@@ -7,10 +7,6 @@ Rails.application.routes.draw do
     get '/' => 'about#index', as: :about
   end
 
-  scope 'metody' do
-    get '/' => 'methods#index', as: :methods
-  end
-
   scope 'kontakt' do
     get '/' => 'contact#index', as: :contact
   end
