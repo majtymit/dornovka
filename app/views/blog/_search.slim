@@ -1,0 +1,30 @@
+.filter-container
+  .search-box
+    .search-form
+      form#search-form.form-inline role="form"
+        .form-group
+          input#search-keyword.form-control placeholder="Enter keyword" type="text" name="query"
+      #search-result
+  /.share-box
+    a#btn-share.btn.btn-theme href="javascript:;"
+      | Zdielať
+      '
+      span.caret
+    .share-box-content
+      ul.social.active
+        li.twitter
+          a href="#" title="Twitter"
+            i.fa.fa-twitter
+        li.facebook
+          a href="#" title="Facebook"
+            i.fa.fa-facebook
+        li.google
+          a href="#" title="Google"
+            i.fa.fa-google-plus
+        li.linkedin
+          a href="#" target="_blank" title="Linkedin"
+            i.fa.fa-linkedin
+  /a.btn.btn-theme href="#footer"
+    i.fa.fa-comments-o
+    '
+    span.disqus-comment-count 3 Comments

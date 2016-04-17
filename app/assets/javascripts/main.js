@@ -698,41 +698,32 @@ var sfApp={
     searchFormHandle:function(){
         // This is demo search function
         $('#search-keyword').keyup(function () {
-            if($('#search-keyword').val().length>3){
-                // Your search result here, you can get it as json format
-                var searchResult={
-                    'items': [
-                        {
-                            "title":"Post title 1 here",
-                            "description":"Post description 1 here, lorem ipsum dolor sit amet, consectetur adipis ..."
-                        },
-                        {
-                            "title":"Post title 2 here",
-                            "description":"Post description 2 here, lorem ipsum dolor sit amet, consectetur adipis ..."
-                        },
-                        {
-                            "title":"Post title 3 here",
-                            "description":"Post description 3 here, lorem ipsum dolor sit amet, consectetur adipis ..."
-                        },
-                        {
-                            "title":"Post title 4 here",
-                            "description":"Post description 4 here, lorem ipsum dolor sit amet, consectetur adipis ..."
-                        }
-                    ]
-                };
-                if(searchResult.items.length>0){
-                    var resultStr='<ul>';
-                    $.each( searchResult.items, function( index, item ) {
-                        resultStr+='<li>\
-                                        <a href="#">\
-                                            <span class="title">'+item.title+'</span>\
-                                            <span class="desc">'+item.description+'</span>\
-                                        </a>\
-                                    </li>';
-                    });
-                    resultStr+='</ul>';
-                    $('#search-result').html(resultStr).fadeIn('fast');
-                }
+            if($('#search-keyword').val().length>2){
+                //
+                $.ajax({
+                  method: "GET",
+                  url: "/ajax",
+                  data: { query: $('#search-keyword').val() }
+                })
+                .done(function( msg ) {
+                    var searchResult={
+                        'items': msg
+                    };
+                    if(searchResult.items.length>0){
+                        var resultStr='<ul>';
+                        $.each( searchResult.items, function( index, item ) {
+                            resultStr+='<li>\
+                                            <a href="/blog/'+item.id+'-'+item.title.replace(/ /g, "-" )+'">\
+                                                <span class="title">'+item.title+'</span>\
+                                                <!--<span class="desc">'+item.description+'</span>-->\
+                                            </a>\
+                                        </li>';
+                        });
+                        resultStr+='</ul>';
+                        $('#search-result').html(resultStr).fadeIn('fast');
+
+                    }
+                });
             }
             else{
                 $('#search-result').html('');
@@ -901,20 +892,32 @@ var sfApp={
 /*================================================================*/
 $(document).on('ready page:load', function() {
     "use strict";
+    new Photostack( document.getElementById( 'photostack-3' ), {
+        callback : function( item ) {
+            //console.log(item)
+        }
+    } );
+});
+
+$(document).on('ready page:load', function() {
+    "use strict";
     sfApp.init();
 });
+
 $(window).on("debouncedresize", function( event ) {
     "use strict";
     sfApp.reloadIsotope();
     sfApp.reloadPortfolio();
     sfApp.reFormatUI();
 });
+
 $(document).on('ready page:load', function() {
     "use strict";
     sfApp.reloadIsotope();
     sfApp.reloadPortfolio();
     sfApp.reFormatUI();
 });
+
 $(window).resize(function () {
     "use strict";
     sfApp.reloadIsotope();
@@ -941,7 +944,7 @@ $(document).on('ready page:load', function() {
     });
 });
 
-$('input').keyup(function() {
+$('input[name="testsearch"]').keyup(function() {
   setTimeout(function() {
     console.log("hovno");
   }, 1000 );

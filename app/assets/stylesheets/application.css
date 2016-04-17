@@ -25,6 +25,7 @@
  *= require ./CBPFWTabs
  *= require ./partners
  *= require ./certificate
+ *= require ./photostack
  *= require ./normalize
  *= require_self
  */

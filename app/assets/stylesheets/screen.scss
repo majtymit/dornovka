@@ -1973,19 +1973,20 @@ ul.social.active li.rss{
 	margin-left: 10px;
 }
 .search-box .search-form{
-	display: none;
+	//display: none;
 	position: absolute;
-	top: 42px;
+	top: 0;
 	left: -125px;
 	width: 250px;
+	height: 30px;
 	background: #fff;
 	border: 1px solid #CBCBCB;
 }
 .filter-container .search-box .search-form{
-	left: -165px;
+	left: -250px;
 }
 .search-box .search-form:before{
-	content: '';
+	//content: '';
 	position: absolute;
 	top: -10px;
 	left: 132px;
@@ -2014,6 +2015,7 @@ ul.social.active li.rss{
 	width: 100%;
 	display: none;
 	border-top: solid 1px #CBCBCB;
+	background: #FFF;
 }
 .search-box .search-form #search-result ul{
 	margin-bottom: 0;
