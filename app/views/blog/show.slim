@@ -11,10 +11,6 @@
           img.img-responsive alt="#{@post.title}" title="#{@post.title}" src=image_url("blog/#{@post.image_url}")
         .col-md-6
           h2 = @post.title
-          strong Popis:
-          br
-          = @post.description
-          br
           br
           = @post.text
       .row.margin-20

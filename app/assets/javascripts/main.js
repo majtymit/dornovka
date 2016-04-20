@@ -945,7 +945,7 @@ $(document).on('ready page:load', function() {
     "use strict";
     window.hovno = new Photostack( document.getElementById( 'photostack-3' ), {
         callback : function( item ) {
-            console.log("hovno")
+            console.log("hovno");
         }
     } );
 });

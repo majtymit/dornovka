@@ -21,6 +21,7 @@ gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
 gem 'upmin-admin', github: 'upmin/upmin-admin-ruby'
 gem 'nprogress-rails'
 gem 'paperclip'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'rspec-rails'

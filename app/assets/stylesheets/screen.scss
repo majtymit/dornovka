@@ -31,7 +31,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
 *, body {
 	font-family: 'Open Sans', sans-serif;
-	color: #333;
+	color: #000;
 	font-size: 14px;
 	line-height: 1.65;
 	-webkit-font-smoothing: antialiased;
@@ -436,14 +436,14 @@ blockquote.blockquote-reverse{
 
 ul.social{
 	text-align:center;
-	margin:25px 0 20px 0;
+	margin: 15px 0 -20px 0;
 }
 ul.social li {
 	display: inline-block;
 	overflow: hidden;
 	line-height: 34px;
-	width: 34px;
-	height: 34px;
+	width: 44px;
+	height: 44px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
@@ -459,15 +459,15 @@ ul.social *{
 	transition: all 0.25s ease;
 }
 ul.social li a{
-	width: 30px;
-	height: 30px;
+	width: 41px;
+	height: 41px;
 	display: block;
 	text-decoration: none;
 }
 ul.social li a i{
 	color:#fff;
 	width:100%;
-	font-size:18px;
+	font-size:26px;
 	display: block;
 	margin-top: 7px;
 }
@@ -900,7 +900,7 @@ ul.social.active li.rss{
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 10px;
+	bottom: 20px;
 }
 #main-sidebar .copyright a{
 	color: #fff;
@@ -3195,4 +3195,12 @@ ul.social.active li.rss{
 .navsteva-datum {
   font-size: 20px;
   font-weight: bold;
+}
+
+.fa-envelope-o:before {
+  padding-left: 2px;
+}
+
+.fa-youtube:before {
+  padding-left: 1px;
 }
