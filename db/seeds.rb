@@ -197,7 +197,7 @@ Post.create!(
   format: 'article',
   title: 'Artróza',
   description: 'Je degeneratívne ochorenie kĺbov , ktoré vzniká opotrebovaním chrupavky. K opotrebovaniu a poškodeniu chrupaviek dochádza vplyvom ...',
-  text: ['Je degeneratívne ochorenie kĺbov, ktoré vzniká opotrebovaním chrupavky. K opotrebovaniu a poškodeniu chrupaviek dochádza vplyvom záťaže a vekom , alebo pri nesprávnej degeneratívnej polohe kostí aj u mladších zvierat.  Pri artóze dochádza k praskaniu kolagénových vlákien chrupavky a ku znižovaniu kyseliny hyaulrónovej, dochádza tiež ku štrukturálnym zmenám kosti pod chrupavkou.
+  text: 'Je degeneratívne ochorenie kĺbov, ktoré vzniká opotrebovaním chrupavky. K opotrebovaniu a poškodeniu chrupaviek dochádza vplyvom záťaže a vekom , alebo pri nesprávnej degeneratívnej polohe kostí aj u mladších zvierat.  Pri artóze dochádza k praskaniu kolagénových vlákien chrupavky a ku znižovaniu kyseliny hyaulrónovej, dochádza tiež ku štrukturálnym zmenám kosti pod chrupavkou.
     br
     br
     Prejavuje sa:
@@ -207,7 +207,7 @@ Post.create!(
     Počas terapie dôjde k jemnému usadeniu kĺbov do kĺbového púzdra čím sa spustí regeneračný proces postihnutej chrupavky a    zlepší sa celková pohyblivosť kĺbu.
     V AKÚTNEJ FÁZE OCHORENIA (opuch kĺbov, zápalové procesy) SA ZVIERA NESMIE DM OŠETROVAŤ. ODPORÚČAME VYHĽADAŤ VETERINÁRNU POMOC.
     <br />
-    Zdroj: Andrea Dunová'],
+    Zdroj: Andrea Dunová',
   image_url: 'ill_animals.jpg',
   created_at: '20.4.2016',
   date: 'Mon Apr 21 2014 11:40:53',
