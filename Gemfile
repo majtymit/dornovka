@@ -9,7 +9,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
-gem 'pg'
 gem 'sdoc', group: :doc
 gem 'mail_form'
 gem 'nokogiri', '1.6.8.rc3'
@@ -28,4 +27,8 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
+end
+
+group :production do
+  gem "pg"
 end
