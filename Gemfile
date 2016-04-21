@@ -21,6 +21,7 @@ gem 'upmin-admin', github: 'upmin/upmin-admin-ruby'
 gem 'nprogress-rails'
 gem 'paperclip'
 gem 'will_paginate'
+gem 'thin'
 
 
 group :development, :test do
@@ -28,6 +29,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
+  gem 'sqlite3'
 end
 
 group :production do
