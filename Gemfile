@@ -21,7 +21,7 @@ gem 'upmin-admin', github: 'upmin/upmin-admin-ruby'
 gem 'nprogress-rails'
 gem 'paperclip'
 gem 'will_paginate'
-gem 'puma'
+
 
 group :development, :test do
   gem 'rspec-rails'
@@ -32,4 +32,7 @@ end
 
 group :production do
   gem "pg"
+  gem 'rails_12factor'
+  gem 'puma'
 end
+
