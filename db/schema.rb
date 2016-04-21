@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150523151338) do
     t.string   "format"
     t.integer  "category_id"
     t.datetime "happened_at"
+    t.text     "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

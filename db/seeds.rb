@@ -23,6 +23,30 @@ illness = Category.create!(name: 'illness')
 
 Post.create!(
   format: 'article',
+  title: 'Maly smrad',
+  description: 'Tak toto nám doma behá pod nohy :( ...',
+  text: 'texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext',
+  image_url: 'bahia.jpg',
+  created_at: '21.4.2016',
+  date: 'Thu Apr 21 2016 11:44:53',
+  category: small_pets,
+  visits: 36,
+)
+
+Post.create!(
+  format: 'article',
+  title: 'Random pissed cat',
+  description: 'nasrala sa no...',
+  text: 'texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext, texttexttexttext',
+  image_url: 'ela.jpg',
+  created_at: '21.4.2016',
+  date: 'Thu Apr21 2016 11:40:53',
+  category: cats,
+  visits: 36,
+)
+
+Post.create!(
+  format: 'article',
   title: 'Prolaps platničky',
   description: 'V poslednom období sa doslova roztrhlo vrece s buldočkami s prolapsom platničky. Mnohí ľudia zúfalo prosia o pomoc a o rady na facebooku. Niekedy žiaľ vyhľadajú odbornú pomoc príliš neskoro, alebo aj pomoc vyhľadajú, avšak ...',
   text: 'V poslednom období sa doslova roztrhlo vrece s buldočkami s prolapsom platničky. Mnohí ľudia zúfalo prosia o pomoc a o rady na facebooku. Niekedy žiaľ vyhľadajú odbornú pomoc príliš neskoro, alebo aj pomoc vyhľadajú, avšak u veterinára, ktorý sa nešpecializuje na neurológiu. Vzhľadom k zvýšenému počtu otázok k tejto problematike, sme sa rozhodli vytvoriť príspevok . Získate tu informácie o počiatočných príznakoch, priebehu, prípadnej operácii a následnej rehabilitácii, no v neposlednom rade aj o prevencii. Nejedná sa o odborný príspevok, ale o jednoduché rady a vysvetlenie.
@@ -88,7 +112,8 @@ MVDr. Viktor Paluš Dip ECUN, MRCUS,RCVS in Veterinary neurolog,
 klinika Sibra, www.sibra.sk
 Ing.Mária Zámečníková Ph.D DoTh',
   image_url: 'ill_animals.jpg',
-  created_at: '21.4.2016',
+  created_at: '20.4.2016',
+  date: 'Wed Apr 20 2016 11:30:53',
   category: illness,
   visits: 2,
 )
@@ -106,7 +131,8 @@ Neochota chodiť po schodoch, opatrné sadanie si, problematické vstávanie, ne
 Dornova metóda uvedie všetky kosti do fyziologickej polohy, čím už niekedy dôjde k úľave a následne sa aplikuje a pracuje výhradne s bankami. Dornova metóda je spolu s bankovaním veľkou pomocou od bolesti a cesty ako nastoliť opäť rovnováhu s pohybom a zvýšiť regeneráciu nervov kt. bývajú útlakom poškodené. Pomocou týchto metód sa odďaľuje zhoršovanie stavu a zlepšuje pohyblivosť zvieraťa.
 Zdroj: MVDr. Leoš Krkoška, Ph.D.',
   image_url: 'ill_animals.jpg',
-  created_at: '21.4.2016',
+  created_at: '20.4.2016',
+  date: 'Sun Apr 20 2014 11:40:53',
   category: illness,
   visits: 2,
 )
@@ -122,7 +148,8 @@ Krívanie bez príznaku bolesti, rozvolenie končatiny od kĺbu dole, odľahčov
 Pomocou dornovej metódy uvedieme patellu do pôvodnej polohy a fyziologickým pohybom fixujeme. Pravidelným usádzaním prispievame k natvarovaniu chrupavky a spevneniu. Dornova metóda môže byť úspešne vykonávaná  len v prípade nepoškodenia kolenných väzov a samotného kolenného kĺbu. V opačnom prípade je už nutný operačný zásah.
 Zdroj: Andrea Dunová',
   image_url: 'ill_animals.jpg',
-  created_at: '21.4.2016',
+  created_at: '20.4.2016',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: illness,
   visits: 2,
 )
@@ -141,7 +168,8 @@ DM pracuje s ochorením do 3. stupňa, keď ešte nedochádza k zrastaniu stavco
 
 Zdroj: MVDr. Jana Sekvencová, DoTh.; Andrea Dunová',
   image_url: 'ill_animals.jpg',
-  created_at: '21.4.2016',
+  created_at: '20.4.2016',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: illness,
   visits: 2,
 )
@@ -159,7 +187,8 @@ Post.create!(
   DM jemným a pravidelným usádzaním pomáha usadiť hlavicu kĺbu do jamky, zlepšuje pohyblivosť kĺbu a rozsah pohybu, dochádza tým k zmierneniu napätia v mäkkých tkanivách a odznievaniu  bolestivosti. Vďaka regeneračnej schopnosti chrupavky dochádza po usadení kĺbu do správnej polohy zahájenie samoobnovovacieho procesu. Pokiaľ sa zviera pohybuje s neusadeným dysplázickým kĺbom, dochádza v ňom k palotologickému treniu a zväčšovaniu opotrebovanosti chrupavky a následnej bolestivosti.
   Zdroj: Andrea Dunová',
   image_url: 'ill_animals.jpg',
-  created_at: '21.4.2016',
+  created_at: '20.4.2016',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: illness,
   visits: 2,
 )
@@ -168,7 +197,7 @@ Post.create!(
   format: 'article',
   title: 'Artróza',
   description: 'Je degeneratívne ochorenie kĺbov , ktoré vzniká opotrebovaním chrupavky. K opotrebovaniu a poškodeniu chrupaviek dochádza vplyvom ...',
-  text: 'Je degeneratívne ochorenie kĺbov, ktoré vzniká opotrebovaním chrupavky. K opotrebovaniu a poškodeniu chrupaviek dochádza vplyvom záťaže a vekom , alebo pri nesprávnej degeneratívnej polohe kostí aj u mladších zvierat.  Pri artóze dochádza k praskaniu kolagénových vlákien chrupavky a ku znižovaniu kyseliny hyaulrónovej, dochádza tiež ku štrukturálnym zmenám kosti pod chrupavkou.
+  text: ['Je degeneratívne ochorenie kĺbov, ktoré vzniká opotrebovaním chrupavky. K opotrebovaniu a poškodeniu chrupaviek dochádza vplyvom záťaže a vekom , alebo pri nesprávnej degeneratívnej polohe kostí aj u mladších zvierat.  Pri artóze dochádza k praskaniu kolagénových vlákien chrupavky a ku znižovaniu kyseliny hyaulrónovej, dochádza tiež ku štrukturálnym zmenám kosti pod chrupavkou.
     br
     br
     Prejavuje sa:
@@ -178,9 +207,10 @@ Post.create!(
     Počas terapie dôjde k jemnému usadeniu kĺbov do kĺbového púzdra čím sa spustí regeneračný proces postihnutej chrupavky a    zlepší sa celková pohyblivosť kĺbu.
     V AKÚTNEJ FÁZE OCHORENIA (opuch kĺbov, zápalové procesy) SA ZVIERA NESMIE DM OŠETROVAŤ. ODPORÚČAME VYHĽADAŤ VETERINÁRNU POMOC.
     <br />
-    Zdroj: Andrea Dunová',
+    Zdroj: Andrea Dunová'],
   image_url: 'ill_animals.jpg',
   created_at: '20.4.2016',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: illness,
   visits: 2,
 )
@@ -192,6 +222,7 @@ Post.create!(
   text: 'niekam do bratislavy alebo aj mimo nej',
   image_url: 'pes.jpg',
   created_at: '15.2.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: dogs,
   visits: 227,
   subposts: [
@@ -207,6 +238,7 @@ Post.create!(
   text: '6,5r Akita Kuma, DM robena preventívne no nájdených dosť problemov: najvýraznejší je prepad L-Sacr. spojenia, krížovej kosti, ktorý sa už odzrkadloval aj na chôdzi, posun panvy a aj atlasu. Končatiny pukajúce, bolo ich potrebné usadiť pre zlepšenie látkovej výmeny v klboch. A znovu neštastné tylo...',
   image_url: 'akita-kuma.jpg',
   created_at: '26.4.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: dogs,
   visits: 2,
 )
@@ -218,6 +250,7 @@ Post.create!(
   text: 'Rene je čurák!',
   image_url: '',
   created_at: '15.2.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: status,
   visits: 0,
 )
@@ -229,6 +262,7 @@ Post.create!(
   text: 'Vikend s Equine Touch, alebo vzdelania nikdy nie je dost — cítim sa motivovaná.',
   image_url: '',
   created_at: '24.4.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: status,
   visits: 6,
 )
@@ -240,15 +274,9 @@ Post.create!(
   text: 'Trošku som sa toho obávala, pretože som už celkom zabudla posudzovať, už len čo chytím dornujem. Celkovo mi prešlo rukami cez 30 zvierat. Z čoho polovica mala blokady krížovej kosti, prvých chvostových stavcov. Mala som aj 4 zrotované panvy a 1 atlas. Ostatní rozhodcovia na mna čakali, lebo okrem posudzovania sa aj dornovalo, tak som skončila viac ako 30min po nich :). Výsledok je taký, že aj zviera, ktoré na prvý pohlaď je maximálne pružné elastické (viac ako mačka) má naozaj skoro 50% pravdepodobnosť posunu a problémov v pohybovom aparáte, akurat vzhladom na dlžku ich života, aktivitu a štýl pohybu to zatiaľ chovatelia a veterinári neriešia, nakoľko sa ten pohybový problém často prejaví s ochorením (hypertrofia-slabosť končatín, šmachtlanie nohami; po opatrnej dornovke zvieratá už chodia viacmenej normálne a pod.).\nŠkoda, že nebolo času na prednášku nech sa aj fretkári trošku s dornovkou oboznámia, lebo ich zvery by to potrebovali.',
   image_url: 'vystava_CZ.jpg',
   created_at: '15.2.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: events,
   visits: 110,
-)
-
-Partner.create!(
-  name: 'Jozko',
-  description: 'nieco',
-  link: '',
-  #logo: '',
 )
 
 Post.create!(
@@ -258,6 +286,7 @@ Post.create!(
   text: 'Rysy - 2r fenočka Border teriera. Rysy pozná dornovku veľmi dobre, pretože je pravidelná účastníčka kurzov ľudskej dornovky v Bratislave, kde so svojou paničkou asistuje. Panička chcela poriešiť prepadajúci sa stavec, a celkovo preventívne zhodnotiť, nakoľko sa s fenkou pripravujú na Agility. Rysinka mala rozvolnenú patellu na ľavej labke (panička dostala D.ú. usádzať) a toršku rozhádzaný krk (C1, C6) a posun posledného L stavčeka (nedávno dostala bočný náraz od vacšieho šteniatka, čo predpokladáme, že mohlo spsobiť posun L a C6 stavca). Na konci Rysy zhodnotila, že bude radšej aj nadalej chodiť radšej na tie ludské dornovky než na svoje tam jej krk nenaprávajú.',
   image_url: 'rysy.jpg',
   created_at: '02.04.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: dogs,
   visits: 3,
 )
@@ -269,6 +298,7 @@ Post.create!(
   text: 'Merci, cca 2r nádherná múdra mojkacia fenočka adoptovaná z útulku z LM. Má za sebou resekciu ľavého bedrového kĺbu, a dornovku pozná veľmi dobre. Operovanú nohu už celkom slušne používa. Akurat poslednu dobu začala divne chodiť na druhú pravú nôžku, tak prišli preventívne na ošetrenie. Kedže sme nič výrazné nenašli (len posun krčných stavcov) dostala ešte kompletnú bowenovu masáž, lebo problém bude v makkých tkanivách a v pretažovaní zdravej končatiny. Kedže sa blíži leto, chystajú sa s merci plávať, tak veríme, že nožičky zosilnejú.',
   image_url: 'merci.jpg',
   created_at: '10.04.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: dogs,
   visits: 17,
 )
@@ -280,6 +310,7 @@ Post.create!(
   text: 'Včera sme navštívili Igiho aby podstúpil 2. ošetrenie DM. Do 2 týždnoch po prvej dornovke sa igimu postupne polepšilo, prestal krívať na predné nohy, pri poslednej vychádzke si však trošku viac vyhodil z kopýtka, takže trošku zakríval, ale 2. terapia bola aj tak potrebná pre upevnenie všetkých kostí, lebo nie všetky nam ostali ok. Igi podstúpil klasicky uvolnenie celého tela a blokád bowenovou masážou a následne Dorn. Usádzali sme ľavé rameno, ktoré bolo ešte stále o dosť vpredšie, po uplnom uvolnení a odlepení lopatiek, ktoré boli už v lepšom stave ako minule sa objavil posunutý 6. stavec, ku ktorému sme sa cez blokády pri 1. terapii nedostali. A ešte sa upravila panva, ktoré bola trošku ľavou lopatou vpredu. Igorko bol znovu úplne ukážkový pacient.',
   image_url: 'igi.jpg',
   created_at: '25.02.2015',
+  date: 'Mon Apr 21 2014 11:40:53',
   category: horses,
   visits: 9,
 )
@@ -298,6 +329,7 @@ Post.create!(
 ',
   image_url: 'portoriko.jpg',
   created_at: '27.04.2015',
+  date: 'Mon Jan 21 2014 11:40:53',
   category: horses,
   visits: 9,
 )
@@ -316,6 +348,7 @@ Post.create!(
 ',
   image_url: 'portoriko.jpg',
   created_at: '27.04.2015',
+  date: 'Mon Jan 21 2014 11:40:53',
   category: horses,
   visits: 9,
 )

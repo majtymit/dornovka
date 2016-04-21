@@ -1,11 +1,13 @@
 .item-list.post [
   class=post.category.name
-  data-publish-date=""
+  data-publish-date="#{post.date}"
 ]
   .wrap
     h2.post-title
       a href="{#post_url(post)}#disqus_thread"
         = post.title
+        br
+        = post.date
     .post-media
       a href=post_url(post)
         img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("blog/#{post.image_url}")

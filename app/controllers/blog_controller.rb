@@ -3,8 +3,12 @@ class BlogController < ApplicationController
     @body_class = "home-template enable-filter"
     if params[:query]
       @posts = Post.basic_search(params[:query])
+    elsif params[:title]
+      @posts = Post.order("title ASC").all
+    elsif params[:date]
+      @posts = Post.order("created_at DESC").all
     else
-      @posts = Post.all
+      @posts = Post.order("created_at DESC, title ASC").all
     end
   end
 

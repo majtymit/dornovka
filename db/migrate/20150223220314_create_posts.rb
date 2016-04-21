@@ -9,6 +9,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :format
       t.belongs_to :category
       t.datetime :happened_at
+      t.text :date
 
       t.timestamps null: false
     end
