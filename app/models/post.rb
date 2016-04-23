@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  include Impressionist::IsImpressionable # fix for is_impressionable
   is_impressionable
   belongs_to :category
   has_many :subposts
