@@ -12,11 +12,11 @@
     span
       i.fa.fa-tags
       '
-      | psíky | výstavy
+      = @post.category.sk_name
     span
       i.fa.fa-file-text-o
       '
-      | Videné #{@post.visits}x
+      | Zobrazené #{@post.impressionist_count}x
     span.share
       span.title Zdielaj na:
       ul.social.active

@@ -22,6 +22,7 @@ gem 'nprogress-rails'
 gem 'paperclip'
 gem 'will_paginate'
 gem 'thin'
+gem 'impressionist'
 
 
 group :development, :test do

@@ -1,21 +1,17 @@
 .item-list.post [
   class=post.category.name
-  data-publish-date="#{post.date}"
+  data-publish-date=post.date
 ]
   .wrap
     h2.post-title
-      a href="{#post_url(post)}#disqus_thread"
+      a href=post_url(post)
         = post.title
-        br
-        = post.date
     .post-media
       a href=post_url(post)
         img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("blog/#{post.image_url}")
     .post-excerpt
       = post.description
       br
-      /a.read-more href=post_url(post)
-        | Read more »
     .post-meta.clearfix
       span.time.pull-left
         i.fa.fa-calendar
@@ -24,5 +20,7 @@
       span.comment.pull-right
         i.fa.fa-comments-o
         '
-        span
-          | Zobrazené #{post.visits}x
+        /span
+        /| Zobrazené #{post.impressionist_count}x
+        a href="#{post_url(post)}#disqus_thread" komentáre
+        /span.disqus-comment-count data-disqus-identifier="#{post.id}"

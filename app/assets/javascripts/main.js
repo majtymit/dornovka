@@ -15,10 +15,44 @@ var sfApp={
         if($('body').is('.gallery')){
             isGallery=true;
             columnPadding=0;
-            columns = Math.round(Math.max(contentWidth - 500, 0) / 200) + 1;
+            if (contentWidth<=480){
+                columns=1;
+            }
+            else if (contentWidth<=640){
+                columns=2;
+            }
+            else if (contentWidth<=800){
+                columns=3;
+            }
+            else if(contentWidth<=1140){
+                columns=4;
+            }
+            else if(contentWidth<=1380){
+                columns=5;
+            }
+            else if(contentWidth<=1620){
+                columns=6;
+            }
+            else if(contentWidth>1620){
+                columns=7;
+            }
         }
         else{
-            columns = Math.round(Math.max(contentWidth - 650, 0) / 300) + 1;
+            if (contentWidth<640){
+                columns=1;
+            }
+            else if (contentWidth<=966){
+                columns=2;
+            }
+            else if(contentWidth<=1140){
+                columns=3;
+            }
+            else if(contentWidth<=1620){
+                columns=4;
+            }
+            else if(contentWidth>1620){
+                columns=5;
+            }
         }
         var itemWidth = Math.floor((contentWidth-(columnPadding*(columns+1)))/columns);
         $('.item-list').each(function(){
@@ -152,13 +186,16 @@ var sfApp={
                 numberDisplayed: 1,
                 buttonText: function(options, select) {
                     if (options.length == 0) {
-                      return noSelectedText+' <b class="caret"></b>';
+                      return noSelectedText + ' <b class="caret"></b>';
                     }
                     if (options.length == 1) {
-                            return options.length + ' vybraný <b class="caret"></b>';
+                            return options.length + ' categórie <b class="caret"></b>';
                     }
+                    //if (options.length > 1 && options.length < 5) {
+                            //return options.length + ' categórii <b class="caret"></b>';
+                    //}
                     else {
-                        return options.length + ' vybrané <b class="caret"></b>';
+                        return options.length + ' categórii <b class="caret"></b>';
                     }
                 },
                 onChange: function(option, checked) {
@@ -185,6 +222,7 @@ var sfApp={
                             sortBy : sortByStr,
                             sortAscending : sortAsc
                         });
+                        console.log("hovno");
                     }
                     else if($('#portfolio-content').length){
                         $('#portfolio-content').isotope({
@@ -231,8 +269,29 @@ var sfApp={
             $('.post').imagesLoaded(function( instance ) {
                 sfApp.formatWidth();
                 if($('body').is('.gallery')) {
+                    var columns=3;
                     var contentWidth = $container.width();
-                    var columns = Math.round(Math.max(contentWidth - 500, 0) / 200) + 1;
+                    if (contentWidth<=480){
+                        columns=1;
+                    }
+                    else if (contentWidth<=640){
+                        columns=2;
+                    }
+                    else if (contentWidth<=800){
+                        columns=3;
+                    }
+                    else if(contentWidth<=1140){
+                        columns=4;
+                    }
+                    else if(contentWidth<=1380){
+                        columns=5;
+                    }
+                    else if(contentWidth<=1620){
+                        columns=6;
+                    }
+                    else if(contentWidth>1620){
+                        columns=7;
+                    }
                     $container.isotope({
                         itemSelector : '.item-list',
                         layoutMode: 'perfectMasonry',

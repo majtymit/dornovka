@@ -6,4 +6,18 @@ class Category < ActiveRecord::Base
       category.posts.count == 0
     end
   end
+
+  def sk_name
+    {
+    'featured' => 'Zvýraznené',
+    'dogs' => 'Psy',
+    'horses' => 'Kone',
+    'cats' => 'Mačky',
+    'small_pets' => 'Malé zvieratá',
+    'events' => 'Udalosti',
+    'status' => 'Statusy',
+    'methods' => 'Metódy',
+    'illness' => 'Choroby',
+    }[name]
+  end
 end

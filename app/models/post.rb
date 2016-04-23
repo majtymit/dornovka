@@ -1,10 +1,11 @@
 class Post < ActiveRecord::Base
+  is_impressionable
   belongs_to :category
   has_many :subposts
   validates :title, length: { maximum: 45, too_long: "45 characters is the maximum allowed" }
 
   scope :query, ->(q) {
-    attributes = ['title', 'description', 'text']
+    attributes = ['title', 'description', 'text' ]
     where(attributes.map{ |attr| "#{attr} LIKE '%#{q}%'" }.join(' OR '))
   }
 
@@ -14,5 +15,12 @@ class Post < ActiveRecord::Base
 
   def to_param
     "#{id}-#{seo_title}"
+  end
+
+  def sk_name
+    {
+      'dogs' => 'psy',
+      'horses' => 'kone',
+    }[name]
   end
 end
