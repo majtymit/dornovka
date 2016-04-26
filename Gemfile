@@ -17,12 +17,19 @@ gem 'slim-rails'
 gem 'textacular'
 gem 'pry-rails'
 gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
-gem 'upmin-admin', github: 'upmin/upmin-admin-ruby'
+gem 'upmin-admin'
 gem 'nprogress-rails'
 gem 'paperclip'
 gem 'will_paginate'
 gem 'thin'
 gem 'impressionist'
+gem 'redcarpet'
+gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin_pagedown'
+gem 'devise'
+gem 'cancan'
+gem 'draper'
+gem 'pundit'
 
 
 group :development, :test do

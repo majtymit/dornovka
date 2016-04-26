@@ -24,4 +24,14 @@ class Post < ActiveRecord::Base
       'horses' => 'kone',
     }[name]
   end
+
+  def sk_comments(number)
+    if number == 0 || number > 4
+        return 'komentárov'
+    elsif number == 1
+      return 'komentár'
+    else
+      return 'komentáre'
+    end
+  end
 end

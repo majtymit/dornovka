@@ -28,13 +28,11 @@
 //= require ./bootstrap-multiselect
 //= require ./owl.carousel.min
 //= require ./sscr
-//= require ./config
 //= require ./CBPFWTabs
-//= require ./main
 //= require ./timeline
 //= require ./ajax_search
 //= require nprogress
 //= require nprogress-turbolinks
 //= require classie
 //= require photostack
-//= require_self
+//= require ./main

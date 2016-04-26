@@ -21,7 +21,6 @@
  *= require ./custom
  *= require nprogress-bootstrap
  *= require ./timeline
- *= require ./timeline_new
  *= require ./CBPFWTabs
  *= require ./partners
  *= require ./certificate

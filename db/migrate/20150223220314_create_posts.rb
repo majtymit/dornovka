@@ -10,7 +10,6 @@ class CreatePosts < ActiveRecord::Migration
       t.belongs_to :category
       t.datetime :happened_at
       t.text :date
-      t.integer :impressions_count
 
       t.timestamps null: false
     end

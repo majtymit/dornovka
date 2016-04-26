@@ -1,15 +1,21 @@
 GIT
-  remote: git://github.com/upmin/upmin-admin-ruby.git
-  revision: 49252e6ae6655642d5c0a23e4ef2fca2535212e7
+  remote: git://github.com/activeadmin/activeadmin.git
+  revision: d84f8190edac8c28f942cd4b6c3e16086da9d7a2
   specs:
-    upmin-admin (0.1.3)
-      chartkick
-      haml (>= 3.0.0)
+    activeadmin (1.0.0.pre2)
+      arbre (~> 1.0, >= 1.0.2)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.6)
       jquery-rails
-      kaminari
-      rails
-      ransack
+      jquery-ui-rails
+      kaminari (~> 0.15)
+      rails (>= 3.2, < 5.0)
+      ransack (~> 1.3)
       sass-rails
+      sprockets (< 4)
 
 GEM
   remote: http://rubygems.org/
@@ -33,6 +39,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    activeadmin_pagedown (0.0.2)
+      activeadmin (>= 0.5.0)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -49,9 +57,18 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    arbre (1.0.3)
+      activesupport (>= 3.0.0)
     arel (6.0.3)
+    bcrypt (3.1.11)
+    bcrypt (3.1.11-x64-mingw32)
+    bcrypt (3.1.11-x86-mingw32)
+    bourbon (4.2.7)
+      sass (~> 3.4)
+      thor (~> 0.19)
     builder (3.2.2)
     byebug (8.2.4)
+    cancan (1.6.10)
     chartkick (1.4.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -68,21 +85,43 @@ GEM
     concurrent-ruby (1.0.1)
     daemons (1.2.3)
     debug_inspector (0.0.2)
+    devise (4.0.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     eventmachine (1.2.0.1)
     eventmachine (1.2.0.1-x64-mingw32)
     eventmachine (1.2.0.1-x86-mingw32)
     execjs (2.6.0)
+    formtastic (3.1.4)
+      actionpack (>= 3.2.13)
+    formtastic_i18n (0.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
-    httpclient (2.7.1)
+    has_scope (0.6.0)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
+    httpclient (2.8.0)
     i18n (0.7.0)
     impressionist (1.5.1)
       httpclient (~> 2.2)
       nokogiri (~> 1.5)
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5)
+      has_scope (~> 0.6.0.rc)
+      railties (>= 3.2, < 5)
+      responders
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -90,6 +129,8 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
@@ -110,7 +151,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.8.4)
     modernizr-rails (2.7.1)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     nokogiri (1.6.8.rc3)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -121,6 +162,7 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     nprogress-rails (0.1.6.7)
+    orm_adapter (0.5.0)
     paperclip (4.3.6)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -140,6 +182,8 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     puma (3.4.0)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -181,7 +225,11 @@ GEM
       polyamorous (~> 1.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    redcarpet (3.3.4)
     ref (2.0.0)
+    request_store (1.3.1)
+    responders (2.1.2)
+      railties (>= 4.2.0, < 5.1)
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -254,6 +302,16 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    upmin-admin (0.1.3)
+      chartkick
+      haml (>= 3.0.0)
+      jquery-rails
+      kaminari
+      rails
+      ransack
+      sass-rails
+    warden (1.2.6)
+      rack (>= 1.0)
     web-console (3.1.1)
       activemodel (>= 4.2)
       debug_inspector
@@ -266,8 +324,13 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  activeadmin!
+  activeadmin_pagedown
   byebug
+  cancan
   coffee-rails
+  devise
+  draper
   impressionist
   jbuilder
   jquery-rails
@@ -279,8 +342,10 @@ DEPENDENCIES
   pg
   pry-rails
   puma
+  pundit
   rails (= 4.2.0)
   rails_12factor
+  redcarpet
   rspec-rails
   sass-rails
   sdoc
@@ -294,7 +359,7 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier
-  upmin-admin!
+  upmin-admin
   web-console
   will_paginate
 

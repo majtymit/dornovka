@@ -121,15 +121,17 @@ Ing.Mária Zámečníková Ph.D DoTh',
 Post.create!(
   format: 'article',
   title: 'Syndróm Cauda Equina',
-  description: 'Jedná sa o ochorenie prevažne psov veľkých plemien. Typickým predstaviteľom je nemecký ovčiak.
-Tento pojem zahŕňa skupinu neurologických ochorení so širokou škálou klinických ...',
-  text: 'Jedná sa o ochorenie prevažne psov veľkých plemien. Typickým predstaviteľom je nemecký ovčiak.
-Tento pojem zahŕňa skupinu neurologických ochorení so širokou škálou klinických príznakov. Problém je lokalizovaný v zadnej časti chrbtice na prechode bedrovej a krížovej . V tomto mieste už v miechovom kanáli nie je lokalizovaná miecha ale len korene nervov odborne nazývané cauda equina. SCE vzniká následkom zužovania miechového kanálu v tejto oblasti, dochádza ku kompresii, deštrukcii alebo k posunu nervových vlákien. Zúženie kanálu môže mať mnoho príčin, najčastejšia býva vysunutie medzistavcovej platničky medzi posledným bedrovým stavcom a krížovou kosťou. Alebo sa jedná o zosilnenie stien stavcov tvoriacich miechový kanál, prípade k zhrubnutiu väzivových vlákien, ktoré spájajú jednotlivé stavce medzi sebou.
-Prejavuje sa:
-Neochota chodiť po schodoch, opatrné sadanie si, problematické vstávanie, neskôr bolestivosť bedrovo-krížového spojenia a chvosta pri manipulácii, hryzenie si chvosta, bolestivosť chrbtice už na dotyk, atrofia stehenných svalov, nekontrolované močenie až ochrnutie panvových končatín.
-Čo ošetrenie DM spôsobí?
-Dornova metóda uvedie všetky kosti do fyziologickej polohy, čím už niekedy dôjde k úľave a následne sa aplikuje a pracuje výhradne s bankami. Dornova metóda je spolu s bankovaním veľkou pomocou od bolesti a cesty ako nastoliť opäť rovnováhu s pohybom a zvýšiť regeneráciu nervov kt. bývajú útlakom poškodené. Pomocou týchto metód sa odďaľuje zhoršovanie stavu a zlepšuje pohyblivosť zvieraťa.
-Zdroj: MVDr. Leoš Krkoška, Ph.D.',
+  description:
+  'Jedná sa o ochorenie prevažne psov veľkých plemien. Typickým predstaviteľom je nemecký ovčiak. Tento pojem zahŕňa skupinu neurologických ochorení so širokou škálou klinických ...',
+  text:
+  'Jedná sa o ochorenie prevažne psov veľkých plemien. Typickým predstaviteľom je nemecký ovčiak. Tento pojem zahŕňa skupinu neurologických ochorení so širokou škálou klinických príznakov.<br />
+  Problém je lokalizovaný v zadnej časti chrbtice na prechode bedrovej a krížovej. V tomto mieste už v miechovom kanáli nie je lokalizovaná miecha ale len korene nervov odborne nazývané cauda equina. SCE vzniká následkom zužovania miechového kanálu v tejto oblasti, dochádza ku kompresii, deštrukcii alebo k posunu nervových vlákien. Zúženie kanálu môže mať mnoho príčin a najčastejšia býva vysunutie medzistavcovej platničky medzi posledným bedrovým stavcom a krížovou kosťou. Alebo sa jedná o zosilnenie stien stavcov tvoriacich miechový kanál, prípadne k zhrubnutiu väzivových vlákien, ktoré spájajú jednotlivé stavce medzi sebou.<br />
+  <br />
+  <strong>Prejavuje sa:</strong><br />
+  Neochota chodiť po schodoch, opatrné sadanie si, problematické vstávanie, neskôr bolestivosť bedrovo-krížového spojenia a chvosta pri manipulácii, hryzenie si chvosta, bolesť chrbtice už na dotyk, atrofia stehenných svalov, nekontrolované močenie až ochrnutie panvových končatín.<br />
+  <strong>Čo ošetrenie DM spôsobí?</strong><br />
+  Dornova metóda uvedie všetky kosti do fyziologickej polohy, čím už niekedy dôjde k úľave a následne sa aplikuje a pracuje výhradne s bankami. Dornova metóda je spolu s bankovaním veľkou pomocou od bolesti a cesty ako nastoliť opäť rovnováhu s pohybom a zvýšiť regeneráciu nervov kt. bývajú útlakom poškodené. Pomocou týchto metód sa odďaľuje zhoršovanie stavu a zlepšuje pohyblivosť zvieraťa.
+  Zdroj: MVDr. Leoš Krkoška, Ph.D.',
   image_url: 'ill_animals.jpg',
   created_at: '20.4.2016',
   date: 'Sun Apr 20 2014 11:40:53',
@@ -325,8 +327,7 @@ Post.create!(
     hlavu, nedriape sa až tak dopredu a jazdenie je teda príjmenejšie. Ale nedostatky tam stále sú práca na parkúre je dosť nestabilná,
     dúfame, že sú to všetko len prechodné stavy.
     Ľavá panvová lopata bola ešte jemne hore, krížová kosť bola tiež tým pádom ešte bloknutá. Prvý krčný stavec v lepšom stave, rotácia
-    už nie je, ale stále je príliž natlačený na hlavu, takže musíme v jemných uvolnovaniach pokračovať. Na záver dostal Porto základné vybalansovanie tela pomocou the equine touch techniky + ošetrenie hlavy a krku na uvolnenie lymfatického toku krku a hlavy. Za mesiac prídeme opať na návštevu povenovať sa problémovej C1.
-',
+    už nie je, ale stále je príliž natlačený na hlavu, takže musíme v jemných uvolnovaniach pokračovať. Na záver dostal Porto základné vybalansovanie tela pomocou the equine touch techniky + ošetrenie hlavy a krku na uvolnenie lymfatického toku krku a hlavy. Za mesiac prídeme opať na návštevu povenovať sa problémovej C1.',
   image_url: 'portoriko.jpg',
   created_at: '27.04.2015',
   date: 'Mon Jan 21 2014 11:40:53',
@@ -334,21 +335,8 @@ Post.create!(
   visits: 9,
 )
 
-Post.create!(
-  format: 'article',
-  title: 'Portoriko',
-  description: '15r, Westfalsky valach, Miloslavov, zameranie: parkúr',
-  text: 'Ďna 3.4.2015 sme navštívili stajnu Plameň v Miloslavove aby sme sa pozreli na Portorikove telo, nakoľko je vynikajúci skokan, ale veľmi ťažko jazditelný. Už na prvý pohlad bol jasne viditeľný problém a blokáda krčných stavcov. Na úvod podstúpil bowenovu masáž pre kone, na celkové uvolnenie svalstva, následne dornovu metódu. Prvý krčný stavec bol výrazne zrotovaný a aj vpáčený do hlavy, čoho následkom je aj opuch lymfatických uzlín, ktoré mal výrazne zväčšené. Dalej to bol posun 3. a 4. krčného stavca do prava. A zrotovaná panva - pravou lopatou dopredu a ľavou dohora, pridružila sa aj blokáda krížovej kosti v pravo. S Portom sa veľmi dobre pracovalo a aj keď mal krk bolestivý, pomáhal ako mohol.
-
-    27.4.2015 sme sa vybrali na kontrolu. Hneď po nutnom oddychu nám majiteľka písala, že má pod sedlom iného koňa, inak nosí krk a
-    hlavu, nedriape sa až tak dopredu a jazdenie je teda príjmenejšie. Ale nedostatky tam stále sú práca na parkúre je dosť nestabilná,
-    dúfame, že sú to všetko len prechodné stavy.
-    Ľavá panvová lopata bola ešte jemne hore, krížová kosť bola tiež tým pádom ešte bloknutá. Prvý krčný stavec v lepšom stave, rotácia
-    už nie je, ale stále je príliž natlačený na hlavu, takže musíme v jemných uvolnovaniach pokračovať. Na záver dostal Porto základné vybalansovanie tela pomocou the equine touch techniky + ošetrenie hlavy a krku na uvolnenie lymfatického toku krku a hlavy. Za mesiac prídeme opať na návštevu povenovať sa problémovej C1.
-',
-  image_url: 'portoriko.jpg',
-  created_at: '27.04.2015',
-  date: 'Mon Jan 21 2014 11:40:53',
-  category: horses,
-  visits: 9,
+AdminUser.create!(
+  email: 'admin@dornovka.sk',
+  password: 'akvonrod',
+  password_confirmation: 'akvonrod'
 )

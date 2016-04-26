@@ -958,7 +958,6 @@ $(window).on("debouncedresize", function( event ) {
     "use strict";
     sfApp.reloadIsotope();
     sfApp.reloadPortfolio();
-    sfApp.reFormatUI();
 });
 
 $(document).on('ready page:load', function() {
@@ -976,6 +975,7 @@ $(window).resize(function () {
 });
 
 $(document).on('ready page:load', function() {
+    "use strict";
     var tabs = document.getElementById('tabs');
     if (tabs) {
         window.CBPFWTabsInstance = new CBPFWTabs(tabs);

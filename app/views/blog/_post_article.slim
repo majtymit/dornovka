@@ -20,7 +20,6 @@
       span.comment.pull-right
         i.fa.fa-comments-o
         '
-        /span
-        /| Zobrazené #{post.impressionist_count}x
-        /a href="#{post_url(post)}#disqus_thread"
-        span.disqus-comment-count data-disqus-identifier="#{post.id}"
+        /span Zobrazené #{post.impressionist_count}x
+        a href="#{post_url(post)}#disqus_thread" Diskusia
+        /span.disqus-comment-count data-disqus-identifier="#{post.id}"
