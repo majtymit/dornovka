@@ -30,6 +30,7 @@ gem 'devise'
 gem 'cancan'
 gem 'draper'
 gem 'pundit'
+ # https://github.com/platanus/activeadmin_addons
 
 
 group :development, :test do
