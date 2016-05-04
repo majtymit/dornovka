@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426121956) do
+ActiveRecord::Schema.define(version: 20160504100013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 20160426121956) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "assets", force: :cascade do |t|
+    t.string   "storage_uid"
+    t.string   "storage_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "storage_width"
+    t.integer  "storage_height"
+    t.float    "storage_aspect_ratio"
+    t.integer  "storage_depth"
+    t.string   "storage_format"
+    t.string   "storage_mime_type"
+    t.string   "storage_size"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -106,6 +120,19 @@ ActiveRecord::Schema.define(version: 20160426121956) do
     t.datetime "image_updated_at"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "rich_rich_files", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "rich_file_file_name"
+    t.string   "rich_file_content_type"
+    t.integer  "rich_file_file_size"
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+    t.string   "simplified_type",        default: "file"
   end
 
   create_table "subposts", force: :cascade do |t|

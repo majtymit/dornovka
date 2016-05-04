@@ -24,12 +24,12 @@ gem 'thin'
 gem 'impressionist'
 gem 'redcarpet'
 gem 'activeadmin', github: 'activeadmin'
-gem 'activeadmin_pagedown'
 gem 'devise'
 gem 'cancan'
 gem 'draper'
 gem 'pundit'
- # https://github.com/platanus/activeadmin_addons
+gem 'rich', git: 'https://github.com/kreativgebiet/rich.git'
+# https://github.com/platanus/activeadmin_addons
 
 
 group :development, :test do

@@ -36,3 +36,6 @@
 //= require classie
 //= require photostack
 //= require ./main
+//= require rich
+//= require active_admin.js
+//= require active_admin.js.coffee

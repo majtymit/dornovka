@@ -31,7 +31,7 @@ ActiveAdmin.register Post do
         link_to post.title, edit_admin_post_path(post)
       end
       column "Text", sortable: :text do |post|
-        post.text.truncate(60, separator: /\s/)
+        post.text.truncate(60, separator: /\s/).html_safe
       end
       column "Formát", :format, sortable: :format
       column "Kategória", :category_id, sortable: :category_id
@@ -40,11 +40,7 @@ ActiveAdmin.register Post do
       #end
       column "Kliky", :impressionist_count
       column "Obrázok", sortable: :image do |post|
-        if post.image.url.present?
-          link_to image_tag("#{post.image.url}", height: "50"), admin_post_path(post)
-        else
-          link_to image_tag("blog/nopic.png", height: "50"), admin_post_path(post)
-        end
+        link_to image_tag("#{post.image.url}", height: "50"), admin_post_path(post)
       end
       column "Vytvorené", sortable: :created_at do |post|
         post.created_at.localtime.strftime("%d %B %Y")
@@ -57,15 +53,12 @@ ActiveAdmin.register Post do
 
   show do
     attributes_table do
+      row :id
       row "názov" do post.title; end
       row "krátky popis" do post.description; end
-      row "text" do post.text; end
+      row "text" do post.text.html_safe; end
       row "obrázok" do
-        if post.image.url.present?
-          image_tag("#{post.image.url}", height: "300")
-        else
-          image_tag("blog/nopic.png", height: "300")
-        end
+        image_tag("#{post.image.url}", height: "300")
       end
       row "formát" do post.format; end
       row "kategória" do post.category.name; end
@@ -81,11 +74,11 @@ ActiveAdmin.register Post do
     end
   end
 
-  form :html => { :enctype => "multipart/form-data" } do |f|
+  form do |f|
     f.inputs do
       f.input :title, required: true, label: "Názov"
       f.input :description, label: "Krátky popis"
-      f.input :text, label: "Text"
+      f.input :text, label: "Text", as: :rich, :config => { :height => '200px' }
       f.input :image, :as => :file, :hint => image_tag(f.object.image.url, height: "300")
       f.input :format, required: true, label: "Formát", include_blank: false, as: :select, collection: Post.distinct.pluck(:format).map { |f| [f, f] }
       f.input :category, required: true, label: "Kategória", include_blank: false #, as: :select, collection: Post.all.map {|post| post.category.sk_name}.uniq
