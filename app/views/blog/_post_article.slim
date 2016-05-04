@@ -8,7 +8,7 @@
         = post.title
     .post-media
       a href=post_url(post)
-        img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("blog/#{post.image_url}")
+        img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("#{post.image.url}")
     .post-excerpt
       = post.description
       br

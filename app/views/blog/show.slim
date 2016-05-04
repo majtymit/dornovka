@@ -8,7 +8,7 @@
     section.post-content
       .row
         .col-md-6
-          img.img-responsive alt="#{@post.title}" title="#{@post.title}" src=image_url("blog/#{@post.image_url}")
+          img.img-responsive alt="#{@post.title}" title="#{@post.title}" src=image_url("#{@post.image.url}")
         .col-md-6
           h2 = @post.title
           br

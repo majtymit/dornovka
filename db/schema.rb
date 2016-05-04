@@ -96,14 +96,16 @@ ActiveRecord::Schema.define(version: 20160426121956) do
     t.string   "title"
     t.text     "description"
     t.text     "text"
-    t.integer  "visits"
-    t.string   "image_url"
     t.string   "format"
     t.integer  "category_id"
     t.datetime "happened_at"
     t.text     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "subposts", force: :cascade do |t|

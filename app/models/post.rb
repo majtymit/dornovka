@@ -4,6 +4,9 @@ class Post < ActiveRecord::Base
   belongs_to :category
   has_many :subposts
   validates :title, length: { maximum: 45, too_long: "45 characters is the maximum allowed" }
+  has_attached_file :image, :style => { :medium => "300x300#", :thumb => "50x50#" }, :default_url => "/images/:style/no_pic.png"
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
 
   scope :query, ->(q) {
     attributes = ['title', 'description', 'text' ]

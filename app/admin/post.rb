@@ -13,7 +13,7 @@ ActiveAdmin.register Post do
 #   permitted
 # end
 
-  permit_params :title, :description, :text,  :image_url, :format, :category_id, :happened_at, :date, :impressionist_count, :created_at, :updated_at
+  permit_params :title, :description, :text, :image, :format, :category_id, :happened_at, :date, :impressionist_count, :created_at, :updated_at
 
   config.sort_order = 'created_at_desc'
   #config.per_page = 10
@@ -26,6 +26,7 @@ ActiveAdmin.register Post do
 
   index do
     selectable_column
+      column :id
       column "Názov", sortable: :title do |post|
         link_to post.title, edit_admin_post_path(post)
       end
@@ -38,9 +39,9 @@ ActiveAdmin.register Post do
         #post.category.sk_name
       #end
       column "Kliky", :impressionist_count
-      column "Obrázok", sortable: :image_url do |post|
-        if post.image_url.present?
-          link_to image_tag("blog/#{post.image_url}", height: "50"), admin_post_path(post)
+      column "Obrázok", sortable: :image do |post|
+        if post.image.url.present?
+          link_to image_tag("#{post.image.url}", height: "50"), admin_post_path(post)
         else
           link_to image_tag("blog/nopic.png", height: "50"), admin_post_path(post)
         end
@@ -60,8 +61,8 @@ ActiveAdmin.register Post do
       row "krátky popis" do post.description; end
       row "text" do post.text; end
       row "obrázok" do
-        if post.image_url.present?
-          image_tag("blog/#{post.image_url}", height: "300")
+        if post.image.url.present?
+          image_tag("#{post.image.url}", height: "300")
         else
           image_tag("blog/nopic.png", height: "300")
         end
@@ -80,12 +81,12 @@ ActiveAdmin.register Post do
     end
   end
 
-  form do |f|
+  form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :title, required: true, label: "Názov"
       f.input :description, label: "Krátky popis"
       f.input :text, label: "Text"
-      f.input :image_url, required: true, label: "Obrázok", as: :file, hint: f.template.image_tag("blog/#{f.object.image_url}", height: "200")
+      f.input :image, :as => :file, :hint => image_tag(f.object.image.url, height: "300")
       f.input :format, required: true, label: "Formát", include_blank: false, as: :select, collection: Post.distinct.pluck(:format).map { |f| [f, f] }
       f.input :category, required: true, label: "Kategória", include_blank: false #, as: :select, collection: Post.all.map {|post| post.category.sk_name}.uniq
       #f.input :impressionist_count, label: "Videnia"
@@ -95,17 +96,17 @@ ActiveAdmin.register Post do
     f.actions
   end
 
-  scope :all, default: true
-  scope :article do |posts|
+  scope "Všetky", :all, default: true
+  scope "Article", :article do |posts|
     posts.where(format: 'article')
   end
-  scope :status do |posts|
+  scope "Status", :status do |posts|
     posts.where(format: 'status')
   end
-  scope :today do |posts|
+  scope "Dnes", :today do |posts|
     posts.where(created_at: Date.today)
   end
-  scope :hovno do |posts|
+  scope "Posledné", :lastones do |posts|
     posts.where(id: posts.order(updated_at: :desc).limit(5).pluck(:id))
   end
 

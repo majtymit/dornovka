@@ -17,7 +17,6 @@ gem 'slim-rails'
 gem 'textacular'
 gem 'pry-rails'
 gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
-gem 'upmin-admin'
 gem 'nprogress-rails'
 gem 'paperclip'
 gem 'will_paginate'
