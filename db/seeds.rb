@@ -21,6 +21,14 @@ status = Category.create!(name: 'status')
 methods = Category.create!(name: 'methods')
 illness = Category.create!(name: 'illness')
 
+Partner.create!(
+  position: 1,
+  name: 'test',
+  description: 'hovno',
+  contact: '0918 555 555',
+  link: 'www.google.sk',
+)
+
 Post.create!(
   format: 'article',
   title: 'Maly smrad',

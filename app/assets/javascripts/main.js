@@ -222,7 +222,6 @@ var sfApp={
                             sortBy : sortByStr,
                             sortAscending : sortAsc
                         });
-                        console.log("hovno");
                     }
                     else if($('#portfolio-content').length){
                         $('#portfolio-content').isotope({
@@ -952,30 +951,9 @@ var sfApp={
 $(document).on('ready page:load', function() {
     "use strict";
     sfApp.init();
-});
-
-$(window).on("debouncedresize", function( event ) {
-    "use strict";
-    sfApp.reloadIsotope();
-    sfApp.reloadPortfolio();
-});
-
-$(document).on('ready page:load', function() {
-    "use strict";
-    sfApp.reloadIsotope();
     sfApp.reloadPortfolio();
     sfApp.reFormatUI();
-});
 
-$(window).resize(function () {
-    "use strict";
-    sfApp.reloadIsotope();
-    sfApp.reloadPortfolio();
-    sfApp.reFormatUI();
-});
-
-$(document).on('ready page:load', function() {
-    "use strict";
     var tabs = document.getElementById('tabs');
     if (tabs) {
         window.CBPFWTabsInstance = new CBPFWTabs(tabs);
@@ -985,19 +963,40 @@ $(document).on('ready page:load', function() {
             CBPFWTabsInstance._show($(this).data('tab-idx'));
         }
     });
+
+    initPhotostack();
+
+    setTimeout(sfApp.reloadIsotope, 1500);
 });
+
+$(window).on("debouncedresize", function( event ) {
+    "use strict";
+    sfApp.reloadIsotope();
+    sfApp.reloadPortfolio();
+});
+
+$(window).resize(function () {
+    "use strict";
+    sfApp.reloadIsotope();
+    sfApp.reloadPortfolio();
+    sfApp.reFormatUI();
+});
+
 
 $('input[name="testsearch"]').keyup(function() {
   setTimeout(function() {
-    console.log("hovno");
+    //console.log("test");
   }, 1000 );
 });
 
-$(document).on('ready page:load', function() {
-    "use strict";
-    window.hovno = new Photostack( document.getElementById( 'photostack-3' ), {
+function initPhotostack() {
+    var photostackElement = document.getElementById('photostack-3');
+
+    if (!photostackElement) return;
+
+    window.ps = new Photostack(photostackElement, {
         callback : function( item ) {
-            console.log("hovno");
+            //console.log("test");
         }
     } );
-});
+};

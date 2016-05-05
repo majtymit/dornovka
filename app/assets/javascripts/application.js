@@ -10,7 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require ./jquery-1.10.2.min
+//= require active_admin
 //= require turbolinks
 //= require ./bootstrap.min
 //= require ./imagesloaded.pkgd.min
@@ -35,7 +37,5 @@
 //= require nprogress-turbolinks
 //= require classie
 //= require photostack
-//= require ./main
 //= require rich
-//= require active_admin.js
-//= require active_admin.js.coffee
+//= require ./main

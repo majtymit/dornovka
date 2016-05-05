@@ -89,19 +89,6 @@ ActiveAdmin.register Post do
     f.actions
   end
 
-  scope "Všetky", :all, default: true
-  scope "Article", :article do |posts|
-    posts.where(format: 'article')
-  end
-  scope "Status", :status do |posts|
-    posts.where(format: 'status')
-  end
-  scope "Dnes", :today do |posts|
-    posts.where(created_at: Date.today)
-  end
-  scope "Posledné", :lastones do |posts|
-    posts.where(id: posts.order(updated_at: :desc).limit(5).pluck(:id))
-  end
 
   #sidebar "Details", only: :show do
     #attributes_table_for post do
