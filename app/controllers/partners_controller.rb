@@ -4,6 +4,7 @@ class PartnersController < ApplicationController
   end
 
   def show
+    @partner = Partner.find(params[:id])
     impressionist(@partner)
   end
 

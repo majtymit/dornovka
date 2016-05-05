@@ -11,7 +11,6 @@ Post.destroy_all
 Subpost.destroy_all
 Partner.destroy_all
 
-featured = Category.create!(name: 'featured')
 dogs = Category.create!(name: 'dogs')
 horses = Category.create!(name: 'horses')
 cats = Category.create!(name: 'cats')

@@ -95,10 +95,12 @@ ActiveRecord::Schema.define(version: 20160504100013) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.string   "visibility"
     t.string   "title"
-    t.text     "description"
+    t.string   "description"
     t.text     "text"
     t.string   "format"
+    t.string   "featured"
     t.integer  "category_id"
     t.datetime "happened_at"
     t.text     "date"

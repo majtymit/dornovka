@@ -1,6 +1,6 @@
 .item-list.post [
-  class=post.category.name
-  data-publish-date=post.date
+  class="#{post.category.name} #{post.featured}"
+  data-publish-date=post.created_at.strftime("%a %b %d %Y %H:%M:%S")
 ]
   .wrap.quote
     .post-excerpt

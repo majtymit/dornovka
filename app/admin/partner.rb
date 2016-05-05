@@ -22,7 +22,6 @@ ActiveAdmin.register Partner do
 
   index do
     selectable_column
-      column "Id", :ids
       column "Pozícia", :position, sortable: :position
       column "Meno", sortable: :name do |partner|
         link_to partner.name, edit_admin_partner_path(partner)
