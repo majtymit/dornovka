@@ -281,6 +281,9 @@ figure.photostack-current::after {
 	-webkit-transform-origin: 0% 50%;
 	transform-origin: 0% 50%;
 }
+.photostack-perspective figure.vertical {
+	margin-top: -30px;
+}
 
 .csstransformspreserve3d figure.photostack-flip .photostack-back {
 	-webkit-transform: rotateY(180deg);
