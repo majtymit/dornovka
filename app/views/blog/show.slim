@@ -2,7 +2,6 @@
   .pull-left.post-title
     h2 = @post.title
   .pull-right.post-tools
-    = render partial: 'search'
 .post-wrap
   article.post
     section.post-content
@@ -13,7 +12,7 @@
           h2 = @post.title
           br
           = @post.text.html_safe
-      .row.margin-20
+      /.row.margin-20
         .col-md-12
           - @post.subposts.each do |subpost|
             blockquote

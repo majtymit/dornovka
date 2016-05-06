@@ -10,14 +10,14 @@
 }
 
 .photostack {
-	background: #ddd;
+	background: rgba(122, 172, 222, 0.2);
 	position: relative;
 	text-align: center;
 	overflow: hidden;
 }
 
 .js .photostack {
-	height: 580px;
+	height: 500px;
 }
 
 .photostack-start {
@@ -105,7 +105,7 @@
 .photostack nav {
 	position: absolute;
 	width: 100%;
-	bottom: 30px;
+	bottom: 20px;
 	z-index: 90;
 	text-align: center;
 	left: 0;
@@ -124,7 +124,7 @@
 	width: 30px;
 	height: 30px;
 	cursor: pointer;
-	background: #aaa;
+	background: #5996d5;
 	border-radius: 50%;
 	text-align: center;
 	-webkit-transition: -webkit-transform 0.6s ease-in-out, background 0.3s;
@@ -160,7 +160,7 @@
 }
 
 .photostack nav span.current {
-	background: #888;
+	background: #5996d5;
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
@@ -168,7 +168,7 @@
 .photostack nav span.current.flip {
 	-webkit-transform: scale(1) rotateY(-180deg) translateZ(-1px);
 	transform: scale(1) rotateY(-180deg) translateZ(-1px);
-	background: #555;
+	background: #5996d5;
 }
 
 .photostack nav span.flippable::after {

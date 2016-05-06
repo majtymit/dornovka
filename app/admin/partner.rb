@@ -33,10 +33,10 @@ ActiveAdmin.register Partner do
       column "Kliky", :impressionist_count
       column "Link", :link, sortable: :link
       column "Logo" do |partner|
-        link_to image_tag("#{partner.logo.url}", height: "50"), admin_partner_path(partner)
+        link_to image_tag("#{partner.logo.url}", height: "50"), edit_admin_partner_path(partner)
       end
       column "Vytvorené", sortable: :created_at do |partner|
-        partner.created_at.localtime.strftime("%d %B %Y")
+        partner.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
       end
       actions
   end
@@ -49,14 +49,14 @@ ActiveAdmin.register Partner do
       row "kontakt" do partner.contact; end
       row "link" do partner.link; end
       row "logo" do
-        image_tag("#{partner.logo.url}")
+        link_to image_tag("#{partner.logo.url}"), edit_admin_partner_path(partner)
       end
       row "kliky" do partner.impressionist_count; end
       row "vytvorené" do
-        partner.created_at.localtime.strftime("%d %B %Y, %H:%M")
+        partner.created_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
       row "editované" do
-        partner.updated_at.localtime.strftime("%d %B %Y, %H:%M")
+        partner.updated_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
     end
   end
@@ -69,7 +69,6 @@ ActiveAdmin.register Partner do
       f.input :contact, label: "Kontakt", required: true
       f.input :link, label: "Link", required: true
       f.input :logo, label: "Logo<br /><span style='color: red; font-size: 20px;'>283px šírka a 117px výška<br />žiadny iný rozmer!</span>".html_safe, required: true, :as => :file, :hint => image_tag(f.object.logo.url)
-      f.input :created_at, label: "Vytvorené"
     end
     f.actions
   end

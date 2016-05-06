@@ -13,7 +13,7 @@ ActiveAdmin.register Post do
 #   permitted
 # end
 
-  permit_params :id, :visibility, :title, :description, :text, :image, :format, :category_id, :featured, :happened_at, :date, :impressionist_count, :created_at, :updated_at
+  permit_params :id, :visibility, :title, :description, :text, :image, :format, :category_id, :featured, :happened_at, :impressionist_count, :created_at, :updated_at
 
   config.sort_order = 'created_at_desc'
   #config.per_page = 10
@@ -118,6 +118,9 @@ ActiveAdmin.register Post do
   end
   scope "Status", :status do |posts|
     posts.where(format: 'status')
+  end
+  scope "Nezverejnené", :visibility do |posts|
+    posts.where(visibility: 'no')
   end
   scope "Dnes", :today do |posts|
     posts.where(created_at: Date.today)

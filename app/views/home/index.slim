@@ -108,3 +108,11 @@
                 figcaption
                   .photostack-back
                     p Fish don't fry in the kitchen and beans don't burn on the grill. Took a whole lotta tryin' just to get up that hill. Baby if you've ever wondered - wondered whatever became of me.
+      br
+      .row
+        .col-md-12
+          h3 Najnovšie články
+      #portfolio-content data-cols="4"
+        - @posts.each do |post|
+          - if post.visibility == "yes"
+            = render partial: "home/post_latest", locals: { post: post }

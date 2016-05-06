@@ -36,18 +36,4 @@
           option value="title" Názov
     a.sort-option data-sort="desc" href="javascript:;"
       i.fa.fa-long-arrow-down
-    .search-box
-      .search-form
-        form#search-form.form-inline role="form"
-          .form-group
-            input#search-keyword.form-control placeholder="Enter keyword" type="text" name="query"
-        #search-result
-
-    /.search-box
-      a#btn-search.btn.btn-theme
-        span Vyhľadať článok
-      .search-form
-        form#search-form.form-inline role="form"
-          .form-group
-            input#search-keyword.form-control placeholder="Enter keyword" type="text" name="query"
-        #search-result
+    = render partial: 'search'
