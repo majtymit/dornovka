@@ -4,4 +4,5 @@
       | S kým sa kamarátim
 #isotope-content
   - @partners.each do |partner|
-    = render partial: "partner_structure", locals: { partner: partner }
+    - if partner.visibility == "yes"
+      = render partial: "partner_structure", locals: { partner: partner }

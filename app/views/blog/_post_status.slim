@@ -1,12 +1,12 @@
 .item-list.post [
-  class="#{post.category.name} #{post.featured}"
+  class="#{post.category} #{post.featured}"
   data-publish-date=post.created_at.strftime("%a %b %d %Y %H:%M:%S")
 ]
   .wrap.quote
     .post-excerpt
       blockquote
         p
-          = post.text
+          = post.text.html_safe
       cite
         = post.title
     .post-meta.clearfix

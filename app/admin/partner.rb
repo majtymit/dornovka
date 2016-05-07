@@ -12,20 +12,26 @@ ActiveAdmin.register Partner do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :position, :name, :description, :contact, :link, :logo, :impressionist_count, :created_at, :updated_at
+  permit_params :visibility, :position, :name, :description, :contact, :link, :logo, :impressionist_count, :created_at, :updated_at
 
+  config.filters = false
   config.batch_actions = true
   config.sort_order = 'position_asc'
   #config.per_page = 10
-  filter :name_or_description, as: :string
+  #filter :name_or_description, as: :string
 
 
   index do
     selectable_column
-      column "Pozícia", :position, sortable: :position
-      column "Meno", sortable: :name do |partner|
-        link_to partner.name, edit_admin_partner_path(partner)
+      column "Viditeľnosť", :visibility, sortable: :position do |partner|
+        if partner.visibility == "yes"
+          link_to image_tag("yes.png", height: "50"), edit_admin_partner_path(partner)
+        else
+          link_to image_tag("no.png", height: "50"), edit_admin_partner_path(partner)
+        end
       end
+      column "Pozícia", :position, sortable: :position
+      column "Meno", :name, sortable: :name
       column "Popis", sortable: :description do |partner|
         partner.description
       end
@@ -43,6 +49,13 @@ ActiveAdmin.register Partner do
 
   show do
     attributes_table do
+      row "viditeľosť" do
+        if partner.visibility == "yes"
+          link_to image_tag("yes.png", height: "50"), edit_admin_partner_path(partner)
+        else
+          link_to image_tag("no.png", height: "50"), edit_admin_partner_path(partner)
+        end
+      end
       row "pozícia" do partner.position; end
       row "meno" do partner.name; end
       row "krátky popis" do partner.description; end
@@ -63,7 +76,8 @@ ActiveAdmin.register Partner do
 
   form do |f|
     f.inputs do
-      f.input :position, label: "Pozícia", required: true
+      f.input :visibility, label: "Viditeľnosť", include_blank: false, as: :select, collection: [['áno', 'yes'], ['nie', 'no']]
+      f.input :position, label: "Pozícia"
       f.input :name, label: "Meno", required: true
       f.input :description, label: "Krátky popis", required: true
       f.input :contact, label: "Kontakt", required: true

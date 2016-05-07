@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
   include Impressionist::IsImpressionable # fix for is_impressionable
   is_impressionable
-  belongs_to :category
   has_many :subposts
   validates :title, uniqueness: true, length: { maximum: 45, too_long: "45 characters is the maximum allowed" }
   has_attached_file :image, :default_url => "/assets/original/no_pic.png"
@@ -21,20 +20,33 @@ class Post < ActiveRecord::Base
     "#{id}-#{seo_title}"
   end
 
-  def sk_name
+  def category_sk
     {
       'dogs' => 'psy',
       'horses' => 'kone',
-    }[name]
+      'cats' => 'mačky',
+      'small_pets' => 'malé zvieratá',
+      'events' => 'udalosti',
+      'status' => 'statusy',
+      'methods' => 'metódy',
+      'illness' => 'choroby',
+    }[category]
+  end
+
+  def format_sk
+    {
+      'article' => 'článok',
+      'status' => 'status',
+    }[format]
   end
 
   def sk_comments(number)
     if number == 0 || number > 4
-        return 'komentárov'
+      'komentárov'
     elsif number == 1
-      return 'komentár'
+      'komentár'
     else
-      return 'komentáre'
+      'komentáre'
     end
   end
 end

@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :text
       t.string :format
       t.string :featured
-      t.belongs_to :category
+      t.string :category
       t.datetime :happened_at
       t.attachment :image
 

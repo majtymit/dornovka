@@ -1,6 +1,7 @@
 class CreatePartners < ActiveRecord::Migration
   def change
     create_table :partners do |t|
+      t.string :visibility
       t.integer :position
       t.string :name
       t.string :description
