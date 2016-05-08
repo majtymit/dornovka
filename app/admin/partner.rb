@@ -12,6 +12,20 @@ ActiveAdmin.register Partner do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  controller do
+    def create
+      super do |format|
+        redirect_to collection_url and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to collection_url and return if resource.valid?
+      end
+    end
+  end
+
   permit_params :visibility, :position, :name, :description, :contact, :link, :logo, :impressionist_count, :created_at, :updated_at
 
   config.filters = false

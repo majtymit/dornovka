@@ -12,9 +12,23 @@ ActiveAdmin.register Post do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  controller do
+    def create
+      super do |format|
+        redirect_to collection_url and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to collection_url and return if resource.valid?
+      end
+    end
+  end
 
   permit_params :id, :visibility, :title, :description, :text, :image, :format, :category, :featured, :happened_at, :impressionist_count, :created_at, :updated_at
 
+  active_admin_importable
   config.sort_order = 'created_at_desc'
   #config.per_page = 10
   filter :title
