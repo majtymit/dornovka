@@ -4,6 +4,8 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.action_mailer.default_url_options = { host: "www.dornovka.sk" }
+
   config.assets.precompile += %w(active_admin.js active_admin.css active_admin/print.css)
 
   # Eager load code on boot. This eager loads most of Rails and
