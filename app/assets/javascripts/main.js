@@ -453,7 +453,6 @@ var sfApp={
                     });
                 }
                 var afterLoad = function () {
-                    console.log("banana")
                     $(this).remove();
                     if($('body').is('.enable-filter')){
                         $('.filter-control').fadeIn('fast', function() {
