@@ -9,7 +9,7 @@
 
 
 AdminUser.create!(
-  email: 'admin@dornovka.sk',
+  email: 'majtymit@gmail.com',
   password: 'akvonrod',
   password_confirmation: 'akvonrod'
 )
