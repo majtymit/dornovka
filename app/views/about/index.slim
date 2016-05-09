@@ -41,7 +41,11 @@
               section#section-2
                 = render partial: 'section2'
               section#section-3
-                = render partial: 'section3'
+                .row
+                  #portfolio-content data-cols="4"
+                    - @certificates.each do |certificate|
+                      - if certificate.visibility == "yes"
+                        = render partial: 'section3', locals: { certificate: certificate }
               section#section-4
                 = render partial: 'section4'
               section#section-5
