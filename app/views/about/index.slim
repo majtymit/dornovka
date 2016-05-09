@@ -41,13 +41,15 @@
               section#section-2
                 = render partial: 'section2'
               section#section-3
-                .row
-                  #portfolio-content data-cols="4"
-                    - @certificates.each do |certificate|
-                      - if certificate.visibility == "yes"
-                        = render partial: 'section3', locals: { certificate: certificate }
+                #portfolio-content data-cols="4"
+                  - @certificates.each do |certificate|
+                    - if certificate.visibility == "yes"
+                      = render partial: 'section3', locals: { certificate: certificate }
               section#section-4
-                = render partial: 'section4'
+                #accordion.panel-group
+                  - @faqs.each do |faq|
+                    - if faq.visibility == "yes"
+                      = render partial: 'section4', locals: { faq: faq }
               section#section-5
                 = render partial: 'section5'
 
