@@ -7,7 +7,7 @@
     section.post-content
       .row
         .col-md-6
-          img.img-responsive alt="#{@post.title}" title="#{@post.title}" src=image_url("#{@post.image.url}")
+          img.img-responsive alt=@post.title title=@post.title src=image_url(@post.image.url)
         .col-md-6
           h2 = @post.title
           br
@@ -17,7 +17,7 @@
           - @post.subposts.each do |subpost|
             blockquote
               .navsteva
-                img.paw-pic alt="#{subpost.icon}" title="#{subpost.icon}" src=image_url(subpost.icon)
+                img.paw-pic alt=subpost.icon title=subpost.icon src=image_url(subpost.icon)
                 .navsteva-datum = subpost.happened_at
                 = subpost.text
       .row

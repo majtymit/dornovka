@@ -1,7 +1,7 @@
 .portfolio-item.branding
   .mask
-    .portfolio-date = post.created_at.strftime("%d.%m.")
-    img.img-reponsive alt="#{post.title}" src=image_url("#{post.image.url}")
     a href=post_url(post)
-      h3.caption
-        = post.title
+      .portfolio-date = post.created_at.strftime("%d.%m.")
+      img.img-reponsive alt=post.title src=image_url(post.image.url)
+    h3.caption
+      = post.title

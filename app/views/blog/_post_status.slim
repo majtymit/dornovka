@@ -1,5 +1,5 @@
 .item-list.post [
-  class="#{post.category} #{post.featured}"
+  *{:class => [post.category, post.featured]}
   data-publish-date=post.created_at.strftime("%a %b %d %Y %H:%M:%S")
 ]
   .wrap.quote
@@ -19,4 +19,4 @@
         '
         span
           | Zobrazené #{post.visits}x
-      span.disqus-comment-count data-disqus-identifier=="#{post.id}"
+      span.disqus-comment-count data-disqus-identifier==post.id

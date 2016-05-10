@@ -1,5 +1,5 @@
 .item-list.post [
-  class="#{post.category} #{post.featured}"
+  *{:class => [post.category, post.featured]}
   data-publish-date=post.created_at.strftime("%a %b %d %Y %H:%M:%S")
 ]
   .wrap
@@ -8,7 +8,7 @@
         = post.title
     .post-media
       a href=post_url(post)
-        img.img-responsive title="#{post.title}" alt="#{post.title}" src=image_url("#{post.image.url}")
+        img.img-responsive title=post.title alt=post.title src=image_url(post.image.url)
     .post-excerpt
       = post.description
       br
@@ -23,4 +23,4 @@
         /span Zobrazené #{post.impressionist_count}x
         a href=post_url(post, anchor: 'disqus_thread') Diskusia
         /"#{post_url(post)}#disqus_thread"
-        /span.disqus-comment-count data-disqus-identifier="#{post.id}"
+        /span.disqus-comment-count data-disqus-identifier=post.id
