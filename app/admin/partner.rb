@@ -1,5 +1,7 @@
 ActiveAdmin.register Partner do
 
+  menu priority: 5, label: "Partneri"
+
   controller do
     def create
       super do |format|
@@ -22,8 +24,8 @@ ActiveAdmin.register Partner do
 
   index do
     selectable_column
-      column "Viditeľnosť", :visibility, sortable: :position do |partner|
-        if partner.visibility == "yes"
+      column "Zverejnené", :visibility, sortable: :position do |partner|
+        if partner.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_partner_path(partner)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_partner_path(partner)
@@ -38,7 +40,7 @@ ActiveAdmin.register Partner do
       column "Kliky", :impressionist_count
       column "Link", :link, sortable: :link
       column "Logo" do |partner|
-        link_to image_tag("#{partner.logo.url}", height: "50"), edit_admin_partner_path(partner)
+        link_to image_tag(partner.logo.url, height: "50"), edit_admin_partner_path(partner)
       end
       column "Vytvorené", sortable: :created_at do |partner|
         partner.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
@@ -48,8 +50,8 @@ ActiveAdmin.register Partner do
 
   show do
     attributes_table do
-      row "viditeľosť" do
-        if partner.visibility == "yes"
+      row "zverejnený" do
+        if partner.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_partner_path(partner)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_partner_path(partner)
@@ -61,13 +63,13 @@ ActiveAdmin.register Partner do
       row "kontakt" do partner.contact; end
       row "link" do partner.link; end
       row "logo" do
-        link_to image_tag("#{partner.logo.url}"), edit_admin_partner_path(partner)
+        link_to image_tag(partner.logo.url), edit_admin_partner_path(partner)
       end
       row "kliky" do partner.impressionist_count; end
-      row "vytvorené" do
+      row "vytvorený" do
         partner.created_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
-      row "editované" do
+      row "editovaný" do
         partner.updated_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
     end
@@ -75,13 +77,13 @@ ActiveAdmin.register Partner do
 
   form do |f|
     f.inputs do
-      f.input :visibility, label: "Viditeľnosť", include_blank: false, as: :select, collection: [['áno', 'yes'], ['nie', 'no']]
+      f.input :visibility, label: "Zverejnený", input_html: {checked: true}
       f.input :position, label: "Pozícia"
       f.input :name, label: "Meno", required: true
       f.input :description, label: "Krátky popis", required: true
       f.input :contact, label: "Kontakt", required: true
       f.input :link, label: "Link", required: true
-      f.input :logo, label: "Logo<br /><span style='color: red; font-size: 20px;'>283px šírka a 117px výška<br />žiadny iný rozmer!</span>".html_safe, required: true, :as => :file, :hint => image_tag(f.object.logo.url)
+      f.input :logo, label: "Logo<br /><span style='color: red; font-size: 20px;'>283px šírka a 117px výška<br />žiadny iný rozmer!</span>".html_safe, required: true, as: :file, hint: image_tag(f.object.logo.url)
     end
     f.actions
   end

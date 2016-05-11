@@ -1,5 +1,7 @@
 ActiveAdmin.register Certificate do
 
+  menu priority: 3, label: "Certifikáty"
+
   controller do
     def create
       super do |format|
@@ -22,8 +24,8 @@ ActiveAdmin.register Certificate do
 
   index do
     selectable_column
-      column "Viditeľnosť", :visibility, sortable: :position do |certificate|
-        if certificate.visibility == "yes"
+      column "Zverejnené", :visibility, sortable: :position do |certificate|
+        if certificate.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_certificate_path(certificate)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_certificate_path(certificate)
@@ -32,7 +34,7 @@ ActiveAdmin.register Certificate do
       column "Pozícia", :position, sortable: :position
       column "Názov", :title, sortable: :title
       column "Obrázok" do |certificate|
-        link_to image_tag("#{certificate.image.url}", height: "50"), edit_admin_certificate_path(certificate)
+        link_to image_tag(certificate.image.url, height: "50"), edit_admin_certificate_path(certificate)
       end
       column "Vytvorené", sortable: :created_at do |certificate|
         certificate.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
@@ -42,8 +44,8 @@ ActiveAdmin.register Certificate do
 
   show do
     attributes_table do
-      row "viditeľosť" do
-        if certificate.visibility == "yes"
+      row "zverejnený" do
+        if certificate.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_certificate_path(certificate)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_certificate_path(certificate)
@@ -52,12 +54,12 @@ ActiveAdmin.register Certificate do
       row "pozícia" do certificate.position; end
       row "názov" do certificate.title; end
       row "obrázok" do
-        link_to image_tag("#{certificate.image.url}"), edit_admin_certificate_path(certificate)
+        link_to image_tag(certificate.image.url), edit_admin_certificate_path(certificate)
       end
-      row "vytvorené" do
+      row "vytvorený" do
         certificate.created_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
-      row "editované" do
+      row "editovaný" do
         certificate.updated_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
     end
@@ -65,7 +67,7 @@ ActiveAdmin.register Certificate do
 
   form do |f|
     f.inputs do
-      f.input :visibility, label: "Viditeľnosť", include_blank: false, as: :select, collection: [['áno', 'yes'], ['nie', 'no']]
+      f.input :visibility, label: "Zverejnený", input_html: {checked: true}
       f.input :position, label: "Pozícia"
       f.input :title, label: "Názov", required: true
       f.input :image, label: "Obrázok", required: true, :as => :file, :hint => image_tag(f.object.image.url)

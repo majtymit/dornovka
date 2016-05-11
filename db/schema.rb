@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160509184116) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "certificates", force: :cascade do |t|
-    t.string   "visibility"
+    t.boolean  "visibility"
     t.integer  "position"
     t.string   "title"
     t.string   "description"
@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 20160509184116) do
   end
 
   create_table "faqs", force: :cascade do |t|
-    t.string   "visibility"
+    t.boolean  "visibility"
     t.integer  "position"
-    t.string   "active"
+    t.boolean  "active"
     t.string   "title"
     t.string   "text"
     t.datetime "created_at", null: false
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20160509184116) do
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "partners", force: :cascade do |t|
-    t.string   "visibility"
+    t.boolean  "visibility"
     t.integer  "position"
     t.string   "name"
     t.string   "description"
@@ -113,12 +113,12 @@ ActiveRecord::Schema.define(version: 20160509184116) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "visibility"
+    t.boolean  "visibility"
     t.string   "title"
     t.string   "description"
     t.text     "text"
     t.string   "format"
-    t.string   "featured"
+    t.boolean  "featured"
     t.string   "category"
     t.datetime "happened_at"
     t.string   "image_file_name"

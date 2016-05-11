@@ -20,6 +20,7 @@ gem 'pry-rails'
 gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 gem 'nprogress-rails'
 gem 'paperclip'
+gem 'paperclip-dimension-validator'
 gem 'will_paginate'
 gem 'thin'
 gem 'impressionist'
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'web-console'
   gem 'spring'
   gem 'sqlite3'
+  gem 'chunky_png'
 end
 
 group :production do

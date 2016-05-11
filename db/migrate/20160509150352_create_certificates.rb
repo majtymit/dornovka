@@ -1,7 +1,7 @@
 class CreateCertificates < ActiveRecord::Migration
   def change
     create_table :certificates do |t|
-      t.string :visibility
+      t.boolean :visibility
       t.integer :position
       t.string :title
       t.string :description

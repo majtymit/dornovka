@@ -2,5 +2,5 @@
 
 #isotope-content
   - @posts.each do |post|
-    - if post.visibility == "yes"
+    - if post.visibility
       = render partial: "post_#{post.format}", locals: { post: post }

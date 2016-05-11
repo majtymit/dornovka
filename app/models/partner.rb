@@ -4,6 +4,7 @@ class Partner < ActiveRecord::Base
   validates :position, uniqueness: true, numericality: :true
   has_attached_file :logo, default_url: "/assets/original/no_pic.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
+  validates_attachment :logo, dimensions: { height: 117, width: 283 }
 
   #validate :image_dimensions
 

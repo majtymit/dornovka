@@ -16,5 +16,5 @@
       .row
         #portfolio-content data-cols="4"
           - @posts.each do |post|
-            - if post.visibility == "yes"
+            - if post.visibility
               = render partial: "home/post_latest", locals: { post: post }

@@ -1,9 +1,9 @@
-.panel.panel-default class=faq.active
+.panel.panel-default *{:class => "'active' if post.active"}
   .panel-heading
     h4.panel-title
       a.accordion-toggle data-parent="#accordion" data-toggle="collapse" href="#collapse#{faq.position}"
         strong
           = faq.title
-  .panel-collapse.collapse id="collapse#{faq.position}" class="#{'in' if faq.active == 'active'}"
+  .panel-collapse.collapse id="collapse#{faq.position}" class="#{'in' if faq.active}"
     .panel-body
       = faq.text.html_safe

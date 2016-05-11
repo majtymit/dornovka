@@ -1,5 +1,7 @@
 ActiveAdmin.register Faq do
 
+  menu priority: 4, label: "Otázky a odpovede"
+
   controller do
     def create
       super do |format|
@@ -22,8 +24,8 @@ ActiveAdmin.register Faq do
 
   index do
     selectable_column
-      column "Viditeľnosť", :visibility, sortable: :position do |faq|
-        if faq.visibility == "yes"
+      column "Zverejnené", :visibility, sortable: :position do |faq|
+        if faq.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_faq_path(faq)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_faq_path(faq)
@@ -31,12 +33,12 @@ ActiveAdmin.register Faq do
       end
       column "Pozícia", :position, sortable: :position
       column "Otvorené", :active, sortable: :active do |faq|
-        if faq.active == "active"
+        if faq.active
           link_to image_tag("yes.png", height: "25"), edit_admin_faq_path(faq)
         end
       end
       column "Názov", :title, sortable: :title
-      column "Text", sortable: :text, :class => "aa-text_and_name_column" do |faq|
+      column "Text", sortable: :text, class: "aa-text_and_name_column" do |faq|
         faq.text.truncate(60, separator: /\s/).html_safe
       end
       column "Vytvorené", sortable: :created_at do |faq|
@@ -47,27 +49,27 @@ ActiveAdmin.register Faq do
 
   show do
     attributes_table do
-      row "viditeľosť" do
-        if faq.visibility == "yes"
+      row "zverejnený" do
+        if faq.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_faq_path(faq)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_faq_path(faq)
         end
       end
       row "pozícia" do faq.position; end
-      row "otvorené" do
-        if faq.active == "active"
+      row "otvorený" do
+        if faq.active
           image_tag("yes.png", height: "25")
         else
           p 'nie'
         end
       end
       row "názov" do faq.title; end
-      row "text" do faq.text; end
-      row "vytvorené" do
+      row "text" do faq.text.html_safe; end
+      row "vytvorený" do
         faq.created_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
-      row "editované" do
+      row "editovaný" do
         faq.updated_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")
       end
     end
@@ -75,11 +77,11 @@ ActiveAdmin.register Faq do
 
   form do |f|
     f.inputs do
-      f.input :visibility, label: "Viditeľnosť", include_blank: false, as: :select, collection: [['áno', 'yes'], ['nie', 'no']]
+      f.input :visibility, label: "Zverejnený", input_html: {checked: true}
       f.input :position, label: "Pozícia"
-      f.input :active, label: "Otvorené", include_blank: false, as: :select, collection: [['nie', ''], ['áno', 'active']]
+      f.input :active, label: "Otvorený", input_html: {checked: false}
       f.input :title, label: "Názov", required: true
-      f.input :text, label: "Krátky popis", required: true, as: :rich, :config => { :height => '200px' }
+      f.input :text, label: "Krátky popis", required: true, as: :rich, config: { height: "200px" }
     end
     f.actions
   end

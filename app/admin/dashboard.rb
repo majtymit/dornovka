@@ -1,35 +1,47 @@
 ActiveAdmin.register_page "Dashboard" do
 
-  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
+  ActiveAdmin.setup do |config|
+    config.comments = false
+  end
 
-  content title: proc{ I18n.t("active_admin.dashboard") } do
-    section "Najnovšie články" do
-        table_for Post.order("updated_at desc").limit(5) do
-            column :title do |post|
-                link_to post.title, admin_post_path(post)
+  menu priority: 1, label: "Prehľad"
+
+  content title: "Dashboard" do
+    columns do
+      column do
+        panel "Posledné upravované posty v blogu" do
+          table_for Post.order(created_at: :desc).limit(5).each do |post|
+            column "Viditeľnost", :visibility do |post|
+              if post.visibility
+                link_to image_tag("yes.png", height: "25"), edit_admin_post_path(post)
+              else
+                link_to image_tag("no.png", height: "25"), edit_admin_post_path(post)
+              end
             end
-            column :category
-        end
-        strong { link_to "Všetky články", admin_posts_path }
-    end
-    br
-    br
-    br
-    br
-    section "Najnovší partneri" do
-        table_for Partner.order("updated_at desc").limit(5) do
-            column :name do |partner|
-                link_to partner.name, admin_partner_path(partner)
+            column "Názov", :title
+            column "Obrázok", :image do |post|
+              link_to image_tag(post.image.url, height: "50"), edit_admin_post_path(post)
             end
+            column "Vytvorené", :created_at
+          end
         end
-        strong { link_to "Všetci partneri", admin_partners_path }
-    end
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+        panel "asdkljaslkd" do
+        end
       end
-    end
+
+      column do
+        panel "Recent Customers" do
+        end
+      end
+
+      column do
+        div do
+          br
+          text_node %{<iframe src="https://rpm.newrelic.com/public/charts/6VooNO2hKWB" width="500" height="300" scrolling="no" frameborder="no"></iframe>}.html_safe
+        end
+      end
+
+    end # columns
 
 
 

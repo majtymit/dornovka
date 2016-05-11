@@ -1,5 +1,7 @@
 ActiveAdmin.register Post do
 
+  menu priority: 6, label: "Blog"
+
   controller do
     def create
       super do |format|
@@ -14,11 +16,9 @@ ActiveAdmin.register Post do
     end
   end
 
-  permit_params :id, :visibility, :title, :description, :text, :image, :format, :category, :featured, :happened_at, :impressionist_count, :created_at, :updated_at
-
   active_admin_importable
   config.sort_order = 'created_at_desc'
-  #config.per_page = 10
+  #config.per_page = 30
   filter :title
   filter :text
   filter :title_or_text, as: :string
@@ -26,11 +26,32 @@ ActiveAdmin.register Post do
   filter :category, as: :select, collection: [['psy', 'dogs'], ['kone', 'horses'], ['mačky','cats'], ['malé zvieratá', 'small_pets'], ['udalosti', 'events'], ['statusy', 'status'], ['metódy', 'methods'], ['choroby', 'illness']]
   filter :created_at
 
+  scope "Všetky", :all, default: true
+  scope "Články", :article do |posts|
+    posts.where(format: 'article')
+  end
+  scope "Statusy", :status do |posts|
+    posts.where(format: 'status')
+  end
+  scope "Nezverejnené", :visibility do |posts|
+    posts.where(visibility: 'no')
+  end
+  scope "Zvýraznené", :featured do |posts|
+    posts.where(featured: true)
+  end
+  scope "Dnes", :today do |posts|
+    posts.where("created_at >= ?", Time.zone.now.beginning_of_day)
+  end
+  scope "Posledné", :lastones do |posts|
+    posts.where(id: posts.order(updated_at: :desc).limit(5).pluck(:id))
+  end
+  permit_params :id, :visibility, :title, :description, :text, :image, :format, :category, :featured, :happened_at, :impressionist_count, :created_at, :updated_at
+
   index do
     selectable_column
       column "ID", :id
-      column "Viditeľnosť", :visibility, sortable: :visibility do |post|
-        if post.visibility == "yes"
+      column "Zverejnené", :visibility, sortable: :visibility do |post|
+        if post.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_post_path(post)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_post_path(post)
@@ -49,13 +70,13 @@ ActiveAdmin.register Post do
         post.category_sk
       end
       column "Zvýraznené", :featured, sortable: :featured do |post|
-        if post.featured == "featured"
+        if post.featured
           link_to image_tag("yes.png", height: "25"), edit_admin_post_path(post)
         end
       end
       column "Kliky", :impressionist_count
       column "Obrázok", sortable: :image do |post|
-        link_to image_tag("#{post.image.url}", height: "50"), edit_admin_post_path(post)
+        link_to image_tag(post.image.url, height: "50"), edit_admin_post_path(post)
       end
       column "Vytvorené", sortable: :created_at do |post|
         post.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
@@ -66,8 +87,8 @@ ActiveAdmin.register Post do
   show do
     attributes_table do
       row :id
-      row "viditeľosť" do
-        if post.visibility == "yes"
+      row "zverejnený" do
+        if post.visibility
           link_to image_tag("yes.png", height: "50"), edit_admin_post_path(post)
         else
           link_to image_tag("no.png", height: "50"), edit_admin_post_path(post)
@@ -77,12 +98,12 @@ ActiveAdmin.register Post do
       row "krátky popis" do post.description; end
       row "text" do post.text.html_safe; end
       row "obrázok" do
-        link_to image_tag("#{post.image.url}", height: "300"), edit_admin_post_path(post)
+        link_to image_tag(post.image.url, height: "300"), edit_admin_post_path(post)
       end
       row "formát" do post.format_sk; end
       row "kategória" do post.category_sk; end
-      row "zvýraznené" do
-        if post.featured == "featured"
+      row "zvýraznený" do
+        if post.featured
           image_tag("yes.png", height: "25")
         else
           p 'nie'
@@ -101,37 +122,17 @@ ActiveAdmin.register Post do
 
   form do |f|
     f.inputs do
-      f.input :visibility, label: "Viditeľnosť", include_blank: false, as: :select, collection: [['áno', 'yes'], ['nie', 'no']]
+      f.input :visibility, label: "Zverejnený"#, input_html: {checked: true}, include_blank: false, as: :select, collection: [['áno', true], ['nie', false]]
       f.input :title, required: true, label: "Názov"
       f.input :description, required: true, label: "Krátky popis"
-      f.input :text, required: true, label: "Text", as: :rich, :config => { :height => '200px' }
-      f.input :image, required: true, :as => :file, :hint => image_tag(f.object.image.url, height: "300")
+      f.input :text, required: true, label: "Text", as: :rich, config: { height: "200px" }
+      f.input :image, required: true, as: :file, hint: image_tag(f.object.image.url, height: "300")
       f.input :format, required: true, label: "Formát", include_blank: false, as: :select, collection: [['článok', 'article'], 'status'] #Post.distinct.pluck(:format).map { |f| [f, f] }.reverse
       f.input :category, required: true, label: "Kategória", include_blank: false, as: :select , collection: [['psy', 'dogs'], ['kone', 'horses'], ['mačky','cats'], ['malé zvieratá', 'small_pets'], ['udalosti', 'events'], ['statusy', 'status'], ['metódy', 'methods'], ['choroby', 'illness']]
-      f.input :featured, label: "Zvýraznené", include_blank: false, as: :select, collection: [['nie', 'none'], ['áno', 'featured']]
-      f.input :created_at, label: "Vytvorené"
+      f.input :featured, label: "Zvýraznený"
+      f.input :created_at, label: "Vytvorený"
     end
     f.actions
-  end
-
-  scope "Všetky", :all, default: true
-  scope "Article", :article do |posts|
-    posts.where(format: 'article')
-  end
-  scope "Status", :status do |posts|
-    posts.where(format: 'status')
-  end
-  scope "Nezverejnené", :visibility do |posts|
-    posts.where(visibility: 'no')
-  end
-  scope "Zvýraznené", :featured do |posts|
-    posts.where(featured: 'featured')
-  end
-  scope "Dnes", :today do |posts|
-    posts.where("created_at >= ?", Time.zone.now.beginning_of_day)
-  end
-  scope "Posledné", :lastones do |posts|
-    posts.where(id: posts.order(updated_at: :desc).limit(5).pluck(:id))
   end
 
   #sidebar "Details", only: :show do
@@ -141,5 +142,10 @@ ActiveAdmin.register Post do
       #row :category
     #end
   #end
-end
 
+  sidebar :product_stats, except: :index do
+    attributes_table_for resource do
+
+    end
+  end
+end
