@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/' => 'home#index', as: :home
 
-  get 'ajax' => 'home#ajax_index', as: :ajax_home
+  get 'ajax' => 'blog#ajax_index', as: :ajax_blog
 
   scope 'o-mne' do
     get '/' => 'about#index', as: :about

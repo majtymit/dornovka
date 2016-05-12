@@ -5,7 +5,7 @@ class BlogController < ApplicationController
     if params[:query]
       @posts = Post.basic_search(params[:query])
     else
-      @posts = Post.order("created_at DESC, title ASC").all
+      @posts = Post.order("created_at DESC, title ASC")
     end
   end
 
