@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
 
   def index
-    @body_class = "home-template enable-filter"
+    @body_class = "post-template enable-filter"
     if params[:query]
       @posts = Post.basic_search(params[:query])
     else

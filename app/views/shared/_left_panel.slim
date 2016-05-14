@@ -1,13 +1,16 @@
 aside#main-sidebar.covered
-  = render partial: 'shared/logo'
-  .sidebar-wrap
-    .sidebar-menu-container
-      = render partial: 'shared/social'
-      a#mobile-menu.btn.btn-theme.collapsed data-target=".main-nav" data-toggle="collapse"
-        span
-          | Menu
-        i.fa.fa-tasks
-      = render partial: 'shared/menu'
+  .logo-container
+    a.logo href=home_url
+      img alt="Dornovka" src=image_url("dornovka_logo.jpg")
+  .mobile-logo
+    | DORNOVKA
+  .sidebar-menu-container
+    = render partial: 'shared/social'
+  a#mobile-menu.btn.btn-theme.collapsed data-target=".main-nav" data-toggle="collapse"
+    span Menu
+    '
+    i.fa.fa-tasks
+  = render partial: 'shared/menu'
   /.copyright
     | &copy;
     '

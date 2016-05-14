@@ -39,7 +39,10 @@
               section#section-1
                 = render partial: 'section1'
               section#section-2
-                = render partial: 'section2'
+                ul.cbp_tmtimeline
+                  - @timelines.each do |timeline|
+                    - if timeline.visibility
+                      = render partial: 'section2', locals: { timeline: timeline }
               section#section-3
                 #portfolio-content data-cols="4"
                   - @certificates.each do |certificate|

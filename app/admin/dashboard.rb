@@ -20,7 +20,7 @@ ActiveAdmin.register_page "Dashboard" do
             end
             column "Názov", :title
             column "Obrázok", :image do |post|
-              link_to image_tag(post.image.url, height: "50"), edit_admin_post_path(post)
+              link_to image_tag(post.image.url, height: "35"), edit_admin_post_path(post)
             end
             column "Vytvorené", :created_at
           end
@@ -30,7 +30,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Recent Customers" do
+        panel "qwe asd asdasd" do
         end
       end
 

@@ -9,7 +9,9 @@
         .col-md-12
           section#photostack-3.photostack
             div
-              = render partial: "home/ps_figures"
+              - @figures.each do |figure|
+                - if figure.visibility
+                  = render partial: "home/ps_figures", locals: { figure: figure }
       .row
         .col-md-12
           h3 Najnovšie články

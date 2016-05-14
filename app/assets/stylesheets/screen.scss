@@ -272,7 +272,7 @@ a:hover, a:focus{
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	background: transparent;
-	height: 32px;
+	//height: 32px;
 	color: #fff;
 	border-color: #fff;
 }
@@ -697,7 +697,7 @@ ul.social.active li.rss{
 #main-sidebar #mobile-menu{
 	display: none;
 	float: right;
-	margin-top: 17px;
+	margin-top: 19px;
 }
 #main-sidebar #mobile-menu span{
 	text-transform: uppercase;
@@ -1968,22 +1968,22 @@ ul.social.active li.rss{
 	z-index: 21;
 }
 .filter-container .search-box{
-	float: right;
+	float: left;
 	margin-top: 5px;
 	margin-left: 10px;
 }
 .search-box .search-form{
 	//display: none;
-	position: absolute;
+	//position: absolute;
 	top: 0;
-	left: -125px;
-	width: 250px;
+	//left: -125px;
+	width: 120px;
 	height: 30px;
 	background: #fff;
 	border: 1px solid #CBCBCB;
 }
 .filter-container .search-box .search-form{
-	left: -250px;
+	//left: -250px;
 }
 .search-box .search-form:before{
 	//content: '';
@@ -2618,6 +2618,46 @@ ul.social.active li.rss{
 		right: 0px;
 	}
 }
+
+@media only screen and (min-width: 980px) {
+	.mobile-logo {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 979px) {
+	.mobile-logo {
+		font-weight: bold;
+		font-size: 43px;
+    color: #FFF;
+    float: left
+	}
+	.filter-control {
+		top: 1px !important;
+	}
+	.social.mobile {
+		float: left;
+		padding: 12px 5px 12px 10px;
+		margin: 0;
+	}
+}
+
+@media only screen and (max-width: 559px) {
+	.mobile-logo {
+		font-size: 31px;
+		padding-top: 12px
+	}
+	.post-header h2 {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 1516px) { //1159
+		#section-1 .col-sm-4 {
+		width: 100%;
+	}
+}
+
 @media only screen and (min-width: 738px) and (max-width: 979px) {
 	#preloader{
 		margin-top: 130px;
@@ -2642,7 +2682,7 @@ ul.social.active li.rss{
 		width: 100%;
 		text-align: left;
 		border: none;
-		height: 200px;
+		height: 78px;
 	}
 	#main-sidebar .sidebar-menu-container{
 		z-index: initial;
@@ -2664,7 +2704,7 @@ ul.social.active li.rss{
 		z-index: 3;
 	}
 	#main-sidebar .logo-container .logo img {
-  max-height: 181px;
+  //max-height: 181px;
 }
 	#main-sidebar #mobile-menu{
 		display: inline-block;
@@ -2799,6 +2839,12 @@ ul.social.active li.rss{
 	.no-margin-top{
 		margin-top: 20px;
 	}
+	.logo-container .logo img {
+		display: none;
+	}
+	.social.mobile {
+		padding: 12px 5px 12px 150px;
+	}
 }
 @media only screen and (max-width: 737px) {
 	.margin-20{
@@ -2848,8 +2894,8 @@ ul.social.active li.rss{
 	#main-sidebar .logo-container .logo.text {
 		font-size: 22px;
 	}
-	#main-sidebar .logo-container .logo img{
-		max-height: 181px;
+	.logo-container .logo img {
+		display: none;
 	}
 	#main-sidebar #mobile-menu{
 		display: inline-block;
@@ -2949,9 +2995,6 @@ ul.social.active li.rss{
 	}
 	.filter-control .filter-container .group{
 		margin-right: 5px;
-	}
-	.filter-container .search-box{
-		margin-left: 5px;
 	}
 	.filter-container .search-box .search-form{
 		left: auto;
@@ -3065,7 +3108,9 @@ ul.social.active li.rss{
 	  width: 180px;
 	  text-align: right;
 	}
-	.filter-container .group .input-group-addon span{
+}
+@media only screen and (max-width: 647px) {
+	.filter-container .group .input-group-addon span {
 		display: none;
 	}
 }
@@ -3076,7 +3121,7 @@ ul.social.active li.rss{
 		margin-left: -20px;
 	}
 	#main-sidebar #mobile-menu,
-	.simple-style #main-sidebar #mobile-menu{
+	.simple-style #main-sidebar #mobile-menu {
 		display: inline-block;
 	}
 	#main-sidebar #mobile-menu span,
@@ -3091,7 +3136,7 @@ ul.social.active li.rss{
   display: inline-block;
   float: left;
   //width: 277px;
-  padding-top: 58px;
+  //padding-top: 58px;
 	}
 	.filter-container .group .input-group-addon span{
 		display: none;
@@ -3128,7 +3173,7 @@ ul.social.active li.rss{
 		padding-right: 20px;
 	}
 	#main-sidebar .logo-container .logo img {
-  max-height: 86px;
+  //max-height: 86px;
 	}
 	.simple-style #main-sidebar .bottom-nav.in li{
 		display: inline-block;
@@ -3243,4 +3288,8 @@ ul.social.active li.rss{
 #certificate img {
 	position: absolute;
 	//margin-top: -50px;
+}
+
+#mobile-logo {
+	visibility: hidden;
 }
