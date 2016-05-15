@@ -1,17 +1,14 @@
 .item-list.post [
-  *{class: [post.category, post.featured]}
+  class="#{post.category} #{post.featured}"
   data-publish-date=post.created_at.strftime("%a %b %d %Y %H:%M:%S")
 ]
   .wrap
     h2.post-title
-      a href=post_url(post)
-        = post.title
+      a href=post_url(post) = post.title
     .post-media
       a href=post_url(post)
         img.img-responsive title=post.title alt=post.title src=image_url(post.image.url)
-    .post-excerpt
-      = post.description
-      br
+    .post-excerpt = post.description
     .post-meta.clearfix
       span.time.pull-left
         i.fa.fa-calendar

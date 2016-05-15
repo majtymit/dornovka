@@ -1,8 +1,7 @@
 .post-header
   .pull-left.post-title
-    h2
-      | Vitaje na stránke venovanej Dornovej metóde
-.post-wrap style="display: block"
+    h2 Vitaje na stránke venovanej Dornovej metóde
+.post-wrap.displayps
   article.post.page
     section.post-content
       .row
@@ -17,6 +16,5 @@
           h3 Najnovšie články
       .row
         #portfolio-content data-cols="4"
-          - @posts.each do |post|
-            - if post.visibility
-              = render partial: "home/post_latest", locals: { post: post }
+          - @posts.select { |post| post.visibility }.take(4).each do |post|
+            = render partial: "home/post_latest", locals: { post: post }

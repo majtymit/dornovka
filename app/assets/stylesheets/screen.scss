@@ -2652,7 +2652,7 @@ ul.social.active li.rss{
 	}
 }
 
-@media only screen and (max-width: 1516px) { //1159
+@media only screen and (max-width: 1516px) {
 		#section-1 .col-sm-4 {
 		width: 100%;
 	}
@@ -3223,6 +3223,12 @@ ul.social.active li.rss{
 	}
 }
 
+@media only screen and (min-width: 980px) and (max-height: 550px) {
+	.sidebar-menu-container{
+
+	}
+}
+
 .iconfix {
 	width: 15px;
 }
@@ -3287,9 +3293,12 @@ ul.social.active li.rss{
 }
 #certificate img {
 	position: absolute;
-	//margin-top: -50px;
 }
 
-#mobile-logo {
-	visibility: hidden;
+a.mobile-logo:hover {
+  color: #FFF;
+}
+
+.displayps {
+	display: block;
 }

@@ -1,6 +1,6 @@
 .item-list.post.image-thumbnail
     .wrap.photo
-      a href="http://#{partner.link}" target="blank_"
+      a href="http://#{partner.link}" title=partner.link target="blank_"
         img.img.responsive.centerimage alt=partner.link src=image_url(partner.logo.url)
       .post-meta.clearfix.footer_background
         span.time
@@ -9,6 +9,5 @@
             .partner_info = partner.description
             i.fa.fa-phone
             '
-            span
-              = partner.contact
-              = partner.impressionist_count
+            = partner.contact
+            /= partner.impressionist_count

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.order("created_at DESC").limit(4)
+    @posts = Post.order("created_at DESC")
     @figures = Figure.all
   end
 

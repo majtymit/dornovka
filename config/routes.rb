@@ -26,6 +26,4 @@ Rails.application.routes.draw do
     get ':id' => 'blog#show', as: :post
   end
 
-  #mount Upmin::Engine => '/admin'
-
 end

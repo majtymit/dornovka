@@ -10,4 +10,5 @@ class ApplicationController < ActionController::Base
   def body_class
     ""
   end
+
 end

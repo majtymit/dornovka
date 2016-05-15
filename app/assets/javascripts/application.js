@@ -31,7 +31,6 @@
 //= require ./owl.carousel.min
 //= require ./sscr
 //= require ./CBPFWTabs
-//= require ./timeline
 //= require ./ajax_search
 //= require nprogress
 //= require nprogress-turbolinks

@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
   include Impressionist::IsImpressionable # fix for is_impressionable
   is_impressionable
-  has_many :subposts
   validates :title, uniqueness: true, length: { maximum: 45, too_long: "45 characters is the maximum allowed" }
   has_attached_file :image, default_url: "/assets/original/no_pic.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

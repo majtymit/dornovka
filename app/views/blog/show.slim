@@ -12,16 +12,6 @@
           h2 = @post.title
           br
           = @post.text.html_safe
-      /.row.margin-20
-        .col-md-12
-          - @post.subposts.each do |subpost|
-            blockquote
-              .navsteva
-                img.paw-pic alt=subpost.icon title=subpost.icon src=image_url(subpost.icon)
-                .navsteva-datum = subpost.happened_at
-                = subpost.text
       .row
         .col-md-12
           = render partial: 'footer'
-
-
