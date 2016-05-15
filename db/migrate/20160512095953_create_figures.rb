@@ -3,8 +3,6 @@ class CreateFigures < ActiveRecord::Migration
     create_table :figures do |t|
       t.boolean :visibility
       t.integer :position
-      t.string :dimension
-      t.string :title
       t.string :description
       t.string :link
       t.attachment :photo

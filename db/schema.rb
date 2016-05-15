@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512100331) do
+ActiveRecord::Schema.define(version: 20160515192900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,8 +75,6 @@ ActiveRecord::Schema.define(version: 20160512100331) do
   create_table "figures", force: :cascade do |t|
     t.boolean  "visibility"
     t.integer  "position"
-    t.string   "dimension"
-    t.string   "title"
     t.string   "description"
     t.string   "link"
     t.string   "photo_file_name"
@@ -155,6 +153,14 @@ ActiveRecord::Schema.define(version: 20160512100331) do
     t.integer  "owner_id"
     t.text     "uri_cache"
     t.string   "simplified_type",        default: "file"
+  end
+
+  create_table "send_mails", force: :cascade do |t|
+    t.string   "email"
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subposts", force: :cascade do |t|
