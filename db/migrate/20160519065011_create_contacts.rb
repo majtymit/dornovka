@@ -1,6 +1,6 @@
-class CreateSendMails < ActiveRecord::Migration
+class CreateContacts < ActiveRecord::Migration
   def change
-    create_table :send_mails do |t|
+    create_table :contacts do |t|
       t.string :email
       t.string :subject
       t.text :message

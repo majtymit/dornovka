@@ -39,18 +39,15 @@
                 = render partial: 'section1'
               section#section-2
                 ul.cbp_tmtimeline
-                  - @timelines.each do |timeline|
-                    - if timeline.visibility
-                      = render partial: 'section2', locals: { timeline: timeline }
+                  - @timelines.select { |timeline| timeline.visibility}.each do |timeline|
+                    = render partial: 'section2', locals: { timeline: timeline }
               section#section-3
                 #portfolio-content data-cols="4"
-                  - @certificates.each do |certificate|
-                    - if certificate.visibility
-                      = render partial: 'section3', locals: { certificate: certificate }
+                  - @certificates.select { |certificate| certificate.visibility}.each do |certificate|
+                    = render partial: 'section3', locals: { certificate: certificate }
               section#section-4
                 #accordion.panel-group
-                  - @faqs.each do |faq|
-                    - if faq.visibility
-                      = render partial: 'section4', locals: { faq: faq }
+                  - @faqs.select { |faq| faq.visibility}.each do |faq|
+                    = render partial: 'section4', locals: { faq: faq }
               section#section-5
                 = render partial: 'section5'

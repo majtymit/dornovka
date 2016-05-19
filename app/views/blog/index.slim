@@ -1,6 +1,5 @@
 = render partial: 'filter'
 
 #isotope-content
-  - @posts.each do |post|
-    - if post.visibility
-      = render partial: "post_#{post.format}", locals: { post: post }
+  - @posts.select { |post| post.visibility}.each do |post|
+    = render partial: "post_#{post.format}", locals: { post: post }

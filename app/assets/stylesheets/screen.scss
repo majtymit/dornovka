@@ -2623,6 +2623,9 @@ ul.social.active li.rss{
 	.mobile-logo {
 		display: none;
 	}
+	.post-header {
+		top: 0 !important;
+	}
 }
 
 @media only screen and (max-width: 979px) {
@@ -2631,9 +2634,6 @@ ul.social.active li.rss{
 		font-size: 43px;
     color: #FFF;
     float: left
-	}
-	.filter-control {
-		top: 1px !important;
 	}
 	.social.mobile {
 		float: left;

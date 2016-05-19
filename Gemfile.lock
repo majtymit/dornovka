@@ -113,6 +113,8 @@ GEM
     eventmachine (1.2.0.1-x64-mingw32)
     eventmachine (1.2.0.1-x86-mingw32)
     execjs (2.6.0)
+    figaro (1.1.1)
+      thor (~> 0.14)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -336,6 +338,7 @@ DEPENDENCIES
   coffee-rails
   devise
   draper
+  figaro
   impressionist
   jbuilder
   jquery-rails

@@ -1,29 +1,26 @@
 Rails.application.routes.draw do
+
   mount Rich::Engine => '/rich', :as => 'rich'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   get '/' => 'home#index', as: :home
 
-  get 'ajax' => 'blog#ajax_index', as: :ajax_blog
-
   scope 'o-mne' do
     get '/' => 'about#index', as: :about
+    post '/' => "about#create"
   end
-
-  scope 'kontakt' do
-    get '/' => 'contact#index', as: :contact
-  end
-
-  match '/send_mail', to: 'contact#send_mail', via: 'post'
 
   scope 'partneri' do
     get '/' => 'partners#index', as: :partners
+    get ':id' => 'partners#show', as: :partner
   end
 
   scope 'blog' do
     get '/' => 'blog#index', as: :blog
     get ':id' => 'blog#show', as: :post
   end
+
+  get 'ajax' => 'blog#ajax_index', as: :ajax_blog
 
 end

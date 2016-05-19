@@ -25,8 +25,8 @@
 	function CBPFWTabs( el, options ) {
 		this.el = el;
 		this.options = extend( {}, this.options );
-  		extend( this.options, options );
-  		this._init();
+  	extend( this.options, options );
+  	this._init();
 	}
 
 	CBPFWTabs.prototype.options = {
@@ -68,6 +68,10 @@
 		this.tabs[ this.current ].className = 'tab-current';
 		this.items[ this.current ].className = 'content-current';
 		window.location.hash = idx || 0;
+
+		if (this.options.callback) {
+			this.options.callback();
+		}
 	};
 
 	// add to global namespace

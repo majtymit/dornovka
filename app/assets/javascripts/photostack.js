@@ -182,7 +182,7 @@
 
 		if(this.options.showNavigation) {
 			this.navDots.forEach( function( dot, idx ) {
-				dot.addEventListener( 'click', function() {
+				var listener = function() {
 					// rotate the photo if clicking on the current dot
 					if( idx === self.current ) {
 						self._rotateItem();
@@ -197,7 +197,10 @@
 							callback();
 						}
 					}
-				} );
+				};
+
+				dot.addEventListener( 'click', listener);
+				document.querySelector("a > .photostack-img").addEventListener( 'click', listener);
 			} );
 		}
 

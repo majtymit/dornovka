@@ -770,7 +770,7 @@ var sfApp={
                         var resultStr='<ul>';
                         $.each( searchResult.items, function( index, item ) {
                             resultStr+='<li>\
-                                            <a href="/blog/'+item.id+'-'+item.title.replace(/ /g, "-" )+'">\
+                                            <a href="/blog?query'+item.id+'-'+item.title.replace(/ /g, "-" )+'">\
                                                 <span class="title">'+item.title+'</span>\
                                                 <!--<span class="desc">'+item.description+'</span>-->\
                                             </a>\
@@ -955,7 +955,7 @@ $(document).on('ready page:load', function() {
 
     var tabs = document.getElementById('tabs');
     if (tabs) {
-        window.CBPFWTabsInstance = new CBPFWTabs(tabs);
+        window.CBPFWTabsInstance = new CBPFWTabs(tabs, { callback: sfApp.portfolioSetup });
     }
     $('[data-tab-idx]').click(function() {
         if (window.CBPFWTabsInstance) {
@@ -1005,4 +1005,26 @@ function initPhotostack() {
             //console.log("test");
         }
     } );
+
+    return;
+
+    window.hovno = 0;
+    window.hovnoPause = false;
+
+    $('.photostack-img').focus(function() {
+        window.hovnoPause = true;
+        console.log("focus");
+    });
+
+    $('.photostack-img').blur(function() {
+        window.hovnoPause = false;
+        console.log("blur");
+    });
+
+    setInterval(function() {
+        if (window.hovnoPause) return;
+        window.hovno++;
+        if (window.hovno > 1) window.hovno = 0;
+        window.ps.showPhoto(window.hovno);
+    }, 3000);
 };

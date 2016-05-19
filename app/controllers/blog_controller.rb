@@ -3,7 +3,7 @@ class BlogController < ApplicationController
   def index
     @body_class = "post-template enable-filter"
     if params[:query]
-      @posts = Post.basic_search(params[:query])
+      @posts = Post.query(params[:query])
     else
       @posts = Post.order("created_at DESC, title ASC")
     end
@@ -11,7 +11,7 @@ class BlogController < ApplicationController
 
   def ajax_index
     if params[:query]
-      @posts = Post.basic_search(params[:query])
+      @posts = Post.query(params[:query])
     else
       @posts = Post.all
     end

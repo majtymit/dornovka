@@ -1,3 +1,4 @@
+=begin
 module ActiveSupport
   class TimeWithZone
     def to_s
@@ -5,3 +6,4 @@ module ActiveSupport
     end
   end
 end
+=end

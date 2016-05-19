@@ -8,13 +8,12 @@
         .col-md-12
           section#photostack-3.photostack
             div
-              - @figures.each do |figure|
-                - if figure.visibility
+              - @figures.select { |figure| figure.visibility}.each do |figure|
                   = render partial: "home/ps_figures", locals: { figure: figure }
       .row
         .col-md-12
           h3 Najnovšie články
       .row
         #portfolio-content data-cols="4"
-          - @posts.select { |post| post.visibility }.take(4).each do |post|
+          - @posts.each do |post|
             = render partial: "home/post_latest", locals: { post: post }
