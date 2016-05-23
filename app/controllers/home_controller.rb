@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.order('created_at DESC').select { |post| post.visibility }.take(4)
+    @posts = Post.order('created_at DESC').select {|post| post.visibility}
     @figures = Figure.all
   end
 

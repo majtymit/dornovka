@@ -1,17 +1,24 @@
 .row
+  .col-md-12
+    - unless flash.empty?
+      - flash.each do |type, message|
+        .alert class="alert-#{type}"
+          .button.close type="button" data-dismiss="alert"
+          = message
+.row
   .col-md-6
-    h3 Napíšte mi
-    form#contact-form.contact-form role="form"
+    = form_for @contact, url: about_url, remote: true do |f|
       .form-group
-        input#contactEmail.form-control name="contactEmail" placeholder="Vaša e-mailová adresa" required="" type="email"
+        = f.text_field :email, required: "", type: "email", placeholder: "Vaša e-mailová adresa...", class: "form-control", id: "contactEmail"
       .form-group
-        input#contactSubject.form-control name="contactSubject" placeholder="Predmet správy..." required="" type="text"
+        = f.text_field :subject, required: "", type: "subject", placeholder: "Predmet správy...", class: "form-control", id: "contactSubject"
       .form-group
-        textarea#contactMessage.form-control name="contactMessage" placeholder="Správa..." required="" rows="3"
+        = f.text_area :message, required: "", type: "message", placeholder: "Správa...", class: "form-control", rows: "3", id: "contactMessage"
       button.btn.btn-theme-color type="submit"
         | Odoslať správu
         '
         i.fa.fa-envelope-o
+    end
   .col-md-6
     h3 Kontakt
     p Rada odpoviem na vaše otázky
@@ -34,25 +41,3 @@
           i.fa.fa-envelope
         span.vcard-text
           a href="mailto:hena.vegesiova@gmail.com" hena.vegesiova@gmail.com
-br
-br
-br
-/.row
-  .col-md-6
-    iframe allowtransparency="true" frameborder="0" height="130" scrolling="no" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdornovametodaslovensko%2F&tabs=false&width=500&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" style="border:none;overflow:hidden" width="500"
-
-
-.row
-  .col-md-6
-    = form_for @contact, url: about_url, remote: true do |f|
-      .form-group
-        = f.text_field :email, required: "", type: "email", placeholder: "Vaša e-mailová adresa...", class: "form-control", id: "contactEmail"
-      .form-group
-        = f.text_field :subject, required: "", type: "subject", placeholder: "Predmet správy...", class: "form-control", id: "contactSubject"
-      .form-group
-        = f.text_area :message, required: "", type: "message", placeholder: "Správa...", class: "form-control", rows: "3", id: "contactMessage"
-      button.btn.btn-theme-color type="submit"
-        | Odoslať správu
-        '
-        i.fa.fa-envelope-o
-    end

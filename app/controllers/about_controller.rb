@@ -20,14 +20,14 @@ class AboutController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        @contact.email = nil
         ContactMailer.new_contact(@contact).deliver_now
-        format.html
+        flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na Vašu adresu."
+        #format.js {render js: "$('#new_contact')[0].reset();"}
+        format.js {render inline: "location.reload();"}
         format.json
-        format.js
       else
-        format.html { render :new }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
+        format.html
+        format.js
       end
     end
   end
