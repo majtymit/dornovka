@@ -5,14 +5,9 @@
         .alert class="alert-#{type}"
           .button.close type="button" data-dismiss="alert"
           = message
-javascript:
-  function hovno() {
-    $('button[type="submit"]').attr("disabled", true)
-    return true;
-  }
 .row
   .col-md-6
-    = form_for @contact, url: about_url, html: { onsubmit: "hovno()" } do |f|
+    = form_for @contact, url: about_url, html: { onsubmit: "disablesubmit()" } do |f|
       .form-group
         = f.text_field :email, required: "", type: "email", placeholder: "Vaša e-mailová adresa...", class: "form-control", id: "contactEmail"
       .form-group

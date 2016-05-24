@@ -1026,3 +1026,8 @@ function initPhotostack() {
         window.ps.showPhoto(window.hovno);
     }, 3000);
 };
+
+function disablesubmit() {
+    $('button[type="submit"]').attr("disabled", true)
+    return true;
+}
