@@ -18,18 +18,14 @@ class AboutController < ApplicationController
   def create
     @contact = Contact.new(user_params)
 
-    respond_to do |format|
       if @contact.save
         ContactMailer.new_contact(@contact).deliver_now
         flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na Vašu adresu."
-        #format.js {render js: "$('#new_contact')[0].reset();"}
-        format.js {render inline: "location.reload();"}
-        format.json
+        redirect_to about_url(anchor: "4")
       else
-        format.html
-        format.js
+        flash[:error] = "opravte si chybu"
+        render "new"
       end
-    end
   end
 
   def hovno

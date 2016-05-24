@@ -968,11 +968,9 @@ $(document).on('ready page:load', function() {
     setTimeout(sfApp.reloadIsotope, 1500);
 });
 
-$(document).on('page:load', function() {
-    DISQUSWIDGETS.getCount({reset: true});
-});
-
-
+//$(document).on('page:load', function() {
+    //DISQUSWIDGETS.getCount({reset: true});
+//});
 
 
 $(window).on("debouncedresize", function( event ) {
