@@ -964,33 +964,40 @@ function initPhotostack() {
 
     if (!photostackElement) return;
 
-    window.ps = new Photostack(photostackElement, {
-        callback : function( item ) {
-            //console.log("test");
-        }
-    } );
+    window.ps = new Photostack(photostackElement);
 
-    return;
+    var showNextPhoto = function() {
+      var nextPhotoIdx = window.ps.getCurrent() + 1;
 
-    window.hovno = 0;
-    window.hovnoPause = false;
+      if (nextPhotoIdx >= window.ps.getTotalCount()) {
+        nextPhotoIdx = 0;
+      }
 
-    $('.photostack-img').focus(function() {
-        window.hovnoPause = true;
+      window.ps.showPhoto(nextPhotoIdx);
+    };
+
+    $(".photostack-img").hover(
+      function() {
+        // hover
         console.log("focus");
-    });
+        if (window.psInterval) {
+          clearInterval(window.psInterval);
+          window.psInterval = null;
+        }
+      },
+      function() {
+        // unhover
+        console.log("unhover");
+        if (window.psInterval) {
+          clearInterval(window.psInterval);
+          window.psInterval = null;
+        }
 
-    $('.photostack-img').blur(function() {
-        window.hovnoPause = false;
-        console.log("blur");
-    });
+        window.psInterval = setInterval(showNextPhoto, 3000);
+      }
+    );
 
-    setInterval(function() {
-        if (window.hovnoPause) return;
-        window.hovno++;
-        if (window.hovno > 1) window.hovno = 0;
-        window.ps.showPhoto(window.hovno);
-    }, 3000);
+    window.psInterval = setInterval(showNextPhoto, 3000);
 };
 
 function disablesubmit() {

@@ -99,18 +99,24 @@
   	this._init();
 		var ps = this;
 
-  	// Public methods.
-  	return {
-  		showPhoto: function(idx) {
-  			ps._showPhoto.call(ps, idx);
-  		},
-  		open: function() {
-  			ps._open.call(ps, true);
-  		},
-  		navigate: function(dir) {
-  			ps._navigate.call(ps, dir);
-  		},
-  	}
+		// Public methods.
+		return {
+			showPhoto: function(idx) {
+				ps._showPhoto.call(ps, idx);
+			},
+			open: function() {
+				ps._open.call(ps, true);
+			},
+			navigate: function(dir) {
+				ps._navigate.call(ps, dir);
+			},
+			getCurrent: function() {
+				return ps.current;
+			},
+			getTotalCount: function() {
+				return ps.itemsCount;
+			},
+		}
 	}
 
 	Photostack.prototype.options = {
