@@ -181,6 +181,12 @@
 		}
 
 		if(this.options.showNavigation) {
+			$('div:has(figure)')
+				.unbind('click')
+				.on('click', function() {
+					self._rotateItem();
+				});
+
 			this.navDots.forEach( function( dot, idx ) {
 				var listener = function() {
 					// rotate the photo if clicking on the current dot
@@ -199,8 +205,9 @@
 					}
 				};
 
-				dot.addEventListener( 'click', listener);
-				document.querySelector("a > .photostack-img").addEventListener( 'click', listener);
+				dot.addEventListener('click', listener);
+
+				document.querySelector('.photostack figure').addEventListener('click', listener);
 			} );
 		}
 
@@ -510,4 +517,3 @@
 	window.Photostack = Photostack;
 
 })( window );
-

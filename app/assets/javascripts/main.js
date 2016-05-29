@@ -919,17 +919,19 @@ $(document).on('ready page:load', function() {
 
     var tabs = document.getElementById('tabs');
     if (tabs) {
-        window.CBPFWTabsInstance = new CBPFWTabs(tabs, { callback: sfApp.portfolioSetup });
+        window.CBPFWTabsInstance = new CBPFWTabs(tabs)//, { callback: sfApp.portfolioSetup });
     }
+    /*
     $('[data-tab-idx]').click(function() {
         if (window.CBPFWTabsInstance) {
             CBPFWTabsInstance._show($(this).data('tab-idx'));
         }
     });
+    */
 
     initPhotostack();
 
-    setTimeout(sfApp.reloadIsotope, 1500);
+    //setTimeout(sfApp.reloadIsotope, 1500);
 });
 
 //$(document).on('page:load', function() {
