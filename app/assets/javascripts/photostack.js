@@ -187,7 +187,7 @@
 		}
 
 		if(this.options.showNavigation) {
-			$('div:has(figure)')
+			$('.figure-container')
 				.unbind('click')
 				.on('click', function() {
 					self._rotateItem();

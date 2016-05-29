@@ -959,6 +959,32 @@ $('input[name="testsearch"]').keyup(function() {
   }, 1000 );
 });
 
+function photostackShowNextPhoto() {
+  var nextPhotoIdx = window.ps.getCurrent() + 1;
+
+  if (nextPhotoIdx >= window.ps.getTotalCount()) {
+    nextPhotoIdx = 0;
+  }
+
+  window.ps.showPhoto(nextPhotoIdx);
+};
+
+function stopPhotostackAutorun() {
+  if (window.psInterval) {
+    clearInterval(window.psInterval);
+    window.psInterval = null;
+  }
+}
+
+function startPhotostackAutorun() {
+  if (window.psInterval) {
+    clearInterval(window.psInterval);
+    window.psInterval = null;
+  }
+
+  window.psInterval = setInterval(photostackShowNextPhoto, 3000);
+}
+
 function initPhotostack() {
     var photostackElement = document.getElementById('photostack-3');
 
@@ -966,38 +992,9 @@ function initPhotostack() {
 
     window.ps = new Photostack(photostackElement);
 
-    var showNextPhoto = function() {
-      var nextPhotoIdx = window.ps.getCurrent() + 1;
+    $(".figure-container").hover(stopPhotostackAutorun, startPhotostackAutorun);
 
-      if (nextPhotoIdx >= window.ps.getTotalCount()) {
-        nextPhotoIdx = 0;
-      }
-
-      window.ps.showPhoto(nextPhotoIdx);
-    };
-
-    $(".photostack-img").hover(
-      function() {
-        // hover
-        console.log("focus");
-        if (window.psInterval) {
-          clearInterval(window.psInterval);
-          window.psInterval = null;
-        }
-      },
-      function() {
-        // unhover
-        console.log("unhover");
-        if (window.psInterval) {
-          clearInterval(window.psInterval);
-          window.psInterval = null;
-        }
-
-        window.psInterval = setInterval(showNextPhoto, 3000);
-      }
-    );
-
-    window.psInterval = setInterval(showNextPhoto, 3000);
+    startPhotostackAutorun();
 };
 
 function disablesubmit() {
