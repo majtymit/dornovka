@@ -752,41 +752,6 @@ var sfApp={
         }
         return '#' + parts.join('');
     },
-    searchFormHandle:function(){
-        // This is demo search function
-        $('#search-keyword').keyup(function () {
-            if($('#search-keyword').val().length>2){
-                //
-                $.ajax({
-                  method: "GET",
-                  url: "/ajax",
-                  data: { query: $('#search-keyword').val() }
-                })
-                .done(function( msg ) {
-                    var searchResult={
-                        'items': msg
-                    };
-                    if(searchResult.items.length>0){
-                        var resultStr='<ul>';
-                        $.each( searchResult.items, function( index, item ) {
-                            resultStr+='<li>\
-                                            <a href="/blog?query'+item.id+'-'+item.title.replace(/ /g, "-" )+'">\
-                                                <span class="title">'+item.title+'</span>\
-                                                <!--<span class="desc">'+item.description+'</span>-->\
-                                            </a>\
-                                        </li>';
-                        });
-                        resultStr+='</ul>';
-                        $('#search-result').html(resultStr).fadeIn('fast');
-
-                    }
-                });
-            }
-            else{
-                $('#search-result').html('');
-            }
-        });
-    },
     uiInit:function(){
         $('html, document, body').scrollTop(0);
         $('#isotope-content').hide();
@@ -936,7 +901,6 @@ var sfApp={
         sfApp.contentPopup();
         sfApp.newsletterSetup();
         sfApp.postAnimation();
-        sfApp.searchFormHandle();
         sfApp.twitterSetup();
         sfApp.contactFormHandle();
         sfApp.misc();

@@ -18,9 +18,9 @@ Rails.application.routes.draw do
 
   scope 'blog' do
     get '/' => 'blog#index', as: :blog
+    get 'ajax' => 'blog#ajax_index', as: :ajax_blog
     get ':id' => 'blog#show', as: :post
   end
 
-  get 'ajax' => 'blog#ajax_index', as: :ajax_blog
 
 end

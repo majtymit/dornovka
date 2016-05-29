@@ -5,11 +5,16 @@ class Post < ActiveRecord::Base
   has_attached_file :image, default_url: "/assets/original/no_pic.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-
+  default_scope { order(created_at: :desc, title: :asc) }
   scope :query, ->(q) {
-    attributes = ['title', 'description', 'text' ]
-    where(attributes.map{ |attr| "#{attr} LIKE '%#{q}%'" }.join(' OR '))
+    if q.blank?
+      all
+    else
+      attributes = ['title', 'description', 'text' ]
+      where(attributes.map{ |attr| "lower(#{attr}) LIKE '%#{q.downcase}%'" }.join(' OR '))
+    end
   }
+  scope :visible, -> { where(visibility: true) }
 
   def seo_title
     I18n.transliterate(title).gsub(' ', '-').gsub(/[^a-zA-Z0-9-]/, '')

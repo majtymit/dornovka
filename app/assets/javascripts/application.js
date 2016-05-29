@@ -26,6 +26,7 @@
 //= require ./jquery.isotope.perfectmasonry
 //= require ./jquery.magnific-popup.min
 //= require ./jquery.nicescroll.min
+//= require imagesloaded.pkgd.min
 //= require ./jribbble
 //= require ./bootstrap-multiselect
 //= require ./owl.carousel.min

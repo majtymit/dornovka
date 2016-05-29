@@ -1,32 +1,28 @@
 class BlogController < ApplicationController
+  before_filter :set_body_class, only: [:index, :show]
 
   def index
-    @body_class = "post-template enable-filter"
-    if params[:query]
-      @posts = Post.query(params[:query])
-    else
-      @posts = Post.order("created_at DESC, title ASC")
-    end
+    @posts = Post.visible.query(params[:query])
   end
 
   def ajax_index
-    if params[:query]
-      @posts = Post.query(params[:query])
-    else
-      @posts = Post.all
-    end
-    render json: @posts
+    @posts = Post.visible.query(params[:query])
+
+    render layout: false
   end
 
   def show
-    @body_class = "post-template"
     @post = Post.find(params[:id])
     impressionist(@post)
   end
 
   private
 
-  def body_class
-    @body_class
+  def set_body_class
+    @body_class =
+      case params[:action]
+      when "index" then "post-template enable-filter"
+      when "show" then "post-template"
+      end
   end
 end
