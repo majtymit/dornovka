@@ -51,6 +51,9 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_admin-duplicatable (0.2.0)
+      activeadmin
+      amoeba (>= 2.0.0)
     active_admin_importable (1.1.2)
     activejob (4.2.0)
       activesupport (= 4.2.0)
@@ -68,6 +71,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    amoeba (3.0.0)
+      activerecord (>= 3.2.6)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
@@ -330,6 +335,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  active_admin-duplicatable
   active_admin_importable
   activeadmin!
   byebug

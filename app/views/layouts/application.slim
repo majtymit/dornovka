@@ -6,14 +6,14 @@ html
     meta name="description" content="Dornova metóda zvieratá"
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
     link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon"
-    link href="/favicon.ico" rel="icon" type="image/x-icon"
+    /link href="/favicon.ico" rel="icon" type="image/x-icon"
     /script src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag :modernizr
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    //= favicon_link_tag '/favicon.ico'
+    /= favicon_link_tag '/favicon.ico'
 
   body.pattern class=body_class
     .main-wrap

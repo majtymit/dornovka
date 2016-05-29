@@ -20,6 +20,7 @@ class AboutController < ApplicationController
 
       if @contact.save
         ContactMailer.new_contact(@contact).deliver_now
+        ContactMailer.copy_for_sender(@contact).deliver_now
         flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
         redirect_to about_url(anchor: "4")
       else

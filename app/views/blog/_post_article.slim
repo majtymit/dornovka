@@ -13,7 +13,7 @@
       span.time.pull-left
         i.fa.fa-calendar
         '
-        = post.created_at
+        = post.created_at.localtime.strftime("%d.%m.%Y")
       span.comment.pull-right
         i.fa.fa-comments-o
         '

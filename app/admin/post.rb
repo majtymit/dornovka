@@ -16,6 +16,11 @@ ActiveAdmin.register Post do
     end
   end
 
+  member_action :copy, method: :get do
+    @post = resource.dup
+    render :new, layout: false
+  end
+
   active_admin_importable
   config.sort_order = 'created_at_desc'
   #config.per_page = 30
@@ -81,7 +86,9 @@ ActiveAdmin.register Post do
       column "Vytvorené", sortable: :created_at do |post|
         post.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
       end
-      actions
+      actions defaults: true do |post|
+        link_to("Copy", copy_admin_post_path(post))
+      end
   end
 
   show do

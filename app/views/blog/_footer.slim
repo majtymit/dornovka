@@ -3,7 +3,7 @@
     span
       i.fa.fa-calendar
       '
-      = @post.created_at
+      = @post.created_at.localtime.strftime("%d.%m.%Y")
     span
       i.fa.fa-user
       '
