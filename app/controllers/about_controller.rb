@@ -24,7 +24,7 @@ class AboutController < ApplicationController
         flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
         redirect_to about_url(anchor: "4")
       else
-        flash[:error] = "Nastala chyba, e-mail nebol odoslaný!"
+        flash[:danger] = "Nastala chyba, e-mail nebol odoslaný!"
         render "new"
       end
   end

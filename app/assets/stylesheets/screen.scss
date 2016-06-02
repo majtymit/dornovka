@@ -3300,7 +3300,7 @@ a.mobile-logo:hover {
   color: #FFF;
 }
 
-.displayps {
+.display-invis {
 	display: block;
 }
 
@@ -3309,10 +3309,17 @@ a.mobile-logo:hover {
 	text-transform: uppercase;
 	color: #5996d5;
 }
+
 .alert {
 	padding: 15px;
+	font-size: 20px;
 }
 
-#empty {
-  width: 100% !important;
+.strong-alert-size {
+	font-size: 20px;
+}
+
+.empty {
+  padding: 10px 25px 20px 25px;
+  width: 100%;
 }

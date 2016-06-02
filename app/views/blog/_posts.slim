@@ -1,5 +1,10 @@
 - if @posts.empty?
-    = render partial: "empty_search"
+  .empty
+    .alert.alert-danger
+      .button.close type="button" data-dismiss="alert"
+      | Hľadané slovo '
+      strong.strong-alert-size #{params[:query]}
+      | ' sa nenachádza v žiadnom článku.
 - else
   - @posts.each do |post|
     = render partial: "post_#{post.format}", locals: { post: post }

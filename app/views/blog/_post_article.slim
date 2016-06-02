@@ -14,7 +14,12 @@
         i.fa.fa-calendar
         '
         = post.created_at.localtime.strftime("%d.%m.%Y")
-      span.comment.pull-right
+        '
+      span.category.pull-right
+        i.fa.fa-tags
+        '
+        = post.category_sk
+      /span.comment.pull-right
         i.fa.fa-comments-o
         '
         /span Zobrazené #{post.impressionist_count}x

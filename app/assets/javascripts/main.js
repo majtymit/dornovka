@@ -283,6 +283,11 @@ var sfApp={
                         }
                     });
                 }
+                else if ($('body').is('.enable-filter') || $('#isotope-content').is(':empty')) {
+                    $container.isotope({
+                        itemClass:""
+                    });
+                }
                 else{
                     if($('body').is('.enable-filter')){
                         $container.isotope({
