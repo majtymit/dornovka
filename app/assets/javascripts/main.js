@@ -283,15 +283,10 @@ var sfApp={
                         }
                     });
                 }
-                else if ($('body').is('.enable-filter') || $('#isotope-content').is(':empty')) {
-                    $container.isotope({
-                        itemClass:""
-                    });
-                }
                 else{
-                    if($('body').is('.enable-filter')){
+                    if ($("isotope-content .item-list").length == 0) {
                         $container.isotope({
-                            itemSelector : '.item-list',
+                            itemSelector: '',
                             filter:'*',
                             resizable: false,
                             animationOptions: {
@@ -312,11 +307,20 @@ var sfApp={
                     else{
                         $container.isotope({
                             itemSelector: '.item-list',
+                            filter: '*',
                             resizable: false,
                             animationOptions: {
                                 duration: 400,
                                 easing: 'swing',
                                 queue: false
+                            },
+                            getSortData: {
+                                date: function ($elem) {
+                                    return Date.parse($elem.data('publish-date'));
+                                },
+                                title:function($elem){
+                                    return $elem.find('.post-title a').text().replace(' ','');
+                                }
                             }
                         });
                     }
@@ -906,36 +910,22 @@ $(document).on('ready page:load', function() {
         }
     });
     */
-
     initPhotostack();
-
-    //setTimeout(sfApp.reloadIsotope, 1500);
+    setTimeout(sfApp.reloadIsotope, 1500);
 });
 
-//$(document).on('page:load', function() {
-    //DISQUSWIDGETS.getCount({reset: true});
-//});
-
-
-$(window).on("debouncedresize", function( event ) {
-    "use strict";
-    sfApp.reloadIsotope();
-    sfApp.reloadPortfolio();
+/*$(document).on('page:load', function() {
+    DISQUSWIDGETS.getCount({reset: true});
 });
+*/
 
-$(window).resize(function () {
-    "use strict";
-    sfApp.reloadIsotope();
-    sfApp.reloadPortfolio();
-    sfApp.reFormatUI();
-});
-
-
+/*
 $('input[name="testsearch"]').keyup(function() {
   setTimeout(function() {
     //console.log("test");
   }, 1000 );
 });
+*/
 
 function photostackShowNextPhoto() {
   var nextPhotoIdx = window.ps.getCurrent() + 1;
@@ -979,3 +969,16 @@ function disablesubmit() {
     $('button[type="submit"]').attr("disabled", true)
     return true;
 }
+
+$(window).on("debouncedresize", function( event ) {
+    "use strict";
+    sfApp.reloadIsotope();
+    sfApp.reloadPortfolio();
+});
+
+$(window).resize(function () {
+    "use strict";
+    sfApp.reloadIsotope();
+    sfApp.reloadPortfolio();
+    sfApp.reFormatUI();
+});

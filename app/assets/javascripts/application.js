@@ -19,9 +19,7 @@
 //= require ./jqBootstrapValidation
 //= require ./jquery.easing.1.3
 //= require ./jquery.fitvids
-//= require ./jquery.flickr
 //= require ./jquery.infinitescroll
-//= require ./jquery.instagram
 //= require ./jquery.isotope.min
 //= require ./jquery.isotope.perfectmasonry
 //= require ./jquery.magnific-popup.min
