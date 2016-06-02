@@ -149,38 +149,12 @@ var sfApp={
             }
         }
     },
-    getInstagram: function(){
-        if($('.instagram-feed').length){
-            if(instagram_accessToken!='' || instagram_accessToken!='your-instagram-access-token'){
-                /* Initalize Instagram Feed */
-                $.fn.spectragram.accessData = {
-                    accessToken: instagram_accessToken,
-                    clientID: instagram_clientID
-                };
-            }
-            $('.instagram-feed').each(function(){
-                if(instagram_accessToken=='' || instagram_accessToken=='your-instagram-access-token'){
-                    $(this).html('<li><strong>Please change instagram api access info before use this widget</strong></li>');
-                }
-                else{
-                    var display=15;
-                    var wrapEachWithStr='<li></li>';
-                    if($(this).data('display'))
-                        display=$(this).data('display');
-                    $(this).spectragram('getUserFeed',{
-                        query: instagram_user,
-                        max: display
-                    });
-                }
-            });
-        }
-    },
     initFilter:function(){
         // This is demo how to use filter function, you can change it as you want.
         if($('body').is('.enable-filter') && $('.filter-control').length){
             var noSelectedText="Všetky";
             if($(window).width()<=480){
-                noSelectedText="None";
+                noSelectedText="Všetky";
             }
             $('#filter').multiselect({
                 numberDisplayed: 1,
@@ -189,13 +163,13 @@ var sfApp={
                       return noSelectedText + ' <b class="caret"></b>';
                     }
                     if (options.length == 1) {
-                            return options.length + ' categórie <b class="caret"></b>';
+                            return options.length + ' kategória <b class="caret"></b>';
                     }
-                    //if (options.length > 1 && options.length < 5) {
-                            //return options.length + ' categórii <b class="caret"></b>';
-                    //}
+                    if (options.length > 1 && options.length < 5) {
+                            return options.length + ' kategórie <b class="caret"></b>';
+                    }
                     else {
-                        return options.length + ' categórii <b class="caret"></b>';
+                        return options.length + ' kategórii <b class="caret"></b>';
                     }
                 },
                 onChange: function(option, checked) {
@@ -897,7 +871,6 @@ var sfApp={
         sfApp.isotopeSetup();
         sfApp.infiniteScrollSetup();
         sfApp.portfolioSetup();
-        sfApp.getInstagram();
         sfApp.contentPopup();
         sfApp.newsletterSetup();
         sfApp.postAnimation();

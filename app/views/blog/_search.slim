@@ -1,15 +1,6 @@
 .search-box
   .search-form
-    form#search-form.form-inline role="form"
+    form#search-form.form-inline role="form" onsubmit="return false;"
       .form-group
-        input#search-keyword.form-control placeholder="Enter keyword" type="text" name="query"
-    #search-result
-
-/.search-box
-  a#btn-search.btn.btn-theme
-    span Vyhľadať článok
-  .search-form
-    form#search-form.form-inline role="form"
-      .form-group
-        input#search-keyword.form-control placeholder="Enter keyword" type="text" name="query"
+        input#search-keyword.form-control placeholder="Napíšte slovo" type="text" name="query"
     #search-result

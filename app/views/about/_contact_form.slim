@@ -1,0 +1,13 @@
+= form_for @contact, url: about_url, html: { onsubmit: "disablesubmit()" } do |f|
+  .form-group
+    = f.text_field :email, required: "", type: "email", placeholder: "Vaša e-mailová adresa...", class: "form-control", id: "contactEmail"
+  .form-group
+    = f.text_field :subject, required: "", type: "subject", placeholder: "Predmet správy...", class: "form-control", id: "contactSubject"
+  .form-group
+    = f.text_area :message, required: "", type: "message", placeholder: "Správa...", class: "form-control", rows: "3", id: "contactMessage"
+  button.btn.btn-theme-color type="submit"
+
+    | Odoslať správu
+    '
+    i.fa.fa-envelope-o
+end
