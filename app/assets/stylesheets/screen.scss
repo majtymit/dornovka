@@ -275,7 +275,6 @@ a:hover, a:focus{
 	//height: 32px;
 	color: #fff;
 	border-color: #fff;
-	padding-bottom: 10px;
 }
 textarea,
 input[type="text"],
@@ -3322,4 +3321,8 @@ a.mobile-logo:hover {
 .empty {
   padding: 10px 25px 20px 25px;
   width: 100%;
+}
+
+#search-keyword {
+	padding-bottom: 10px;
 }
