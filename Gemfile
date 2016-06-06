@@ -26,7 +26,6 @@ gem 'thin'
 gem 'impressionist'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_importable'
-gem 'active_admin-duplicatable'
 gem 'devise'
 gem 'cancan'
 gem 'draper'
@@ -34,7 +33,6 @@ gem 'pundit'
 gem 'rich', git: 'https://github.com/kreativgebiet/rich.git'
 # https://github.com/platanus/activeadmin_addons
 gem 'figaro'
-
 
 group :development, :test do
   gem 'rspec-rails'

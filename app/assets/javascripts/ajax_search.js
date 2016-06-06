@@ -1,11 +1,9 @@
 $(document).on('ready page:load', function() {
   var previousQuery;
 
-  $('#search-keyword').keyup(function( event ) {
+  $('#search-keyword').on('keyup', _.debounce(function( event ) {
     var element = $(this);
     var value = element.val();
-
-    if (value && value.length < 3 && value !== previousQuery) return;
 
     previousQuery = value;
 
@@ -18,11 +16,11 @@ $(document).on('ready page:load', function() {
       var isotopeContent = $('#isotope-content');
 
       isotopeContent.html(postsHtml).isotope('reloadItems').isotope();
-      sfApp.reloadIsotope();
+      setTimeout(sfApp.reloadIsotope, 1500);
 
       isotopeContent.imagesLoaded(function() {
         sfApp.reloadIsotope();
       })
     });
-  });
+  }, 300));
 });

@@ -362,8 +362,8 @@ var sfApp={
                     itemSelector    : '.post',     // selector for all items you'll retrieve
                     maxPage           : sfApp.getMaxPagination(),
                     loading: {
-                        finishedMsg: 'No more post to load.',
-                        img: '/assets/img/loading.gif'
+                        //finishedMsg: 'No more post to load.',
+                        //img: '/assets/loading.gif'
                     }
                 },
                 // call Isotope as a callback
@@ -384,7 +384,7 @@ var sfApp={
                     maxPage           : sfApp.getMaxPagination(),
                     loading: {
                         finishedMsg: 'No more post to load.',
-                            img: '/assets/img/loading.gif'
+                            img: '/assets/loading.gif'
                     }
                 },
                 // call Isotope as a callback
@@ -984,3 +984,4 @@ $(window).resize(function () {
     sfApp.reloadPortfolio();
     sfApp.reFormatUI();
 });
+

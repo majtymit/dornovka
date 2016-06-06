@@ -36,4 +36,5 @@
 //= require classie
 //= require photostack
 //= require rich
+//= require underscore
 //= require ./main

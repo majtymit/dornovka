@@ -1,6 +1,6 @@
 class PartnersController < ApplicationController
   def index
-    @partners = Partner.order("position ASC")
+    @partners = Partner.visible.order("position ASC")
   end
 
   def show

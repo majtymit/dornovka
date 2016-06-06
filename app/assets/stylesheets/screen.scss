@@ -1740,7 +1740,7 @@ ul.social.active li.rss{
 	margin-bottom: 5px;
 }
 .portfolio-pagination{
-	display: none;
+	//display: none;
 }
 .portfolio-pagination.load-more{
 	margin-top: 10px;
@@ -1753,131 +1753,8 @@ ul.social.active li.rss{
 /*-----------------------------------*/
 /*   7. COMMENT STYLE               */
 /*---------------------------------*/
-.comment-box{
-	position: fixed;
-	height: 100%;
-	width: 300px;
-	top: 0;
-	right: -300px;
-	bottom: 0;
-	padding: 20px 10px 10px 10px;
-	z-index: 35;
-	background: #303030;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
 
-.comment-box .wrap{
-	width: 100%;
-	min-height: 100%;
-}
-.comment-box .wrap .box-title{
-	color: #eee;
-	margin: 0;
-	border-bottom: solid 1px #eee;
-	padding-bottom: 12px;
-	font-size: 20px;
-	text-transform: uppercase;
-	line-height: 28px;
-}
-.comment-box .wrap .comment-list{
-	margin-top: 15px;
-}
-.comment-box .wrap .comment-list li{
-	position: relative;
-	margin-top: 10px;
-}
-.comment-box .wrap .comment-list li .avatar{
-	position: absolute;
-	border-radius: 4px;
-	margin-top: 5px;
-}
-.comment-box .wrap .comment-list li .avatar img{
-	border-radius: 4px;
-	max-width: 60px;
-}
-.comment-box .wrap .comment-list li .comment-detail{
-	margin-left: 70px;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-meta{
-	display: block;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-meta span{
-	display: inline-block;
-	color: #a5b2b9;
-	margin-right: 5px;
-	line-height: 16px;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-meta span.name{
-	font-weight: bold;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-meta span.time{
-	margin-right: 0;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-content{
-	font-size: 13px;
-	line-height: 18px;
-	color: #eee;
-	margin-top: 5px;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-tools{
-	display: block;
-	margin-top: 5px;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-tools a{
-	display: inline-block;
-	color: #a5b2b9;
-	font-size: 13px;
-	line-height: 13px;
-	margin-right: 7px;
-	padding-right: 8px;
-	border-right: solid 1px #a5b2b9;
-	vertical-align: middle;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-tools a i{
-	color: #a5b2b9;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-tools a.share{
-	margin-right: 0;
-	padding-right: 0;
-	border-right:none;
-}
-.comment-box .wrap .comment-list li .comment-detail .comment-tools a:hover,
-.comment-box .wrap .comment-list li .comment-detail .comment-tools a:hover i{
-	color: #fff;
-}
-.comment-form-box{
-	width: 100%;
-	overflow: hidden;
-}
-.comment-form-box .box-title{
-	color: #eee;
-	margin: 0;
-	border-bottom: solid 1px #eee;
-	padding-bottom: 10px;
-	font-size: 20px;
-	text-transform: uppercase;
-	line-height: 28px;
-}
-.comment-form-box .comment-form{
-	margin-top: 20px;
-}
-.comment-form-box .comment-form .form-group {
-	margin-bottom: 10px;
-}
-.comment-form-box .comment-form .col-first{
-  padding-right:5px;
-}
-.comment-form-box .comment-form .col-last{
-  padding-left:5px;
-}
 
-.comment-form-box .comment-form .btn{
-	width:100%;
-}
 
 /*-----------------------------------*/
 /*   8. SLIDER STYLE                */
@@ -2385,7 +2262,7 @@ ul.social.active li.rss{
 }
 
 #preloader{
-	background:#FFF image-url('loading.gif') no-repeat center;
+	background:#FFF asset-url('loading.gif') no-repeat center;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -2402,7 +2279,7 @@ ul.social.active li.rss{
 }
 
 #infscr-loading{
-	background:#FFF image-url('loading.gif') no-repeat center;
+	background:#FFF asset-url('loading.gif') no-repeat center;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -2411,27 +2288,31 @@ ul.social.active li.rss{
 	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 	width:40px;
 	height:40px;
-	position:absolute;
-	top:60px;
-	left:50%;
-	margin:0 0 0 130px;
+	margin:0 0 0 0px;
 	z-index: 30;
+	position: absolute;
+	bottom: 300px;
+	left: 50%;
+  margin-left: -50px; /*half the image width*/
+  margin-top: -50px; /*half the image height*/
 }
+
 .outdated-frame{
 	margin: 0;
-    background: #ccc;
-    color: #000;
-    font-size: 300%;
-    padding: 100px 0;
-    height: 100%;
-    vertical-align: middle;
-    z-index: 99999;
-    position: fixed;
-    text-align: center;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  background: #ccc;
+  color: #000;
+  font-size: 300%;
+  padding: 100px 0;
+  height: 100%;
+  vertical-align: middle;
+  z-index: 99999;
+  position: fixed;
+  text-align: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
 }
 .hidden{
 	display: none;

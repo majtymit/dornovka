@@ -2,5 +2,5 @@
   .pull-left.post-title
     h2 S kým sa kamarátim
 #isotope-content
-  - @partners.select {|partner| partner.visibility}.each do |partner|
-    = render partial: "partner_structure", locals: {partner: partner}
+  - @partners.visible.each do |partner|
+    = render partial: "partner_structure", locals: { partner: partner }

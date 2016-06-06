@@ -8,16 +8,16 @@
         .col-md-12
           section#photostack-3.photostack
             .figure-container
-              - @figures.select {|figure| figure.visibility}.each do |figure|
-                  = render partial: "home/ps_figures", locals: {figure: figure}
+              - @figures.each do |figure|
+                  = render partial: "home/ps_figures", locals: { figure: figure }
       .row
         .col-md-6
           h3.home-center Dôležité články
           #portfolio-content data-cols="2"
-            - @posts.select {|post| post.featured == true}.take(2).each do |post|
-              = render partial: "home/post_latest", locals: {post: post}
+            - @featuredPosts.each do |post|
+              = render partial: "home/post_portfolio", locals: { post: post }
         .col-md-6
           h3.home-center Najnovšie články
           #portfolio-content data-cols="2" style="visibility: visible"
-            - @posts.take(2).each do |post|
-              = render partial: "home/post_latest", locals: {post: post}
+            - @newestPosts.each do |post|
+              = render partial: "home/post_portfolio", locals: { post: post }

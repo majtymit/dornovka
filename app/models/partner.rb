@@ -5,6 +5,7 @@ class Partner < ActiveRecord::Base
   has_attached_file :logo, default_url: "/assets/original/no_pic.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
   validates_attachment :logo, dimensions: { height: 117, width: 283 }
+  scope :visible, -> { where(visibility: true) }
 
   #validate :image_dimensions
 

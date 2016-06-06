@@ -1,8 +1,8 @@
 class AboutController < ApplicationController
   def index
-    @certificates = Certificate.order("position ASC")
-    @faqs = Faq.order("position ASC")
-    @timelines = Timeline.order("position DESC")
+    @certificates = Certificate.visible.order("position ASC")
+    @faqs = Faq.visible.order("position ASC")
+    @timelines = Timeline.visible.order("position DESC")
     @contacts = Contact.all
     @contact = Contact.new
   end

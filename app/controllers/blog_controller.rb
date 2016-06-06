@@ -2,11 +2,11 @@ class BlogController < ApplicationController
   before_filter :set_body_class, only: [:index, :show]
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 20).visible.query(params[:query])
+    @posts = Post.visible.query(params[:query]).paginate(page: params[:page], per_page: 15)
   end
 
   def ajax_index
-    @posts = Post.paginate(page: params[:page], per_page: 20).visible.query(params[:query])
+    @posts = Post.visible.query(params[:query]).paginate(page: params[:page], per_page: 15)
 
     render layout: false
   end

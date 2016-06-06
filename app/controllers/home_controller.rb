@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.order('created_at DESC').select {|post| post.visibility}
-    @figures = Figure.all
+    @newestPosts = Post.visible.take(2)
+    @figures = Figure.visible.all
+    @featuredPosts = Post.visible.featured.take(2)
   end
 
   def body_class
