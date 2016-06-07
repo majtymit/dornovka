@@ -26,6 +26,11 @@
 		this.el = el;
 		this.options = extend( {}, this.options );
   	extend( this.options, options );
+		var tabNames = _.map(el.querySelectorAll('nav > ul > li > a'), function(el) {
+			return el.attributes.href.value.slice(1);
+		})
+		this.options.map = _.invert(tabNames);
+		this.options.invertedMap = _.invert(this.options.map);
   	this._init();
 	}
 
@@ -42,7 +47,7 @@
 		this.current = -1;
 		// show current content item
 
-		var tabIdx = window.location.hash.slice(-1);
+		var tabIdx = this.options.map[window.location.hash.slice(1)];
 		this._show(tabIdx ? tabIdx : undefined);
 		// init events
 		this._initEvents();
@@ -67,7 +72,7 @@
 		this.current = idx != undefined ? idx : this.options.start >= 0 && this.options.start < this.items.length ? this.options.start : 0;
 		this.tabs[ this.current ].className = 'tab-current';
 		this.items[ this.current ].className = 'content-current';
-		window.location.hash = idx || 0;
+		window.location.hash = this.options.invertedMap[idx || 0];
 
 		if (this.options.callback) {
 			this.options.callback();
