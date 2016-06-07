@@ -5,6 +5,9 @@ $(document).on('ready page:load', function() {
     var element = $(this);
     var value = element.val();
 
+    if (previousQuery == value)
+      return;
+
     previousQuery = value;
 
     $.ajax({
