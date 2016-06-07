@@ -3,6 +3,8 @@
 #isotope-content
   = render partial: 'posts'
 
+.col-md-12 style="display: none;"
+  = will_paginate @posts
 /.row
   .col-md-12.text-center
     ul.pagination.portfolio-pagination
