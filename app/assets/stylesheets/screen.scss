@@ -1626,6 +1626,16 @@ ul.social.active li.rss{
 	-moz-transition: -moz-transform 0.4s;
 	transition: transform 0.4s;
 }
+
+.portfolio-item .mask #certificate img {
+	width: 100%;
+	display: block;
+	//position: relative;
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
 .portfolio-item .mask .action{
 	position:absolute;
 	top:50%;
@@ -3160,22 +3170,6 @@ ul.social.active li.rss{
   color: #FFF;
 }
 
-.certificate-border {
-	border-style: solid;
-  border-width: 1px;
-  border-color: #5996d5;
-}
-
-#certificate {
-	position: relative;
-	width: 400px;
-	height: 250px;
-	overflow: hidden;
-}
-#certificate img {
-	position: absolute;
-}
-
 a.mobile-logo:hover {
   color: #FFF;
 }
@@ -3206,4 +3200,21 @@ a.mobile-logo:hover {
 
 #search-keyword {
 	padding-bottom: 10px;
+}
+
+.certificate-style {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #5996d5;
+  float: none;
+  margin: 0 0 30px 0;
+}
+
+#certificate {
+  height: 250px;
+  overflow: hidden;
+}
+
+#certificate img {
+  width: 120%;
 }

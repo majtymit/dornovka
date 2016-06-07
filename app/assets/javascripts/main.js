@@ -901,7 +901,7 @@ $(document).on('ready page:load', function() {
 
     var tabs = document.getElementById('tabs');
     if (tabs) {
-        window.CBPFWTabsInstance = new CBPFWTabs(tabs, { callback: sfApp.init });
+        window.CBPFWTabsInstance = new CBPFWTabs(tabs)//, { callback: sfApp.init });
     }
 
     $('[data-tab-idx]').click(function() {

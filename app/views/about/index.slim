@@ -23,7 +23,7 @@
                   a href="#section-3"
                     i.fa.fa-graduation-cap
                     '
-                    span Metódy
+                    span Certifikáty
                 li
                   a href="#section-4"
                     i.fa.fa-check-square-o
@@ -42,7 +42,7 @@
                   - @timelines.each do |timeline|
                     = render partial: 'section2', locals: { timeline: timeline }
               section#section-3
-                #portfolio-content data-cols="4"
+                .row
                   - @certificates.each do |certificate|
                     = render partial: 'section3', locals: { certificate: certificate }
               section#section-4
