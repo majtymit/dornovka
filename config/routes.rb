@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   scope 'o-mne' do
     get '/' => 'about#index', as: :about
-    post '/' => "about#create"
+    post '/' => 'about#create'
   end
 
   scope 'partneri' do
@@ -22,5 +22,12 @@ Rails.application.routes.draw do
     get ':id' => 'blog#show', as: :post
   end
 
+  scope 'metody' do
+    get '/' => 'methods#index', as: :methods
+  end
+
+  scope 'otazky-a-odpovede' do
+    get '/' => 'faqs#index', as: :faqs
+  end
 
 end

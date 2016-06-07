@@ -1,0 +1,12 @@
+.post-header
+  .pull-left.post-title
+    h2 Čo by Vás mohlo zaujímať
+.post-wrap
+  article.post.page
+    section.post-content
+      .row
+        .col-md-12
+          h1 Najprv si to prečítajte, až potom ma otravujte! :D
+          #accordion.panel-group
+            - @faqs.each do |faq|
+              = render partial: 'accordion', locals: { faq: faq }

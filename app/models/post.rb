@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
     if q.blank?
       all
     else
-      attributes = ['title', 'description', 'text' ]
+      attributes = ['title', 'description', 'text']
       where(attributes.map{ |attr| "lower(#{attr}) LIKE '%#{q.downcase}%'" }.join(' OR '))
     end
   }

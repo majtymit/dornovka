@@ -1,0 +1,7 @@
+.panel.panel-default class="#{'active' if faq.active}"
+  .panel-heading
+    h4.panel-title
+      a.accordion-toggle data-parent="#accordion" data-toggle="collapse" href="#collapse#{faq.position}"
+        strong = faq.title
+  .panel-collapse.collapse id="collapse#{faq.position}" class="#{'in' if faq.active}"
+    .panel-body = faq.text.html_safe
