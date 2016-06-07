@@ -3206,8 +3206,8 @@ a.mobile-logo:hover {
   border-style: solid;
   border-width: 1px;
   border-color: #5996d5;
-  float: none;
-  margin: 0 0 30px 0;
+  margin: 0 30px 30px 0;
+  left: 15px;
 }
 
 #certificate {
@@ -3217,4 +3217,32 @@ a.mobile-logo:hover {
 
 #certificate img {
   width: 120%;
+}
+
+@media only screen and (min-width: 1600px) {
+	.col-certificate {
+		width: 25%;
+		float: left;
+	}
+}
+
+@media only screen and (min-width: 1250px) and (max-width: 1599px) {
+	.col-certificate {
+		width: 33.33%;
+		float: left;
+	}
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1249px) {
+	.col-certificate {
+		width: 50%;
+		float: left;
+	}
+}
+
+@media only screen and (max-width: 699px) {
+	.col-certificate {
+		width: 100%;
+		float: left;
+	}
 }
