@@ -12,8 +12,6 @@
  *
  *= require ./bootstrap.min
  *= require ./font-awesome
- *= require ./owl.carousel
- *= require ./owl.theme
  *= require ./magnific-popup
  *= require ./bootstrap-multiselect
  *= require ./screen
