@@ -1,1 +1,31 @@
-h1 hovno
+.row
+  .col-md-12
+    h1.text-center = therapy.title
+    br
+.row
+  .col-md-12
+    .therapy-text = therapy.description.html_safe
+br
+.row
+  .col-md-12
+    .mediabox
+      a.magnific-popup-image href=therapy.picture1.url
+        img title=therapy.picture1desc alt=therapy.picture1desc src=image_url(therapy.picture1.url)
+      = therapy.picture1desc
+    .mediabox
+      a.magnific-popup-image href=therapy.picture2.url
+        img title=therapy.picture2desc alt=therapy.picture2desc src=image_url(therapy.picture2.url)
+      = therapy.picture2desc
+    .mediabox
+      a.magnific-popup-image href=therapy.picture3.url
+        img title=therapy.picture3desc alt=therapy.picture3desc src=image_url(therapy.picture3.url)
+      = therapy.picture3desc
+br
+.row
+  .col-md-12
+    .therapy-text = therapy.text.html_safe
+
+    /.mask
+      a.magnific-popup-image href=certificate.image.url
+        #certificate
+          img alt=certificate.title src=image_url(certificate.image.url)

@@ -6,7 +6,7 @@
     section.post-content
       .row
         .col-md-12
-          #tabs.tabs
+          #tabs.tabs.about
             nav
               ul
                 li
@@ -40,5 +40,5 @@
                 .row
                   - @certificates.each do |certificate|
                     = render partial: 'section3', locals: { certificate: certificate }
-              section#section-5
+              section#section-4
                 = render partial: 'section4'

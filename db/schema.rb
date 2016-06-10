@@ -184,19 +184,23 @@ ActiveRecord::Schema.define(version: 20160608123043) do
     t.boolean  "visibility"
     t.integer  "position"
     t.string   "title"
+    t.text     "description"
     t.text     "text"
     t.string   "picture1_file_name"
     t.string   "picture1_content_type"
     t.integer  "picture1_file_size"
     t.datetime "picture1_updated_at"
+    t.string   "picture1desc"
     t.string   "picture2_file_name"
     t.string   "picture2_content_type"
     t.integer  "picture2_file_size"
     t.datetime "picture2_updated_at"
+    t.string   "picture2desc"
     t.string   "picture3_file_name"
     t.string   "picture3_content_type"
     t.integer  "picture3_file_size"
     t.datetime "picture3_updated_at"
+    t.string   "picture3desc"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end

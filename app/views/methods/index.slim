@@ -6,3 +6,52 @@
     section.post-content
       .row
         .col-md-12
+          #tabs.tabs
+            nav
+              ul
+                li
+                  a href="#meridiany"
+                    i.fa.fa-graduation-cap
+                    '
+                    .tab-short Mer
+                    span Meridiány
+                li
+                  a href="#lymfodrenaz"
+                    i.fa.fa-graduation-cap
+                    '
+                    .tab-short Lym
+                    span Lymfodrenáž
+                li
+                  a href="#et-bowen"
+                    i.fa.fa-graduation-cap
+                    '
+                    .tab-short ETB
+                    span ET / Bowen
+                li
+                  a href="#bankovanie"
+                    i.fa.fa-graduation-cap
+                    '
+                    .tab-short Ban
+                    span Bankovanie
+                li
+                  a href="#kinesiotaping"
+                    i.fa.fa-graduation-cap
+                    '
+                    .tab-short Kin
+                    span Kinesiotaping
+                li
+                  a href="#shiatsu"
+                    i.fa.fa-graduation-cap
+                    '
+                    .tab-short Shi
+                    span Shiatsu
+                li
+                  a href="#dm-ludia"
+                    i.fa.fa-graduation-cap
+                    '
+                    .tab-short DM+
+                    span DM+ ľudia
+            .content
+              - @therapies.each do |therapy|
+                section id="section-#{therapy.position}"
+                  = render partial: 'therapy_structure', locals: { therapy: therapy }

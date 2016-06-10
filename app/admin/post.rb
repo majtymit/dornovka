@@ -50,6 +50,7 @@ ActiveAdmin.register Post do
   scope "Posledné", :lastones do |posts|
     posts.where(id: posts.order(updated_at: :desc).limit(5).pluck(:id))
   end
+
   permit_params :id, :visibility, :title, :description, :text, :image, :format, :category, :featured, :happened_at, :impressionist_count, :created_at, :updated_at
 
   index do

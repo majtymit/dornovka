@@ -59,7 +59,16 @@
 	display: block;
 	font-size: 1.45em;
 	line-height: 2.5;
-	padding: 0 1.25em;
+	padding: 2px 10px;
+	white-space: nowrap;
+}
+
+.about nav a {
+	color: #becbd2;
+	display: block;
+	font-size: 1.45em;
+	line-height: 2.5;
+	padding: 2px 30px;
 	white-space: nowrap;
 }
 
@@ -118,8 +127,8 @@
 
 .mediabox {
 	float: left;
-	width: 33%;
-	padding: 0 25px;
+	width: 33.33%;
+	padding: 0 8px;
 }
 
 .mediabox img {
@@ -139,16 +148,50 @@
 }
 
 /* Example media queries */
-
-@media only screen and (min-width: 980px) and (max-width: 1100px) {
-	.tabs nav a {
-	  padding: 0 10px 0 10px;
+@media screen and (max-width: 1273px) {
+	.tabs nav i {
+	  display: none;
+	}
+	.about nav i {
+	  display: inline;
 	}
 }
 
+
+@media only screen and (min-width: 1055px) and (max-width: 1275px) {
+	.tabs nav a {
+	  padding: 0 10px 0 10px;
+	}
+	.about nav a {
+	  padding: 2px 30px;
+	}
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1054px) {
+	.tabs nav a {
+	  padding: 0 5px 0 5px;
+	}
+	.about nav a {
+	  padding: 2px 30px;
+	}
+}
+
+@media only screen and (min-width: 838px) and (max-width: 979px) {
+	.tabs nav a {
+	  padding: 0 10px 0 10px;
+	}
+	.about nav a {
+	  padding: 2px 30px;
+	}
+}
+
+/* 838px*/
 @media screen and (max-width: 52.375em) {
 	.tabs nav a span {
 		display: none;
+	}
+	.about nav a span {
+		display: inline;
 	}
 
 	.tabs nav a:before {
@@ -186,23 +229,34 @@
 	.mediabox:after {
 		clear: both;
 	}
+
+	.tab-short {
+		display: block;
+	}
+
+	.tabs nav a {
+		padding: 10px 20px;
+	}
+
+	.about nav a {
+		padding: 2px 30px;
+	}
 }
 
+@media screen and (max-width: 630px) {
+	.about nav a {
+		padding: 2px 15px;
+	}
+}
+
+/*512px*/
 @media screen and (max-width: 32em) {
-	.tabs nav ul,
-	.tabs nav ul li a {
-		width: 100%;
-		padding: 0;
+	.about nav a span {
+		display: none;
 	}
 
-	.tabs nav ul li {
-		width: 20%;
-		width: calc(20% + 1px);
-		margin: 0 0 0 -1px;
-	}
-
-	.tabs nav ul li:last-child {
-		border-right: none;
+	.about nav a {
+		padding: 2px 20px;
 	}
 
 	.mediabox {
@@ -223,6 +277,14 @@
 	.mediabox p {
 		margin: 0;
 	}
+
+	.tabs nav a {
+		padding: 10px 10px;
+	}
+
+	.about nav a {
+		padding: 2px 30px;
+	}
 }
 
 @media screen and (max-width: 1146px) {
@@ -230,5 +292,14 @@
 	.mediabox h3 {
 		font-size: 14px;
 		font-weight: bold;
+	}
+}
+
+@media screen and (min-width: 513px) and (max-width: 577px) {
+	.tabs nav a {
+		padding: 10px 10px;
+	}
+	.about nav a {
+		padding: 2px 15px;
 	}
 }
