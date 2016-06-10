@@ -9,15 +9,16 @@
           section#photostack-3.photostack
             .figure-container
               - @figures.each do |figure|
-                  = render partial: "home/ps_figures", locals: { figure: figure }
+                  = render partial: "home/ps_structure", locals: { figure: figure }
+      br
       .row
         .col-md-6
-          h3.home-center Dôležité články
-          #portfolio-content data-cols="2"
-            - @featuredPosts.each do |post|
-              = render partial: "home/post_portfolio", locals: { post: post }
+          .home-center Dôležité články
+          - @featuredPosts.each do |post|
+            = render partial: "home/post_structure", locals: { post: post }
         .col-md-6
-          h3.home-center Najnovšie články
-          #portfolio-content data-cols="2" style="visibility: visible"
-            - @newestPosts.each do |post|
-              = render partial: "home/post_portfolio", locals: { post: post }
+          .home-center Najnovšie články
+          - @newestPosts.each do |post|
+            = render partial: "home/post_structure", locals: { post: post }
+      br
+      br

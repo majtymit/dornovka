@@ -24,6 +24,10 @@
 	cursor: pointer;
 }
 
+.figure-img {
+		width: 340px;
+}
+
 /* Wrapper and figures */
 
 /* The size of this wrapper can be smaller if the items should not be scattered across the whole container */
@@ -70,7 +74,7 @@
 
 .photostack-img {
 	outline: none;
-	display: block;
+	//display: block;
 	width: 240px;
 	height: 240px;
 	background: #f9f9f9;
@@ -321,4 +325,34 @@ figure.photostack-current::after {
 	background: #888;
 	-webkit-transform: scale(0.61);
 	transform: scale(0.61);
+}
+
+
+@media only screen and (max-width: 1366px) {
+	.js .photostack {
+		height: 400px;
+	}
+
+	.horizontal {
+	  width: 250px;
+	  height: 222px;
+	}
+	.figure-img {
+		width: 230px;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.js .photostack {
+		height: 400px;
+	}
+
+	.horizontal {
+	  width: 220px;
+	  height: 196px;
+
+	}
+	.figure-img {
+		width: 200px;
+	}
 }

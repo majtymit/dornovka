@@ -1,0 +1,16 @@
+.col-home-post
+  .portfolio-item.home-post-style
+    .home-post-title
+      a href=post_url(post) = post.title.truncate(20, separator: /\s/)
+    a href=post_url(post)
+      img.home-post-img alt="" src=image_url(post.image.url) href=post_url(post)
+    .post-home
+      span.time.pull-left.bot-pad-8px
+        i.fa.fa-calendar
+        '
+        = post.created_at.localtime.strftime("%d.%m.%Y")
+        '
+      span.category.pull-right
+        i.fa.fa-tags
+        '
+        = post.category_sk

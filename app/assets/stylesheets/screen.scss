@@ -3182,6 +3182,19 @@ a.mobile-logo:hover {
 	text-align: center;
 	text-transform: uppercase;
 	color: #5996d5;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.home-post-title {
+	left: 5px;
+	text-align: center;
+	padding: 8px 5px 8px 5px;
+}
+
+.col-home-post {
+	width: 50%;
+	float: left;
 }
 
 .alert {
@@ -3210,6 +3223,14 @@ a.mobile-logo:hover {
   left: 15px;
 }
 
+.home-post-style {
+	border-style: solid;
+  border-width: 1px;
+  border-color: #5996d5;
+  margin: 0 10px 10px 0;
+  left: 5px;
+}
+
 #certificate {
   height: 250px;
   overflow: hidden;
@@ -3231,6 +3252,18 @@ a.mobile-logo:hover {
 
 .tab-short {
 	display: none;
+}
+
+.home-post-img {
+	width: 100%;
+}
+
+.post-home {
+	padding: 10px;
+}
+
+.bot-pad-8px {
+	padding-bottom: 8px;
 }
 
 @media only screen and (min-width: 1600px) {
@@ -3258,5 +3291,29 @@ a.mobile-logo:hover {
 	.col-certificate {
 		width: 100%;
 		float: left;
+	}
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1310px) {
+	.post-home .category {
+		width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+	}
+	.post-home .time {
+		width: 100%;
+    text-align: center;
+	}
+}
+
+@media only screen and (max-width: 530px) {
+	.post-home .category {
+		width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+	}
+	.post-home .time {
+		width: 100%;
+    text-align: center;
 	}
 }
