@@ -21,7 +21,6 @@ ActiveAdmin.register Post do
     render :new, layout: false
   end
 
-  active_admin_importable
   config.sort_order = 'created_at_desc'
   #config.per_page = 30
   filter :title
