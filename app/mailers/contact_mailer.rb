@@ -8,13 +8,13 @@ class ContactMailer < ApplicationMailer
   def new_contact(contact)
     @contact = contact
 
-    mail to: "sec2096@gmail.com", reply_to: @contact.email, subject: @contact.subject
+    mail to: "hena.vegesiova@gmail.com", cc: @contact.email, reply_to: @contact.email, subject: @contact.subject
   end
 
   def copy_for_sender(contact)
     @contact = contact
 
-    mail to: @contact.email, reply_to: "majtymit@gmail.com", subject: "#{@contact.subject} - copy"
+    mail to: @contact.email, reply_to: "hena.vegesiova@gmail.com", subject: "#{@contact.subject} - copy"
   end
 end
 
