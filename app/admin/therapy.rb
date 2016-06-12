@@ -94,11 +94,11 @@ ActiveAdmin.register Therapy do
       f.input :title, label: "Názov", required: true
       f.input :description, label: "Opis", required: true, as: :rich, config: { height: "100px" }
       f.input :text, label: "Text", required: true, as: :rich, config: { height: "200px" }
-      f.input :picture1, label: "Logo<br /><span style='color: red; font-size: 20px;'>283px šírka a 117px výška<br />žiadny iný rozmer!</span>".html_safe, required: true, as: :file, hint: image_tag(f.object.picture1.url)
+      f.input :picture1, label: "Logo", required: true, as: :file, hint: image_tag(f.object.picture1.url, height: "300")
       f.input :picture1desc, label: "Obrázok 1 opis"
-      f.input :picture2, label: "Logo<br /><span style='color: red; font-size: 20px;'>283px šírka a 117px výška<br />žiadny iný rozmer!</span>".html_safe, required: true, as: :file, hint: image_tag(f.object.picture2.url)
+      f.input :picture2, label: "Logo", required: true, as: :file, hint: image_tag(f.object.picture2.url, height: "300")
       f.input :picture2desc, label: "Obrázok 2 opis"
-      f.input :picture3, label: "Logo<br /><span style='color: red; font-size: 20px;'>283px šírka a 117px výška<br />žiadny iný rozmer!</span>".html_safe, required: true, as: :file, hint: image_tag(f.object.picture3.url)
+      f.input :picture3, label: "Logo", required: true, as: :file, hint: image_tag(f.object.picture3.url, height: "300")
       f.input :picture3desc, label: "Obrázok 3 opis"
     end
     f.actions

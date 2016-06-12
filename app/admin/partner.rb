@@ -38,7 +38,9 @@ ActiveAdmin.register Partner do
       end
       column "Kontakt", :contact, sortable: :contact
       column "Kliky", :impressionist_count
-      column "Link", :link, sortable: :link
+      column "Link", sortable: :link do |partner|
+        partner.link.truncate(60, separator: /\s/)
+      end
       column "Logo" do |partner|
         link_to image_tag(partner.logo.url, height: "50"), edit_admin_partner_path(partner)
       end

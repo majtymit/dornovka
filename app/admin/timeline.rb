@@ -28,6 +28,7 @@ ActiveAdmin.register Timeline do
     end
   end
 
+  config.filters = false
   permit_params :visibility, :position, :date, :status, :icon, :description, :created_at, :updated_at
 
   index do
