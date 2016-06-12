@@ -30,6 +30,8 @@ gem 'pundit'
 gem 'rich', git: 'https://github.com/kreativgebiet/rich.git'
 # https://github.com/platanus/activeadmin_addons
 gem 'figaro'
+gem 'aws-sdk'
+gem 'fog'
 
 group :development, :test do
   gem 'rspec-rails'
