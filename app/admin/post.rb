@@ -150,9 +150,8 @@ ActiveAdmin.register Post do
     #end
   #end
 
-  sidebar :nieco, except: :index do
-    attributes_table_for resource do
-
-    end
-  end
+  #sidebar :nieco, except: :index do
+  #  attributes_table_for resource do
+  #  end
+  #end
 end

@@ -3317,3 +3317,9 @@ a.mobile-logo:hover {
     text-align: center;
 	}
 }
+
+@media only screen and (min-width: 750px) and (max-width: 991px) {
+	.col-md-6 {
+		width: 50%;
+	}
+}
