@@ -27,6 +27,7 @@
 //= require imagesloaded.pkgd.min
 //= require ./jribbble
 //= require ./bootstrap-multiselect
+//= require ./owl.carousel.min
 //= require ./sscr
 //= require ./CBPFWTabs
 //= require ./ajax_search

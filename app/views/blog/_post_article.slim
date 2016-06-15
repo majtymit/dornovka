@@ -6,8 +6,16 @@
     h2.post-title
       a href=post_url(post) = post.title
     .post-media
-      a href=post_url(post)
-        img.img-responsive title=post.title alt=post.title src=image_url(post.image.url)
+      - if post.blogpictures.count > 1
+        .owl-slider.owl-carousel.slider.thumb-slider data-navigation="true" data-pagination="true"
+          - post.blogpictures.each do |blogpicture|
+            .item
+              a href=post_url(post)
+                img.img-responsive alt="" src=image_url(blogpicture.picture.url)
+      - elsif post.blogpictures.count == 0
+      - else
+        a href=post_url(post)
+          img.img-responsive title=post.title alt=post.title src=image_url(post.blogpictures[0].picture.url)
     .post-excerpt = post.description
     .post-meta.clearfix
       span.time.pull-left
@@ -26,3 +34,4 @@
         a href=post_url(post, anchor: 'disqus_thread') Diskusia
         /"#{post_url(post)}#disqus_thread"
         /span.disqus-comment-count data-disqus-identifier=post.id
+

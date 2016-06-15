@@ -7,7 +7,15 @@
     section.post-content
       .row
         .col-md-6
-          img.img-responsive alt=@post.title title=@post.title src=image_url(@post.image.url)
+          - if @post.blogpictures.count > 1
+            .owl-slider.owl-carousel.slider.thumb-slider data-navigation="true" data-pagination="true"
+              - @post.blogpictures.each do |blogpicture|
+                .item
+                  img.img-responsive title=@post.title alt=@post.title src=image_url(blogpicture.picture.url)
+          - elsif @post.blogpictures.count == 0
+          - else
+            img.img-responsive title=@post.title alt=@post.title src=image_url(@post.blogpictures[0].picture.url)
+          /img.img-responsive alt=@post.title title=@post.title src=image_url(@post.image.url)
         .col-md-6
           h2 = @post.title
           br
@@ -15,3 +23,4 @@
       .row
         .col-md-12
           = render partial: 'footer'
+

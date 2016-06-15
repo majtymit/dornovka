@@ -50,7 +50,7 @@ ActiveAdmin.register Post do
     posts.where(id: posts.order(updated_at: :desc).limit(5).pluck(:id))
   end
 
-  permit_params :id, :visibility, :title, :description, :text, :image, :format, :category, :featured, :happened_at, :impressionist_count, :created_at, :updated_at
+  permit_params :id, :visibility, :title, :description, :text, :format, :category, :featured, :happened_at, :impressionist_count, :created_at, :updated_at, blogpictures_attributes: [:id, :_destroy, :picture]
 
   index do
     selectable_column
@@ -80,9 +80,9 @@ ActiveAdmin.register Post do
         end
       end
       column "Kliky", :impressionist_count
-      column "Obrázok", sortable: :image do |post|
-        link_to image_tag(post.image.url, height: "50"), edit_admin_post_path(post)
-      end
+      #column "Obrázok", sortable: :image do |post|
+      #  link_to image_tag(post.image.url, height: "50"), edit_admin_post_path(post)
+      #end
       column "Vytvorené", sortable: :created_at do |post|
         post.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
       end
@@ -104,9 +104,9 @@ ActiveAdmin.register Post do
       row "názov" do post.title; end
       row "krátky popis" do post.description; end
       row "text" do post.text.html_safe; end
-      row "obrázok" do
-        link_to image_tag(post.image.url, height: "300"), edit_admin_post_path(post)
-      end
+      #row "obrázok" do
+      #  link_to image_tag(post.image.url, height: "300"), edit_admin_post_path(post)
+      #end
       row "formát" do post.format_sk; end
       row "kategória" do post.category_sk; end
       row "zvýraznený" do
@@ -133,7 +133,11 @@ ActiveAdmin.register Post do
       f.input :title, required: true, label: "Názov"
       f.input :description, required: true, label: "Krátky popis"
       f.input :text, required: true, label: "Text", as: :rich, config: { height: "200px" }
-      f.input :image, required: true, as: :file, hint: image_tag(f.object.image.url, height: "300")
+      f.has_many :blogpictures do |ff|
+        ff.input :picture, required: false, as: :file, hint: image_tag(ff.object.picture.url, height: "300")
+        ff.input :_destroy, as: :boolean
+      end
+      #f.input :image, required: true, as: :file, hint: image_tag(f.object.image.url, height: "300")
       f.input :format, required: true, label: "Formát", include_blank: false, as: :select, collection: [['článok', 'article'], 'status'] #Post.distinct.pluck(:format).map { |f| [f, f] }.reverse
       f.input :category, required: true, label: "Kategória", include_blank: false, as: :select , collection: [['psy', 'dogs'], ['kone', 'horses'], ['mačky','cats'], ['malé zvieratá', 'small_pets'], ['udalosti', 'events'], ['statusy', 'status'], ['metódy', 'methods'], ['choroby', 'illness']]
       f.input :featured, label: "Zvýraznený"
@@ -141,6 +145,8 @@ ActiveAdmin.register Post do
     end
     f.actions
   end
+
+
 
   #sidebar "Details", only: :show do
     #attributes_table_for post do

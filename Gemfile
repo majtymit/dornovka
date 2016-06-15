@@ -18,7 +18,7 @@ gem 'slim-rails'
 gem 'pry-rails'
 gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 gem 'nprogress-rails'
-gem 'paperclip'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'will_paginate'
 gem 'thin'
 gem 'impressionist'
