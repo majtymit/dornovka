@@ -1,13 +1,12 @@
-.item-list.post.image-thumbnail
-    .wrap.photo
-      a href=partner_url(partner) title=partner.link target="blank_"
-        img.img.responsive.centerimage alt=partner.link src=image_url(partner.logo.url)
-      .post-meta.clearfix.footer_background
-        span.time
-          .partner
-            .partner_name = partner.name
-            .partner_info = partner.description
-            i.fa.fa-phone
-            '
-            = partner.contact
-            /= partner.impressionist_count
+.col-portfolio
+  .portfolio-item.partner-style
+    .mask
+      #partner
+        a href=partner_url(partner) title=partner.link target="blank_"
+          img alt=partner.link src=image_url(partner.logo.url)
+        .caption
+          .partners-font-name
+            = partner.name
+            br
+          .partners-font-desc
+            = partner.description

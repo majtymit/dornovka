@@ -3215,6 +3215,14 @@ a.mobile-logo:hover {
 	padding-bottom: 10px;
 }
 
+.partner-style {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #5996d5;
+  margin: 0 30px 30px 0;
+  left: 15px;
+}
+
 .certificate-style {
   border-style: solid;
   border-width: 1px;
@@ -3266,33 +3274,78 @@ a.mobile-logo:hover {
 	padding-bottom: 8px;
 }
 
+.partners-font-name {
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFF;
+}
+
+.partners-font-desc {
+	font-size: 14px;
+	text-transform: none;
+	color: #FFF;
+}
+
+
 @media only screen and (min-width: 1600px) {
-	.col-certificate {
+	.col-portfolio {
 		width: 25%;
 		float: left;
 	}
 }
 
 @media only screen and (min-width: 1250px) and (max-width: 1599px) {
-	.col-certificate {
+	.col-portfolio {
 		width: 33.33%;
 		float: left;
 	}
 }
 
-@media only screen and (min-width: 700px) and (max-width: 1249px) {
-	.col-certificate {
+@media only screen and (min-width: 570px) and (max-width: 700px) {
+	.partners-font-name {
+		font-size: 12px;
+		font-weight: bold;
+		color: #FFF;
+	}
+
+	.partners-font-desc {
+		font-size: 10px;
+		text-transform: none;
+		color: #FFF;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	.partners-font-name {
+		font-size: 12px;
+		font-weight: bold;
+		color: #FFF;
+	}
+
+	.partners-font-desc {
+		font-size: 10px;
+		text-transform: none;
+		color: #FFF;
+	}
+}
+
+@media only screen and (min-width: 570px) and (max-width: 1249px) {
+	.col-portfolio {
 		width: 50%;
 		float: left;
 	}
 }
 
-@media only screen and (max-width: 699px) {
-	.col-certificate {
-		width: 100%;
-		float: left;
+@media only screen and (min-width: 480px) and (max-width: 569) {
+	.partner-style {
+		width: 100% !important;
+		left: 0px !important;
+		right: 0px;
+		margin: 0;
 	}
 }
+
+
 
 @media only screen and (min-width: 980px) and (max-width: 1310px) {
 	.post-home .category {
