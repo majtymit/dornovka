@@ -5,10 +5,11 @@ aside#main-sidebar.covered
   a.mobile-logo href=home_url DORNOVKA
   .sidebar-menu-container
     = render partial: 'shared/social'
-  a#mobile-menu.btn.btn-theme.collapsed data-target=".main-nav" data-toggle="collapse"
-    span Menu
-    '
-    i.fa.fa-tasks
+  .mobile-menu
+    a#mobile-menu.btn.btn-theme.collapsed data-target=".main-nav" data-toggle="collapse"
+      span Menu
+      '
+      i.fa.fa-tasks
   = render partial: 'shared/menu'
   /.copyright
     | &copy;

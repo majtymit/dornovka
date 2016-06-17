@@ -1,9 +1,10 @@
 class Blogpicture < ActiveRecord::Base
   belongs_to :post
   has_attached_file :picture,
+    style: { medium: "500x400", thumb: "100x100"},
     default_url: "/assets/original/portfolio-demo.gif",
     url: ":s3_domain_url",
-    path: "public/admin/posts/:post_id/:id_:basename.:extension",
+    path: "public/admin/posts/:id_:basename.:extension",
     storage: :fog,
     fog_credentials: {
         provider: 'AWS',

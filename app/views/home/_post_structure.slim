@@ -3,7 +3,8 @@
     .home-post-title
       a href=post_url(post) = post.title.truncate(20, separator: /\s/)
     a href=post_url(post)
-      img.home-post-img alt="" src=image_url(post.image.url) href=post_url(post)
+      - if post.blogpictures.count > 0
+        img.img-responsive title=post.title alt=post.title src=image_url(post.blogpictures[0].picture.url)
     .post-home
       span.time.pull-left.bot-pad-8px
         i.fa.fa-calendar
