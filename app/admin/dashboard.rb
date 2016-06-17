@@ -19,8 +19,10 @@ ActiveAdmin.register_page "Dashboard" do
               end
             end
             column "Názov", :title
-            column "Obrázok", :image do |post|
-              link_to image_tag(post.image.url, height: "35"), edit_admin_post_path(post)
+            column "Obrázok" do |post|
+              if post.blogpictures.count > 0
+                link_to image_tag(post.blogpictures[0].picture.url, height: "50"), edit_admin_post_path(post)
+              end
             end
             column "Vytvorené", :created_at
           end

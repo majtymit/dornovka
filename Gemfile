@@ -32,6 +32,7 @@ gem 'rich', git: 'https://github.com/kreativgebiet/rich.git'
 gem 'figaro'
 gem 'aws-sdk'
 gem 'fog'
+gem 'recaptcha', require: 'recaptcha/rails'
 
 group :development, :test do
   gem 'rspec-rails'

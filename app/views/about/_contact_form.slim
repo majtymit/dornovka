@@ -5,8 +5,9 @@
     = f.text_field :subject, required: "", type: "subject", placeholder: "Predmet správy...", class: "form-control", id: "contactSubject"
   .form-group
     = f.text_area :message, required: "", type: "message", placeholder: "Správa...", class: "form-control", rows: "3", id: "contactMessage"
+  .form-group
+    = recaptcha_tags
   button.btn.btn-theme-color type="submit"
-
     | Odoslať správu
     '
     i.fa.fa-envelope-o

@@ -80,14 +80,19 @@ ActiveAdmin.register Post do
         end
       end
       column "Kliky", :impressionist_count
-      #column "Obrázok", sortable: :image do |post|
-      #  link_to image_tag(post.image.url, height: "50"), edit_admin_post_path(post)
+      column "Obrázok" do |post|
+        if post.blogpictures.count > 0
+          link_to image_tag(post.blogpictures[0].picture.url, height: "50"), edit_admin_post_path(post)
+        end
+      end
+      #Blogpictures.each do |blogpicture|
+        #link_to image_tag(blogpictures[0].picture.url, height: "50")
       #end
       column "Vytvorené", sortable: :created_at do |post|
         post.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
       end
       actions defaults: true do |post|
-        link_to("Copy", copy_admin_post_path(post))
+        link_to "Copy", copy_admin_post_path(post)
       end
   end
 
@@ -104,9 +109,11 @@ ActiveAdmin.register Post do
       row "názov" do post.title; end
       row "krátky popis" do post.description; end
       row "text" do post.text.html_safe; end
-      #row "obrázok" do
-      #  link_to image_tag(post.image.url, height: "300"), edit_admin_post_path(post)
-      #end
+      row "obrázok" do
+        if post.blogpictures.count > 0
+          link_to image_tag(post.blogpictures[0].picture.url), edit_admin_post_path(post)
+        end
+      end
       row "formát" do post.format_sk; end
       row "kategória" do post.category_sk; end
       row "zvýraznený" do

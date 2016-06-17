@@ -18,25 +18,32 @@ class AboutController < ApplicationController
   def create
     @contact = Contact.new(user_params)
 
-      if @contact.save
-        ContactMailer.new_contact(@contact).deliver_now
-        #ContactMailer.copy_for_sender(@contact).deliver_now
-        flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
-        redirect_to about_url(anchor: "kontakt")
+      if Rails.env.production?
+        if verify_recaptcha && @contact.save
+          ContactMailer.new_contact(@contact).deliver_now
+          #ContactMailer.copy_for_sender(@contact).deliver_now
+          flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
+          redirect_to about_url(anchor: "kontakt")
+        else
+          flash[:danger] = "Nastala chyba, e-mail nebol odoslaný!"
+          redirect_to about_url(anchor: "kontakt")
+        end
       else
-        flash[:danger] = "Nastala chyba, e-mail nebol odoslaný!"
-        render "new"
+        if @contact.save
+          ContactMailer.new_contact(@contact).deliver_now
+          #ContactMailer.copy_for_sender(@contact).deliver_now
+          flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
+          redirect_to about_url(anchor: "kontakt")
+        else
+          flash[:danger] = "Nastala chyba, e-mail nebol odoslaný!"
+          redirect_to about_url(anchor: "kontakt")
+        end
       end
-  end
-
-  def hovno
-    @contact = Contact.new(user_params)
-    flash[:notice] = "Task was successfully created." if @contact.save
   end
 
   private
 
-  def user_params
-    params.require(:contact).permit(:email, :subject, :message)
-  end
+    def user_params
+      params.require(:contact).permit(:email, :subject, :message)
+    end
 end
