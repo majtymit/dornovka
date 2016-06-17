@@ -1,7 +1,7 @@
 .row
   .col-md-12
-    - unless flash.empty?
-      - flash[:success, :danger].each do |type, message|
+    - if flash[:success] || flash[:danger]
+      - flash.each do |type, message|
         .alert class="alert-#{type}"
           .button.close type="button" data-dismiss="alert"
           = message
