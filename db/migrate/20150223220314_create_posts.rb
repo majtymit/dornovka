@@ -9,7 +9,7 @@ class CreatePosts < ActiveRecord::Migration
       t.boolean :featured
       t.string :category
       t.datetime :happened_at
-      t.attachment :image
+      t.integer :visits, default: 0
 
       t.timestamps null: false
     end

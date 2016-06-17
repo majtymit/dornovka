@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   include Impressionist::IsImpressionable # fix for is_impressionable
-  is_impressionable
+  is_impressionable counter_cache: true, column_name: :visits, :unique => :all
   has_many :blogpictures, dependent: :destroy
   accepts_nested_attributes_for :blogpictures, :reject_if => lambda { |attributes| attributes[:picture].blank? }, :allow_destroy => true
 

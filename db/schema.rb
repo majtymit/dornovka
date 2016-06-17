@@ -73,11 +73,12 @@ ActiveRecord::Schema.define(version: 20160614115252) do
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.boolean  "answered",   default: false
     t.string   "email"
     t.string   "subject"
     t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "faqs", force: :cascade do |t|
@@ -152,12 +153,9 @@ ActiveRecord::Schema.define(version: 20160614115252) do
     t.boolean  "featured"
     t.string   "category"
     t.datetime "happened_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "visits",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "rich_rich_files", force: :cascade do |t|
@@ -171,23 +169,6 @@ ActiveRecord::Schema.define(version: 20160614115252) do
     t.integer  "owner_id"
     t.text     "uri_cache"
     t.string   "simplified_type",        default: "file"
-  end
-
-  create_table "send_mails", force: :cascade do |t|
-    t.string   "email"
-    t.string   "subject"
-    t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "subposts", force: :cascade do |t|
-    t.integer  "post_id"
-    t.text     "text"
-    t.string   "icon"
-    t.datetime "happened_at"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "therapies", force: :cascade do |t|
