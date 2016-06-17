@@ -1,7 +1,7 @@
 .row
   .col-md-12
     - unless flash.empty?
-      - flash.delete(flash[:recaptcha_error]).each do |type, message|
+      - [flash[:success], flash[:danger]].each do |type, message|
         .alert class="alert-#{type}"
           .button.close type="button" data-dismiss="alert"
           = message
