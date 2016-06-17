@@ -1,4 +1,7 @@
 class AboutController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def index
     @certificates = Certificate.visible.order("position ASC")
     @faqs = Faq.visible.order("position ASC")
