@@ -6,7 +6,6 @@ class Post < ActiveRecord::Base
 
   validates :title, uniqueness: true, length: { maximum: 45, too_long: "45 characters is the maximum allowed" }
 
-  default_scope { order(created_at: :desc, title: :asc) }
   scope :query, -> (q) {
     if q.blank?
       all
@@ -15,8 +14,10 @@ class Post < ActiveRecord::Base
       where(attributes.map{ |attr| "lower(#{attr}) LIKE '%#{q.downcase}%'" }.join(' OR '))
     end
   }
-  scope :featured, -> { where(featured: true) }
   scope :visible, -> { where(visibility: true) }
+  scope :featured, -> { where(featured: true) }
+  scope :most_visited, -> { order(visits: :desc) }
+  scope :newest, -> { order(created_at: :desc, title: :asc) }
 
   def seo_title
     I18n.transliterate(title).gsub(' ', '-').gsub(/[^a-zA-Z0-9-]/, '')

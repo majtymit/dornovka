@@ -33,7 +33,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Najnavštevovanejšie posty" do
-          table_for Post.order(visits: :asc).limit(5).each do |post|
+          table_for Post.most_visited.limit(5).each do |post|
             column "Kliky", :visits
             column "Názov", :title
             column "Obrázok" do |post|
