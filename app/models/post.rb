@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :blogpictures, dependent: :destroy
   accepts_nested_attributes_for :blogpictures, :reject_if => lambda { |attributes| attributes[:picture].blank? }, :allow_destroy => true
 
-  validates :title, uniqueness: true, length: { maximum: 45, too_long: "45 characters is the maximum allowed" }
+  validates :title, uniqueness: true, length: { maximum: 35, too_long: "35 characters is the maximum allowed" }
 
   scope :query, -> (q) {
     if q.blank?
