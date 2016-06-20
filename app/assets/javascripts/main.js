@@ -911,8 +911,12 @@ $(document).on('ready page:load', function() {
     });
 
     initPhotostack();
-    setTimeout(sfApp.reloadIsotope, 1500);
 
+    isotopeContent.imagesLoaded(function() {
+        sfApp.reFormatUI();
+    })
+
+    setTimeout(sfApp.reloadIsotope, 1500);
 });
 
 /*
