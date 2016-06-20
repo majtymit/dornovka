@@ -912,11 +912,13 @@ $(document).on('ready page:load', function() {
 
     initPhotostack();
 
+    var isotopeContent = $('#isotope-content');
+
     isotopeContent.imagesLoaded(function() {
-        sfApp.reFormatUI();
+        sfApp.reloadIsotope();
     })
 
-    setTimeout(sfApp.reloadIsotope, 1500);
+    //setTimeout(sfApp.reloadIsotope, 1500);
 });
 
 /*
