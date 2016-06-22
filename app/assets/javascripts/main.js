@@ -915,7 +915,7 @@ $(document).on('ready page:load', function() {
     var isotopeContent = $('#isotope-content');
 
     isotopeContent.imagesLoaded(function() {
-        sfApp.reloadIsotope();
+        setTimeout(sfApp.reloadIsotope, 1500);
     })
 
     //setTimeout(sfApp.reloadIsotope, 1500);
