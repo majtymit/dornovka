@@ -139,7 +139,7 @@ ActiveAdmin.register Post do
       f.input :visibility, label: "Zverejnený"#, input_html: {checked: true}, include_blank: false, as: :select, collection: [['áno', true], ['nie', false]]
       f.input :title, required: true, label: "Názov"
       f.input :description, required: true, label: "Krátky popis"
-      f.input :text, required: true, label: "Text", as: :rich, config: { height: "200px" }
+      f.input :text, required: true, label: "Text", as: :rich, config: { height: "300px" }
       f.has_many :blogpictures do |ff|
         ff.input :picture, required: false, as: :file, hint: image_tag(ff.object.picture.url, height: "300")
         ff.input :_destroy, as: :boolean

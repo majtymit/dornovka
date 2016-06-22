@@ -6,6 +6,11 @@
     section.post-content
       .row
         .col-md-12
+          .faq-info
+            | V prípade, že nenájdete odpoveď na otázku, ktorá Vás zaujíma, neváhajte ma
+            '
+            a.faq-info href=about_url(anchor: 'kontakt') title="kontaktujte ma" kontaktovať.
+          br
           #accordion.panel-group
             - @faqs.each do |faq|
               = render partial: 'accordion_structure', locals: { faq: faq }

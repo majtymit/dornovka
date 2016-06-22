@@ -85,7 +85,7 @@ ActiveAdmin.register Partner do
       f.input :description, label: "Krátky popis", required: true
       f.input :contact, label: "Kontakt", required: true
       f.input :link, label: "Link", required: true
-      f.input :logo, label: "Logo<br /><span style='color: red; font-size: 20px;'>283px šírka a 117px výška<br />žiadny iný rozmer!</span>".html_safe, required: true, as: :file, hint: image_tag(f.object.logo.url)
+      f.input :logo, label: "Logo", required: true, as: :file, hint: image_tag(f.object.logo.url)
     end
     f.actions
   end
