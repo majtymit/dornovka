@@ -878,7 +878,7 @@ var sfApp={
         sfApp.sliderSetup();
         sfApp.initFilter();
         sfApp.isotopeSetup();
-        sfApp.infiniteScrollSetup();
+        //sfApp.infiniteScrollSetup();
         sfApp.portfolioSetup();
         sfApp.contentPopup();
         sfApp.newsletterSetup();
