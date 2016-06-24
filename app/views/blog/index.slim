@@ -2,3 +2,6 @@
 
 #isotope-content
   = render partial: 'posts'
+.digg_pagination.text-center
+  = will_paginate @posts
+  /page_links: false

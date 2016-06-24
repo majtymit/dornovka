@@ -22,31 +22,18 @@
         li.facebook
           a href="http://www.facebook.com/sharer.php?u=http://dornovka.sk/blog/#{@post.id}-#{@post.seo_title}" target="_blank" title="Facebook"
             i.fa.fa-facebook
+        '
         li.google
           a href="https://plus.google.com/share?url=http://dornovka.sk/blog/#{@post.id}-#{@post.seo_title}" target="_blank" title="Google+"
             i.fa.fa-google-plus
+        '
         li.twitter
           a href="https://twitter.com/share?url=http://dornovka.sk/blog/#{@post.id}-#{@post.seo_title}&amp;hashtags=dornovka.sk" target="_blank" title="Twitter"
             i.fa.fa-twitter
+        '
         li.email
           a href="mailto:?subject=#{@post.title}&body=Čítaj%20na%20http://dornovka.sk/blog/#{@post.id}-#{@post.seo_title}" title="Email"
             i.fa.fa-envelope-o
 br
 br
-#disqus_thread
-    javascript:
-      var disqus_config = function () {
-      this.page.url = '#{request.original_url}';
-      this.page.identifier = '#{@post.id}';
-      };
-
-      (function() {
-      var d = document, s = d.createElement('script');
-      s.src = '//dornovka.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-      })();
-
-    noscript
-      | Please enable JavaScript to view the
-      a href="https://disqus.com/?ref_noscript" rel="nofollow"  comments powered by Disqus.
+= render partial: 'disqus'

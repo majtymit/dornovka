@@ -22,7 +22,7 @@ ActiveAdmin.register Post do
   end
 
   config.sort_order = 'created_at_desc'
-  #config.per_page = 30
+  config.per_page = 15
   filter :title
   filter :text
   filter :title_or_text, as: :string
