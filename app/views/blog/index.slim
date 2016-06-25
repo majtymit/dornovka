@@ -3,5 +3,4 @@
 #isotope-content
   = render partial: 'posts'
 .digg_pagination.text-center
-  = will_paginate @posts
-  /page_links: false
+  = will_paginate @posts, previous_label: t("<"), next_label: t(">")
