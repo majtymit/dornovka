@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
   scope :visible, -> { where(visibility: true) }
   scope :featured, -> { where(featured: true) }
   scope :most_visited, -> { order(visits: :desc) }
-  scope :newest, -> { order(created_at: :desc, title: :asc) }
+  scope :newest, -> { order(created_at: :desc) }
 
   def seo_title
     I18n.transliterate(title).gsub(' ', '-').gsub(/[^a-zA-Z0-9-]/, '')

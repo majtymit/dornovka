@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626144503) do
+ActiveRecord::Schema.define(version: 20160626145451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 20160626144503) do
   end
 
   add_index "posts", ["visibility", "created_at", "title"], name: "index_posts_on_visibility_and_created_at_and_title", using: :btree
+  add_index "posts", ["visibility", "created_at"], name: "index_posts_on_visibility_and_created_at", using: :btree
   add_index "posts", ["visibility"], name: "index_posts_on_visibility", using: :btree
 
   create_table "rich_rich_files", force: :cascade do |t|
