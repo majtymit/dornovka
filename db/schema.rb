@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614115252) do
+ActiveRecord::Schema.define(version: 20160626143451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20160614115252) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "blogpictures", ["post_id"], name: "index_blogpictures_on_post_id", using: :btree
 
   create_table "certificates", force: :cascade do |t|
     t.boolean  "visibility"
@@ -157,6 +159,8 @@ ActiveRecord::Schema.define(version: 20160614115252) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  add_index "posts", ["visibility"], name: "index_posts_on_visibility", using: :btree
 
   create_table "rich_rich_files", force: :cascade do |t|
     t.datetime "created_at"

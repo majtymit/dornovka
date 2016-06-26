@@ -1,13 +1,11 @@
 class BlogController < ApplicationController
   before_filter :set_body_class, only: [:index, :show]
+  before_filter :set_posts, only: [:index, :ajax_index]
 
   def index
-    @posts = Post.visible.newest.query(params[:query]).paginate(page: params[:page], per_page: 15)
   end
 
   def ajax_index
-    @posts = Post.visible.newest.query(params[:query]).paginate(page: params[:page], per_page: 15)
-
     render layout: false
   end
 
@@ -17,6 +15,16 @@ class BlogController < ApplicationController
   end
 
   private
+
+  def set_posts
+    @posts =
+      Post
+        .includes(:blogpictures)
+        .visible
+        .newest
+        .query(params[:query])
+        .paginate(page: params[:page], per_page: 15)
+  end
 
   def set_body_class
     @body_class =
