@@ -3815,9 +3815,11 @@ a.mobile-logo:hover {
 }
 
 .home-post-title {
-	left: 5px;
+	//left: 5px;
 	text-align: center;
 	padding: 8px 5px 8px 5px;
+	color: #000;
+	text-transform: uppercase;
 }
 
 .col-home-post {

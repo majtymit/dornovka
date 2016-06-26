@@ -17,13 +17,8 @@ class BlogController < ApplicationController
   private
 
   def set_posts
-    @posts =
-      Post
-        .includes(:blogpictures)
-        .visible
-        .newest
-        .query(params[:query])
-        .paginate(page: params[:page], per_page: 15)
+    @posts = Post.includes(:blogpictures).visible.newest.query(params[:query])
+      #.paginate(page: params[:page], per_page: 15)
   end
 
   def set_body_class
