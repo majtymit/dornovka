@@ -27,10 +27,20 @@ table.index_table td {
   text-align: center;
   vertical-align: middle;
 }
+
 table.index_table th {
   text-align: center !important;
 }
 
 .aa-text_and_name_column {
   text-align: left !important;
+}
+
+table tr td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+caption, th, td {
+  text-align: center;
 }

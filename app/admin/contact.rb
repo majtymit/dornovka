@@ -17,5 +17,20 @@ ActiveAdmin.register Contact do
     end
   end
 
-  permit_params :answered, :email, :subject, :message, :created_at, :updated_at
+  permit_params :answered
+
+  index do
+    selectable_column
+      column "Vybavené", :answered, sortable: :answered
+      column "Od", :email, sortable: :email
+      column "Predmet", :subject, sortable: :subject
+      column "Správa", sortable: :message, :class => "aa-text_and_name_column" do |contact|
+        contact.message.truncate(60, separator: /\s/).html_safe
+      end
+      column "Vytvorené", sortable: :created_at do |contact|
+        contact.created_at.localtime.strftime("%d.%m.%Y<br />%H:%M:%S").html_safe
+      end
+      actions
+  end
+
 end

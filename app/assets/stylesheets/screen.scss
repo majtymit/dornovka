@@ -3920,6 +3920,10 @@ a.mobile-logo:hover {
 	font-size: 17px;
 }
 
+textarea[type=message] {
+    resize: vertical;
+}
+
 @media only screen and (min-width: 1600px) {
 	.col-portfolio {
 		width: 25%;
