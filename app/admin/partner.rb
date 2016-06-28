@@ -1,6 +1,6 @@
 ActiveAdmin.register Partner do
 
-  menu priority: 5, label: "Partneri"
+  menu priority: 8, label: "Partneri"
 
   controller do
     def create

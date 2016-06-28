@@ -1,6 +1,6 @@
 ActiveAdmin.register Contact do
 
-  menu priority: 9, label: "Emaily"
+  menu priority: 4, label: "E-maily", parent: "O mne"
   config.per_page = 50
 
   controller do

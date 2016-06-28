@@ -1,6 +1,6 @@
 ActiveAdmin.register Figure do
 
-  menu priority: 8, label: "Banner"
+  menu priority: 3, label: "Banner"
 
   controller do
     def create

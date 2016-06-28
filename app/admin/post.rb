@@ -1,6 +1,6 @@
 ActiveAdmin.register Post do
 
-  menu priority: 6, label: "Blog"
+  menu priority: 1, label: "Články", parent: "Blog"
 
   controller do
     def create

@@ -10,20 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require ./bootstrap.min
- *= require ./font-awesome
- *= require ./owl.carousel
- *= require ./owl.theme
- *= require ./magnific-popup
- *= require ./bootstrap-multiselect
- *= require ./screen
- *= require ./colors
- *= require ./custom
+ *= require bootstrap.min
+ *= require font-awesome
+ *= require owl.carousel
+ *= require owl.theme
+ *= require magnific-popup
+ *= require bootstrap-multiselect
+ *= require screen
+ *= require colors
+ *= require custom
  *= require nprogress-bootstrap
- *= require ./timeline
- *= require ./CBPFWTabs
- *= require ./partners
- *= require ./photostack
- *= require ./normalize
+ *= require timeline
+ *= require CBPFWTabs
+ *= require partners
+ *= require photostack
+ *= require normalize
  *= require_self
- */

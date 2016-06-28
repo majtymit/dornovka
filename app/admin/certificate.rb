@@ -1,6 +1,6 @@
 ActiveAdmin.register Certificate do
 
-  menu priority: 3, label: "Certifikáty"
+  menu priority: 3, label: "Certifikáty", parent: "O mne"
 
   controller do
     def create

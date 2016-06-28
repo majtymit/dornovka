@@ -1,10 +1,29 @@
 ActiveAdmin.setup do |config|
+
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add priority: 4, label: "O mne", url: "#"
+      menu.add priority: 7, label: "Blog", url: "#" do |sites|
+        sites.add priority: 2, label: "Komentáre", url: "https://dornovka.disqus.com/admin/moderate/#/approved", html_options: { target: :blank }
+      end
+    end
+
+    admin.build_menu :utility_navigation do |menu|
+      menu.add label: "Administrátori", url: "/admin/admin_users"
+      admin.add_current_user_to_menu  menu
+      admin.add_logout_button_to_menu menu
+    end
+  end
+
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Dornovka"
+  config.site_title = "dornovka.sk"
+
+  config.site_title_link = "http://dornovka.sk/"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.

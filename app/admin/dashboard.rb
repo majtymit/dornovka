@@ -4,7 +4,7 @@ ActiveAdmin.register_page "Dashboard" do
     config.comments = false
   end
 
-  menu priority: 1, label: "Prehľad"
+  menu priority: 2, label: "Prehľad"
 
   content title: "Dashboard" do
     columns do

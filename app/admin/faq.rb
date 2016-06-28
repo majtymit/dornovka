@@ -1,6 +1,6 @@
 ActiveAdmin.register Faq do
 
-  menu priority: 4, label: "Otázky a odpovede"
+  menu priority: 5, label: "Otázky a odpovede"
 
   controller do
     def create

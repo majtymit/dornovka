@@ -1,6 +1,6 @@
 ActiveAdmin.register Timeline do
 
-  menu priority: 7, label: "Životopis"
+  menu priority: 2, label: "Životopis", parent: "O mne"
 
   controller do
     def create
