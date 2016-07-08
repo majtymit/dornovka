@@ -6,6 +6,11 @@
     section.post-content
       .row
         .col-md-12
+          .logo-container-home
+            a.logo href=home_url
+              img.logo-home alt="Dornovka" src=image_url("dornovka_logo.jpg")
+      .row
+        .col-md-12
           section#photostack-3.photostack
             .figure-container
               - @figures.each do |figure|
