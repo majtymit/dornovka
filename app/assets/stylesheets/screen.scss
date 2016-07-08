@@ -2917,10 +2917,6 @@ ul.social.active li.rss {
 	.post-header {
 		top: 0 !important;
 	}
-
-	.logo-container-home {
-		display: none;
-	}
 }
 
 @media only screen and (max-width: 979px) {
@@ -2941,17 +2937,6 @@ ul.social.active li.rss {
 		top: 1px !important;
 		text-align: center;
 	}
-
-	.logo-container-home {
-		text-align: center;
-		display: block;
-		padding: 15px 0px 15px 0px;
-	}
-
-	.logo-home {
-	  height: auto;
-    max-width: 100%;
-  }
 }
 
 @media only screen and (max-width: 559px) {
