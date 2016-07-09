@@ -13,7 +13,6 @@
 
 //= require jquery-1.10.2.min
 //= require active_admin
-//= require turbolinks
 //= require bootstrap.min
 //= require imagesloaded.pkgd.min
 //= require jqBootstrapValidation

@@ -2917,6 +2917,10 @@ ul.social.active li.rss {
 	.post-header {
 		top: 0 !important;
 	}
+
+	.logo-container-home {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 979px) {
@@ -2937,6 +2941,17 @@ ul.social.active li.rss {
 		top: 1px !important;
 		text-align: center;
 	}
+
+	.logo-container-home {
+		text-align: center;
+		display: block;
+		padding: 15px 0px 15px 0px;
+	}
+
+	.logo-home {
+	  height: auto;
+    max-width: 100%;
+  }
 }
 
 @media only screen and (max-width: 559px) {
@@ -3626,27 +3641,6 @@ ul.social.active li.rss {
 	}
 }
 
-@media only screen and (min-width: 1330px) {
-	.col-home-post {
-		width: 50%;
-		float: left;
-	}
-}
-
-@media only screen and (min-width: 540px) and (max-width: 749px) {
-	.col-home-post {
-		width: 50%;
-		float: left;
-	}
-}
-
-@media only screen and (max-width: 539px) {
-	.col-home-post {
-		width: 100%;
-		float: left;
-	}
-}
-
 @media only screen and (max-width: 597px) {
 	.post-template #main-sidebar {
 		position: absolute;
@@ -3843,6 +3837,11 @@ a.mobile-logo:hover {
 	text-transform: uppercase;
 }
 
+.col-home-post {
+	width: 50%;
+	float: left;
+}
+
 .alert {
 	padding: 15px;
 	font-size: 20px;
@@ -3998,7 +3997,20 @@ textarea[type=message] {
 	}
 }
 
-@media only screen and (max-width: 310px) {
+@media only screen and (min-width: 980px) and (max-width: 1310px) {
+	.post-home .category {
+		width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+	}
+
+	.post-home .time {
+		width: 100%;
+    text-align: center;
+	}
+}
+
+@media only screen and (max-width: 530px) {
 	.post-home .category {
 		width: 100%;
     text-align: center;
