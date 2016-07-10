@@ -1,6 +1,6 @@
 ActiveAdmin.register Therapy do
 
-  menu priority: 6, label: "Metódy"
+  menu priority: 7, label: "Metódy"
 
   controller do
     def create

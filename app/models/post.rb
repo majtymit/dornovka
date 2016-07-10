@@ -18,6 +18,7 @@ class Post < ActiveRecord::Base
   scope :featured, -> { where(featured: true) }
   scope :most_visited, -> { order(visits: :desc) }
   scope :newest, -> { order(created_at: :desc) }
+  scope :nonfeatured, -> { where(featured: false) }
 
   def seo_title
     I18n.transliterate(title).gsub(' ', '-').gsub(/[^a-zA-Z0-9-]/, '')

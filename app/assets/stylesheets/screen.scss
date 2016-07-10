@@ -3997,33 +3997,25 @@ textarea[type=message] {
 	}
 }
 
-@media only screen and (min-width: 980px) and (max-width: 1310px) {
-	.post-home .category {
+@media only screen and (min-width: 980px) and (max-width: 1330px) {
+	.col-home-post {
 		width: 100%;
-    text-align: center;
-    padding-bottom: 5px;
 	}
+}
 
-	.post-home .time {
+@media only screen and (min-width: 531px) and (max-width: 979px) {
+	.col-home-post {
 		width: 100%;
-    text-align: center;
 	}
 }
 
 @media only screen and (max-width: 530px) {
-	.post-home .category {
+	.col-home-post {
 		width: 100%;
-    text-align: center;
-    padding-bottom: 5px;
-	}
-
-	.post-home .time {
-		width: 100%;
-    text-align: center;
 	}
 }
 
-@media only screen and (min-width: 750px) and (max-width: 991px) {
+@media only screen and (min-width: 650px) and (max-width: 991px) {
 	.col-md-6 {
 		width: 50%;
 		float: left;

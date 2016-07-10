@@ -3,7 +3,7 @@ ActiveAdmin.setup do |config|
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
       menu.add priority: 4, label: "O mne", url: "#"
-      menu.add priority: 7, label: "Blog", url: "#" do |sites|
+      menu.add priority: 5, label: "Blog", url: "#" do |sites|
         sites.add priority: 2, label: "Komentáre", url: "https://dornovka.disqus.com/admin/moderate/#/approved", html_options: { target: :blank }
         sites.add priority: 3, label: "Obrázok Share Fix", url: "https://developers.facebook.com/tools/debug/og/object/", html_options: { target: :blank }
       end
