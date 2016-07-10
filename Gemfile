@@ -28,6 +28,7 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'fog'
 gem 'recaptcha', require: 'recaptcha/rails'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rspec-rails'

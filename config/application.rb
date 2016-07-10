@@ -24,7 +24,7 @@ module Dornovka
     config.i18n.default_locale = :en
     config.assets.initialize_on_precompile = false
     config.active_record.raise_in_transactional_callbacks = true
-    config.time_zone = 'Bratislava'
+    config.time_zone = 'Europe/Bratislava'
     config.active_record.default_timezone = :local
 
   end

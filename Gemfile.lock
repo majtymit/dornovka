@@ -300,6 +300,7 @@ GEM
     minitest (5.9.0)
     modernizr-rails (2.7.1)
     multi_json (1.12.1)
+    newrelic_rpm (3.14.0.305)
     nokogiri (1.6.8-x64-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -455,6 +456,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   modernizr-rails
+  newrelic_rpm
   nokogiri
   nprogress-rails
   paperclip!
