@@ -21,7 +21,6 @@
           .home-center Dôležité články
           - @featuredPosts.each do |post|
             = render partial: "home/post_structure", locals: { post: post }
-      .row
         .col-md-6
           .home-center Najnovšie články
           - @newestPosts.each do |post|
