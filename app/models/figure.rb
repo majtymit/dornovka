@@ -1,6 +1,7 @@
 class Figure < ActiveRecord::Base
   validates :position, uniqueness: true, numericality: :true
   scope :visible, -> { where(visibility: true) }
+  scope :newest, -> { order(created_at: :desc) }
 
   has_attached_file :photo,
     default_url: "/assets/original/portfolio-demo.gif",

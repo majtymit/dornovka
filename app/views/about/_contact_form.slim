@@ -7,8 +7,7 @@
     = f.text_area :message, required: "", type: "message", placeholder: "Správa...", class: "form-control", rows: "4", id: "contactMessage"
   .form-group Vaša rozpísaná správa nebude uložená, ani odoslaná, ak neprejdete "ROBOT testom" !
   .form-group
-    - if Rails.env.production?
-      = recaptcha_tags hl: 'sk'
+    = recaptcha_tags hl: 'sk'
   button.btn.btn-theme-color type="submit"
     | Odoslať správu
     '
