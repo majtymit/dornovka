@@ -92,14 +92,14 @@ ActiveAdmin.register Therapy do
       f.input :visibility, label: "Zverejnený", input_html: {checked: true}
       f.input :position, label: "Pozícia"
       f.input :title, label: "Názov", required: true
-      f.input :description, label: "Opis", required: true, as: :rich, config: { height: "100px" }
+      f.input :description, label: "Popis", required: true, as: :rich, config: { height: "100px" }
       f.input :text, label: "Text", required: true, as: :rich, config: { height: "200px" }
       f.input :picture1, label: "Logo", required: true, as: :file, hint: image_tag(f.object.picture1.url, height: "300")
-      f.input :picture1desc, label: "Obrázok 1 opis"
+      f.input :picture1desc, label: "Obrázok 1 popis"
       f.input :picture2, label: "Logo", required: true, as: :file, hint: image_tag(f.object.picture2.url, height: "300")
-      f.input :picture2desc, label: "Obrázok 2 opis"
+      f.input :picture2desc, label: "Obrázok 2 popis"
       f.input :picture3, label: "Logo", required: true, as: :file, hint: image_tag(f.object.picture3.url, height: "300")
-      f.input :picture3desc, label: "Obrázok 3 opis"
+      f.input :picture3desc, label: "Obrázok 3 popis"
     end
     f.actions
   end
