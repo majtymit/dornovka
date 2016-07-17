@@ -352,7 +352,13 @@ figure.photostack-current::after {
 	  height: 196px;
 
 	}
+
 	.figure-img {
 		width: 200px;
+	}
+
+	.photostack-back {
+		padding: 25px 25px;
+		font-size: 15px;
 	}
 }

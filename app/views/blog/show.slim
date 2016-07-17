@@ -1,8 +1,10 @@
 - content_for :head do
-  title="#{@post.title} | dornovka.sk"
-  meta property="og:title" content=@post.title
+  title="Blog • #{@post.title} • Dornovka"
+  meta name="description" content=@post.description
+
+  meta property="og:title" content="#{@post.title} • Dornova metóda"
   meta property="og:description" content=@post.description
-  meta property="og:type" content="article"
+  meta property="og:type" content="website"
   meta property="og:url" content="http://dornovka.sk/blog/#{@post.id}-#{@post.seo_title}"
   meta property="og:image" content=@post.blogpictures[0].picture.url
 
