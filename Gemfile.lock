@@ -118,6 +118,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.2.0.1)
     eventmachine (1.2.0.1-x64-mingw32)
@@ -454,6 +456,7 @@ DEPENDENCIES
   cancan
   coffee-rails
   devise
+  email_validator
   figaro
   fog
   impressionist

@@ -28,6 +28,7 @@ gem 'aws-sdk'
 gem 'fog'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'newrelic_rpm'
+gem 'email_validator'
 
 group :development do
   gem 'web-console'
