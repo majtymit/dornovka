@@ -1,5 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Contact, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Contact do
+  it "" do
+    Contact.new.save!
+  end
 end

@@ -1,5 +1,4 @@
 class AboutController < ApplicationController
-
   skip_before_action :verify_authenticity_token
 
   def index
@@ -19,34 +18,22 @@ class AboutController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(user_params)
+    @contact = Contact.new(contact_params)
 
-      if Rails.env.production?
-        if verify_recaptcha && @contact.save
-          ContactMailer.new_contact(@contact).deliver_now
-          #ContactMailer.copy_for_sender(@contact).deliver_now
-          flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
-          redirect_to about_url(anchor: "kontakt")
-        else
-          flash[:danger] = "E-mail nebol odoslaný! Potvrďte, že nie ste ROBOT!"
-          redirect_to about_url(anchor: "kontakt")
-        end
-      else
-        if @contact.save
-          ContactMailer.new_contact(@contact).deliver_now
-          #ContactMailer.copy_for_sender(@contact).deliver_now
-          flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
-          redirect_to about_url(anchor: "kontakt")
-        else
-          flash[:danger] = "Nastala chyba, e-mail nebol odoslaný!"
-          redirect_to about_url(anchor: "kontakt")
-        end
-      end
+    if (Rails.env.development? || verify_recaptcha) && @contact.save
+      ContactMailer.new_contact(@contact).deliver_now
+      #ContactMailer.copy_for_sender(@contact).deliver_now
+      flash[:success] = "Ďakujem za Váš e-mail. Jeho kópia bola odoslaná na #{@contact.email}"
+      redirect_to about_url(anchor: "kontakt")
+    else
+      flash[:danger] = "E-mail nebol odoslaný! Potvrďte, že nie ste ROBOT!"
+      redirect_to about_url(anchor: "kontakt")
+    end
   end
 
   private
 
-    def user_params
-      params.require(:contact).permit(:email, :subject, :message)
-    end
+  def contact_params
+    params.require(:contact).permit(:email, :subject, :message)
+  end
 end

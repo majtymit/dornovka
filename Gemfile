@@ -10,7 +10,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
-gem 'sdoc', group: :doc
 gem 'nokogiri'
 gem 'slim-rails'
 gem 'pry-rails'
@@ -30,13 +29,14 @@ gem 'fog'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'newrelic_rpm'
 
+group :development do
+  gem 'web-console'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
-  gem 'web-console'
   gem 'spring'
-  gem 'sqlite3'
-  gem 'chunky_png'
 end
 
 group :production do
