@@ -29,6 +29,7 @@ gem 'fog'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'newrelic_rpm'
 gem 'email_validator'
+gem 'rack-attack'
 
 group :development do
   gem 'web-console'

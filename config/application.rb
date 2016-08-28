@@ -26,6 +26,6 @@ module Dornovka
     config.active_record.raise_in_transactional_callbacks = true
     config.time_zone = 'Europe/Bratislava'
     config.active_record.default_timezone = :local
-
+    config.middleware.use Rack::Attack
   end
 end

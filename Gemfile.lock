@@ -326,6 +326,8 @@ GEM
       pry (>= 0.9.10)
     puma (3.4.0)
     rack (1.6.4)
+    rack-attack (5.0.1)
+      rack
     rack-raw-upload (1.1.1)
       multi_json
     rack-test (0.6.3)
@@ -470,6 +472,7 @@ DEPENDENCIES
   pg
   pry-rails
   puma
+  rack-attack
   rails (= 4.2.0)
   rails_12factor
   recaptcha
