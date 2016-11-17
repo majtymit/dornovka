@@ -4,13 +4,13 @@
 # overhead.  For more information, visit www.newrelic.com.
 #
 # Generated July 10, 2016, for version 3.14.0.305
-# 
+#
 # For full documentation of agent configuration options, please refer to
 # https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-configuration
 
 common: &default_settings
   # Required license key associated with your New Relic account.
-  license_key: 12153f3d2f70e8099729b34c6aff81bfd2ccd03d
+  license_key: <%= ENV["NEWRELIC_LICENSE_KEY"] %>
 
   # Your application name. Renaming here affects where data displays in New
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
