@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
   include Impressionist::IsImpressionable # fix for is_impressionable
-  is_impressionable counter_cache: true, column_name: :visits, :unique => :all
+  is_impressionable counter_cache: true, column_name: :visits, unique: :session_hash
   has_many :blogpictures, dependent: :destroy
-  accepts_nested_attributes_for :blogpictures, :reject_if => lambda { |attributes| attributes[:picture].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :blogpictures, reject_if: lambda { |attributes| attributes[:picture].blank? }, :allow_destroy => true
 
   validates :title, uniqueness: true, length: { maximum: 35, too_long: "35 characters is the maximum allowed" }
 

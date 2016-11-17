@@ -50,7 +50,7 @@ ActiveAdmin.register Post do
     posts.where(id: posts.order(updated_at: :desc).limit(5).pluck(:id))
   end
 
-  permit_params :id, :visibility, :title, :description, :text, :format, :category, :featured, :happened_at, :impressionist_count, :created_at, :updated_at, blogpictures_attributes: [:id, :_destroy, :picture]
+  permit_params :id, :visibility, :title, :description, :text, :format, :category, :featured, :happened_at, :created_at, :updated_at, blogpictures_attributes: [:id, :_destroy, :picture]
 
   index do
     selectable_column
@@ -79,7 +79,7 @@ ActiveAdmin.register Post do
           link_to image_tag("yes.png", height: "25"), edit_admin_post_path(post)
         end
       end
-      column "Kliky", :impressionist_count
+      column "Kliky", :visits
       column "Obrázok" do |post|
         if post.blogpictures.count > 0
           link_to image_tag(post.blogpictures[0].picture.url, height: "50"), edit_admin_post_path(post)
@@ -123,7 +123,7 @@ ActiveAdmin.register Post do
           p 'nie'
         end
       end
-      row "videnia" do post.impressionist_count; end
+      row "videnia" do post.visits; end
       row "dátum" do post.created_at.strftime("%a %b %d %Y %H:%M:%S"); end
       row "vytvorené" do
         post.created_at.localtime.strftime("%d.%m.%Y, %H:%M:%S")

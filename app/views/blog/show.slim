@@ -23,6 +23,7 @@
                 .item
                   img.img-responsive title=@post.title alt=@post.title src=image_url(blogpicture.picture.url)
           - elsif @post.blogpictures.count == 0
+            img.img-responsive title=post.title alt=post.title src=image_url("portfolio-demo.gif")
           - else
             img.img-responsive title=@post.title alt=@post.title src=image_url(@post.blogpictures[0].picture.url)
           /img.img-responsive alt=@post.title title=@post.title src=image_url(@post.image.url)

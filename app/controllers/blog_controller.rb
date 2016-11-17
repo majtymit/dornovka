@@ -1,6 +1,7 @@
 class BlogController < ApplicationController
   before_filter :set_body_class, only: [:index, :show]
   before_filter :set_posts, only: [:index, :ajax_index]
+  impressionist :unique => [:session_hash]
 
   def index
   end
