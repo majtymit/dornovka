@@ -461,7 +461,7 @@ DEPENDENCIES
   email_validator
   figaro
   fog
-  impressionist
+  impressionist (= 1.5.1)
   jbuilder
   jquery-rails
   modernizr-rails
