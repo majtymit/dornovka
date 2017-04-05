@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'nokogiri'
-gem 'slim-rails'
+gem 'slim-rails', '3.1.1'
 gem 'pry-rails'
 gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 gem 'nprogress-rails'
