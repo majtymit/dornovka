@@ -19,7 +19,7 @@ class Therapy < ActiveRecord::Base
 
   validates_attachment_content_type :picture1, content_type: /\Aimage\/.*\Z/
 
-has_attached_file :picture2,
+  has_attached_file :picture2,
     default_url: "/assets/original/portfolio-demo.gif",
     url: ":s3_domain_url",
     path: "public/admin/therapies/:id_2_:basename.:extension",
